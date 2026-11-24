@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Көпір: an AI answer for Kazakhstan's kandas children</title>
+<meta name="description" content="Kandas children return to Kazakhstan speaking Kazakh but unable to read it in Cyrillic. A PLS 419 final project on the problem, the data, the research, and an AI reading tutor with its full bill.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231F2366'/%3E%3Ctext x='32' y='45' font-size='38' text-anchor='middle' fill='%23F2B320' font-family='Georgia'%3EҚ%3C/text%3E%3C/svg%3E">
+<link rel="preload" href="fonts/literata.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/golos.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#problem">Skip to the project</a>
+
+<nav class="rail" aria-label="Sections">
+  <div class="rail-track"><div class="rail-fill" id="railFill"></div></div>
+  <ol>
+    <li><a href="#problem" data-sec="problem"><span class="rail-n">1</span><span class="rail-t">Problem</span></a></li>
+    <li><a href="#data" data-sec="data"><span class="rail-n">2</span><span class="rail-t">Data</span></a></li>
+    <li><a href="#research" data-sec="research"><span class="rail-n">3</span><span class="rail-t">Research</span></a></li>
+    <li><a href="#solution" data-sec="solution"><span class="rail-n">4</span><span class="rail-t">Solution</span></a></li>
+    <li><a href="#bill" data-sec="bill"><span class="rail-n">4b</span><span class="rail-t">The bill</span></a></li>
+    <li><a href="#verdict" data-sec="verdict"><span class="rail-n">✓</span><span class="rail-t">Verdict</span></a></li>
+  </ol>
+</nav>
+
+<header class="hero" id="top">
+  <div class="hero-inner">
+    <p class="hero-kicker">PLS 419 final project: an AI answer for Kazakhstan</p>
+    <div class="script-word" aria-label="Kazakh, written in three scripts: Cyrillic, Arabic and Latin">
+      <span class="sw sw-cyr is-on" lang="kk">Қазақ</span>
+      <span class="sw sw-ar" lang="kk-Arab" dir="rtl">قازاق</span>
+      <span class="sw sw-lat" lang="kk-Latn">Qazaq</span>
+    </div>
+    <p class="script-caption" aria-hidden="true"><span id="scriptName">Cyrillic, used in Kazakhstan's schools</span></p>
+    <h1>They come home speaking Kazakh. Then school asks them to read it.</h1>
+    <p class="hero-sub">Every year about six thousand ethnic Kazakh children return to Kazakhstan with their families. Many speak Kazakh fluently and still cannot read the classroom board. This project asks why, maps what the state counts and what it doesn't, and prices an AI reading tutor called Көпір ("bridge") before deciding whether Kazakhstan should build it.</p>
+
+    <div class="tryit" id="tryit">
+      <p class="tryit-q">Try to read this sentence:</p>
+      <p class="tryit-line" id="tryLine" lang="kk-Arab" dir="rtl">مەن مەكتەپكە بارامىن</p>
+      <div class="tryit-btns">
+        <button type="button" class="btn" data-try="cyr">Show it in Cyrillic</button>
+        <button type="button" class="btn btn-ghost" data-try="en">What does it mean?</button>
+      </div>
+      <p class="tryit-note" id="tryNote">This is Kazakh written in tote zhazu, the Arabic-based script used by Kazakhs in China. Many kandas children meet Cyrillic the way you just met this line.</p>
+    </div>
+  </div>
+  <a class="hero-down" href="#problem">Start with the problem</a>
+</header>
+
+<main>
+
+<!-- ============ SECTION 1 ============ -->
+<section class="sec" id="problem" aria-labelledby="h-problem">
+  <div class="sec-head">
+    <span class="sec-n" aria-hidden="true">1</span>
+    <h2 id="h-problem">The problem</h2>
+    <p class="lede">Kazakhstan invites ethnic Kazakhs abroad to come home. Their children arrive Kazakh enough to qualify, and not yet able to read the classroom board.</p>
+  </div>
+
+  <div class="prose">
+    <p>Since independence, Kazakhstan has invited ethnic Kazakhs living abroad to resettle in their historical homeland. People granted this status are now officially called <em>kandas</em> ("of the same blood"); the older term, <em>oralman</em>, has been replaced. By the end of 2025, 1.16 million people had returned <a class="ref" href="#src-1">[1]</a>. The flow has not stopped: 19,178 people received the status in 2022 <a class="ref" href="#src-6">[6]</a>, 21,325 in 2023 <a class="ref" href="#src-3">[3]</a>, more than 19,700 in 2024 <a class="ref" href="#src-4">[4]</a> and 16,805 in 2025 <a class="ref" href="#src-1">[1]</a>. About a third are children: minors were 30.9% of kandas at the start of 2024 <a class="ref" href="#src-3">[3]</a> and 34% at the start of 2026 <a class="ref" href="#src-2">[2]</a>. That works out to roughly 5,700 to 6,600 children a year. That figure is my estimate, because no ministry publishes a count of kandas children.</p>
+  </div>
+
+  <figure class="dots-fig" id="dotsFig">
+    <div class="dots" id="dots" role="img" aria-label="114 dots, each representing 50 children: about 5,700 kandas children received status in 2025."></div>
+    <figcaption><strong>Each dot is 50 children.</strong> About 5,700 minors received kandas status in 2025 (16,805 arrivals × 34% minors; my estimate from <a class="ref" href="#src-1">[1]</a> and <a class="ref" href="#src-2">[2]</a>).</figcaption>
+  </figure>
+
+  <div class="prose">
+    <p>These children are not one group. In 2022, almost two thirds of arrivals came from Uzbekistan <a class="ref" href="#src-7">[7]</a>. By 2024 China had become the largest source, at 45.4% <a class="ref" href="#src-5">[5]</a>, and in 2025 the two were level: 44.5% from Uzbekistan and 44.1% from China <a class="ref" href="#src-2">[2]</a>. Nor do the families settle where the state plans. The government pays resettlement support for moving to labour-short regions in the north, east and west, but in 2025 only 2,309 people moved under that quota <a class="ref" href="#src-9">[9]</a>, about 14% of the year's arrivals. In early 2023 most new kandas settled in Almaty region (27.2%), Mangystau (13.8%), Astana (11%), Almaty city (8.8%), Shymkent (7.1%) and Turkestan region (6.4%) <a class="ref" href="#src-8">[8]</a>. So the pressure falls on particular schools in the south, the west and the big cities.</p>
+
+    <p>A 2026 study of 250 kandas pupils in grades 8 to 11 in Almaty, Astana, Mangystau and Turkistan documents what happens in those schools <a class="ref" href="#src-13">[13]</a>. Many pupils spoke Kazakh better than they could read or write it. Russian was a major barrier, especially for pupils who had never been schooled in Cyrillic. They also struggled with the Cyrillic script, with study materials, with speaking up in class and with dialect differences. Their starting points depend on where they come from. Uzbekistan and Turkmenistan write their national languages in Latin script. Children from China face a sharper gap: Xinjiang's "bilingual" schools have moved instruction into Mandarin <a class="ref" href="#src-31">[31]</a>, and in 2017 one county in the Ili Kazakh Autonomous Prefecture banned Kazakh-language textbooks outright <a class="ref" href="#src-30">[30]</a>. A child can be the most fluent Kazakh speaker in the class and its weakest Kazakh reader.</p>
+
+    <p>At this point the problem stops being only about teaching. The state admits these children because they are Kazakh, and repatriation is part of its nation-building story. Yet at school their Kazakh is treated as non-standard and their weak Russian as a deficit. Researchers describe the same boundary in everyday life, where locals draw "insider" and "outsider" lines around returnees <a class="ref" href="#src-17">[17]</a>.</p>
+  </div>
+
+  <blockquote class="question">
+    <p>When an institution welcomes people as co-ethnics, who is expected to adapt: the child, the family or the school? And what happens to belonging when the child's own Kazakh is marked as wrong?</p>
+    <cite>The social-science question inside the issue</cite>
+  </blockquote>
+
+  <div class="prose">
+    <p>Several groups bear the problem. First are the children: their learning, their confidence and their sense of having come home. Next are the teachers, who receive them without training or materials. Finally there is the state itself, whose promise that kandas are "returning" is tested in every classroom. The problem is also changing. As the share of arrivals from China grows, so, very probably, does the share of children who have never been schooled in Cyrillic. And Kazakhstan's planned move from Cyrillic to a Latin alphabet will add a third script to the ones these children already juggle.</p>
+  </div>
+</section>
+
+<!-- ============ SECTION 2 ============ -->
+<section class="sec sec-alt" id="data" aria-labelledby="h-data">
+  <div class="sec-head">
+    <span class="sec-n" aria-hidden="true">2</span>
+    <h2 id="h-data">Background and data</h2>
+    <p class="lede">Kazakhstan counts kandas carefully as workers and settlers. As pupils, they are almost invisible.</p>
+  </div>
+
+  <div class="prose">
+    <p>The main source is not the Bureau of National Statistics but the Ministry of Labour and Social Protection. Roughly once a month it publishes running totals: how many people received kandas status, their countries of origin, an age split into working age, minors and pensioners, the education level of working-age adults, and how many moved to quota regions and received support <a class="ref" href="#src-1">[1–5]</a>. The Ministry of Science and Higher Education publishes the only series about young kandas. University grants under the kandas quota rose from 801 in 2023 to 1,604 in 2024, 2,138 in 2025 and 2,378 in 2026 <a class="ref" href="#src-10">[10]</a>, after a 2024 rule change let kandas sit the national test (UNT) in three subjects with no threshold score <a class="ref" href="#src-11">[11]</a>. UNDP's 2013 survey of oralmans is the last large international study I found, and it focuses on adults <a class="ref" href="#src-44">[44]</a>.</p>
+  </div>
+
+  <figure class="chart-fig" id="fig1">
+    <div class="fig-top">
+      <div>
+        <h3 class="fig-title">Figure 1. Who arrives: people granted kandas status, by country of origin</h3>
+        <p class="fig-sub">2022–2025, built from Ministry of Labour releases <a class="ref" href="#src-1">[1–7]</a></p>
+      </div>
+      <div class="seg" role="radiogroup" aria-label="Chart measure">
+        <button type="button" role="radio" aria-checked="true" data-mode="count">People</button>
+        <button type="button" role="radio" aria-checked="false" data-mode="share">Share of arrivals</button>
+      </div>
+    </div>
+    <ul class="legend" aria-label="Legend">
+      <li><span class="key" style="--c:var(--s1)"></span>Uzbekistan</li>
+      <li><span class="key" style="--c:var(--s2)"></span>China</li>
+      <li><span class="key" style="--c:var(--s3)"></span>All other countries</li>
+    </ul>
+    <div class="chart" id="chart1"></div>
+    <div class="tip" id="tip1" role="status" aria-live="polite"></div>
+    <details class="tableview">
+      <summary>Show the numbers as a table</summary>
+      <div id="table1"></div>
+    </details>
+    <figcaption class="fig-note">Totals are full-year figures. For 2022 and 2024 the ministry published origin shares only up to 1 December, so I applied those shares to the full-year total, which makes the split an estimate. "All other countries" includes Mongolia, Turkmenistan and Russia.</figcaption>
+  </figure>
+
+  <div class="prose">
+    <p>The numbers show three patterns. First, the flow is steady at 17,000 to 21,000 people a year; this is not a wave that has passed. Second, the origin mix is changing fast. China rose from 8.6% of arrivals in 2022 to 44–45% in 2024 and 2025, while Uzbekistan fell from 63.5% to between 38.9% and 44.5% <a class="ref" href="#src-7">[7]</a> <a class="ref" href="#src-5">[5]</a> <a class="ref" href="#src-2">[2]</a>. Children from China are the ones most likely to have been schooled in Mandarin, so this shift probably widens the script gap rather than closing it. Third, the share of minors is rising, from 30.9% to 34% <a class="ref" href="#src-3">[3]</a> <a class="ref" href="#src-2">[2]</a>.</p>
+  </div>
+
+  <figure class="chart-fig" id="fig2">
+    <h3 class="fig-title">Figure 2. Where new kandas settled, January–April 2023</h3>
+    <p class="fig-sub">Share of arrivals by region or city <a class="ref" href="#src-8">[8]</a></p>
+    <div class="chart" id="chart2"></div>
+    <div class="tip" id="tip2" role="status" aria-live="polite"></div>
+    <figcaption class="fig-note">The ministry publishes regional splits only occasionally; this is the most recent breakdown I found. For comparison, the state's resettlement quota for the north, east and west moved 2,309 people in 2025, about 14% of that year's arrivals <a class="ref" href="#src-9">[9]</a>.</figcaption>
+  </figure>
+
+  <div class="prose">
+    <h3 class="sub-h">Where the data is silent</h3>
+    <p>What no one publishes is the part that matters for schools: how many kandas children are enrolled, in which grades, in Kazakh- or Russian-medium classes, which script they were schooled in, how long they wait before enrolling, how they do on tests, and whether they repeat a year or drop out. I could find no breakdown of pupils by migration background from either the Bureau of National Statistics or the Ministry of Enlightenment. Even the child count has to be estimated by multiplying arrivals by the share of minors, and that age band lumps toddlers together with 17-year-olds.</p>
+  </div>
+
+  <figure class="silence" id="fig3">
+    <h3 class="fig-title">Figure 3. What the state counts about kandas, and what it doesn't</h3>
+    <p class="fig-sub">Tap a row to see the source or the reason it matters.</p>
+    <ul class="silence-list" id="silenceList"></ul>
+  </figure>
+
+  <div class="prose">
+    <p>Some children fall through these gaps completely. Children whose families have not yet obtained status are not counted at all. Teenagers who arrive at 15 to 17 have the least time to catch up before national exams, yet nothing records whether they finish school. The trustworthiness of the numbers that do exist is limited in four ways:</p>
+    <ul class="checks">
+      <li><strong>These are press releases, not a statistical series.</strong> The figures are running totals "as of" a date, and the media often report a 1 December figure as the year's total. The 2024 figure circulates both as 18,035 (to 1 December) and as "more than 19.7 thousand" (the full year) <a class="ref" href="#src-5">[5]</a> <a class="ref" href="#src-4">[4]</a>.</li>
+      <li><strong>Some splits are partial.</strong> For 2022 and 2024, the origin shares only run to 1 December, so Figure 1 is partly an estimate.</li>
+      <li><strong>The age shares have no clear denominator.</strong> They describe "ethnic migrants" as of a date, without saying whether that means one year's arrivals or a longer period.</li>
+      <li><strong>Status is not presence.</strong> Since 2023, people can obtain kandas status through Kazakh embassies without entering the country <a class="ref" href="#src-45">[45]</a>, so a count of status grants is not the same as a count of children in classrooms.</li>
+    </ul>
+    <p>These numbers are produced for a labour and resettlement purpose, so they describe kandas as labour supply: working age, education, employment, relocation. The university quota is tracked because it is a policy lever. The silence about children in school is therefore not a technical accident. It reflects which ministry owns the question, and no ministry currently owns the kandas child in a classroom.</p>
+  </div>
+</section>
+
+<!-- ============ SECTION 3 ============ -->
+<section class="sec" id="research" aria-labelledby="h-research">
+  <div class="sec-head">
+    <span class="sec-n" aria-hidden="true">3</span>
+    <h2 id="h-research">Current state of research</h2>
+    <p class="lede">Four research traditions each see part of the problem. None of them has tested a way to solve it.</p>
+  </div>
+
+  <div class="lenses">
+    <div class="lens-tabs" role="tablist" aria-label="Research approaches">
+      <button type="button" role="tab" id="t-lang" aria-controls="p-lang" aria-selected="true">Language and literacy</button>
+      <button type="button" role="tab" id="t-id" aria-controls="p-id" aria-selected="false" tabindex="-1">Identity and belonging</button>
+      <button type="button" role="tab" id="t-state" aria-controls="p-state" aria-selected="false" tabindex="-1">State and policy</button>
+      <button type="button" role="tab" id="t-tech" aria-controls="p-tech" aria-selected="false" tabindex="-1">Learning technology</button>
+    </div>
+
+    <div class="lens-panel" role="tabpanel" id="p-lang" aria-labelledby="t-lang">
+      <p>Dossanova and Abdikadyr (2021) interviewed school-age repatriate children and described their adaptation in stages, with language the hardest of them <a class="ref" href="#src-14">[14]</a>. Dossanova et al. (2026) scaled this up to a mixed-methods study of 250 pupils plus 35 interviews. Oral Kazakh was stronger than literacy, Russian and Cyrillic were barriers, and support from family, teachers and peers helped. The authors call for "targeted language-bridging programs" <a class="ref" href="#src-13">[13]</a>. At university level, Valieva et al. (2019) found that adaptation problems lowered oralman students' motivation in English classes, and that no extra courses were organised for them <a class="ref" href="#src-15">[15]</a>. Globally, Cummins argues that literacy built in one language transfers to the next <a class="ref" href="#src-23">[23]</a>, which suggests building on what children can already read rather than starting them from zero.</p>
+      <p class="limit"><strong>Where it falls short:</strong> proficiency is self-reported, the samples are small and drawn from a few cities, there is no comparison with local pupils, and there are no test-score data. The 2026 study appeared in a smaller journal (<em>International Journal of Body, Mind and Culture</em>) and reports no percentages.</p>
+    </div>
+
+    <div class="lens-panel" role="tabpanel" id="p-id" aria-labelledby="t-id" hidden>
+      <p>Bokayev (2013) analyses the culture shock and stereotypes repatriates meet, and how Kazakhstani society draws "insider/outsider" lines around them <a class="ref" href="#src-17">[17]</a>. Saiken's thesis on Xinjiang Kazakhs finds a hybrid identity, with skills gained in China used as capital in Kazakhstan <a class="ref" href="#src-18">[18]</a>. A 2024 <em>Frontiers in Sociology</em> study of students from Mongolia and China shows that family ties across borders shape how they adapt <a class="ref" href="#src-19">[19]</a>. Comparative research on ethnic return migration finds the same paradox from Germany to Japan: returnees are admitted for their sameness and then marginalised for their difference <a class="ref" href="#src-22">[22]</a>.</p>
+      <p class="limit"><strong>What it means for this project:</strong> language marks who belongs. A tool that "corrects" a child's Kazakh can deepen the very outsider label it is meant to remove.</p>
+    </div>
+
+    <div class="lens-panel" role="tabpanel" id="p-state" aria-labelledby="t-state" hidden>
+      <p>Oka (2013) traces how the repatriation policy's priorities shifted and how its central dilemma grew <a class="ref" href="#src-20">[20]</a>. Cerny (2010) shows the environmental and political pressures that pushed Kazakh herders out of China, and why Kazakhstan looked like the place "where the grass is greener" <a class="ref" href="#src-21">[21]</a>. This literature treats kandas as a nation-building and demographic project.</p>
+      <p class="limit"><strong>Where it falls short:</strong> children appear mainly as numbers, which mirrors the data silence in Section 2.</p>
+    </div>
+
+    <div class="lens-panel" role="tabpanel" id="p-tech" aria-labelledby="t-tech" hidden>
+      <p>A randomised trial of the Mindspark adaptive software in Delhi found large gains in maths and Hindi because it taught each child at their actual level <a class="ref" href="#src-24">[24]</a>. Google's Read Along used speech recognition as a reading tutor in a pilot run with India's ASER Centre <a class="ref" href="#src-25">[25]</a>. A World Bank trial in Nigeria found that a GPT-4 tutor, used inside a teacher-led after-school programme, raised English scores by 0.23 standard deviations in six weeks <a class="ref" href="#src-26">[26]</a>. UNICEF's evaluations of the Akelius course show digital language learning supporting refugee children in Greece and Lebanon <a class="ref" href="#src-27">[27]</a> <a class="ref" href="#src-28">[28]</a>.</p>
+      <p class="limit"><strong>What is known:</strong> technology helps when it targets the child's level and sits inside a structured programme run by a teacher. Used on its own, as a device handed out, it disappoints.</p>
+    </div>
+  </div>
+
+  <div class="prose">
+    <h3 class="sub-h">What is contested: which language to bridge to</h3>
+    <p>Dossanova et al. treat Russian as a major barrier <a class="ref" href="#src-13">[13]</a>. Raimova (2026), studying repatriate families, finds the opposite priority: Kazakh first, English second, with Russian widely rejected, often after experiences of linguistic discrimination. She calls for consistent enforcement of language policy in Russian-dominant cities <a class="ref" href="#src-16">[16]</a>. This is a political choice, not a technical one. A tool that teaches Russian accommodates Russian's dominance in cities; a tool that ignores Russian leaves children stranded where Russian dominates. A second disagreement sits underneath the first: is the problem the child's language, or the school's inflexibility?</p>
+
+    <h3 class="sub-h">The gap this project speaks to</h3>
+    <p>These literatures do not meet. The school studies describe the barrier but test no intervention. The identity studies warn about the burden of adaptation but say little about classroom practice. The technology studies show what works with refugees and struggling readers elsewhere, but none of it has been tried with kandas pupils. Nazarbayev University's open Kazakh speech corpus makes Kazakh speech recognition feasible <a class="ref" href="#src-29">[29]</a>, but it was not built from children or diaspora dialects. My project addresses that gap: it designs a script-bridging reading tutor and gives an honest account of whether it should exist.</p>
+  </div>
+</section>
+
+<!-- ============ SECTION 4 ============ -->
+<section class="sec sec-alt" id="solution" aria-labelledby="h-solution">
+  <div class="sec-head">
+    <span class="sec-n" aria-hidden="true">4</span>
+    <h2 id="h-solution">The AI-assisted solution, and what it would cost</h2>
+    <p class="lede">Көпір means "bridge". It is a reading tutor that starts from the script a child already knows.</p>
+  </div>
+
+  <div class="prose">
+    <p><strong>What it is.</strong> A reading tutor on shared school tablets for kandas pupils in their first two years in a Kazakh school, used during lessons with a language-support teacher. Here is how it works:</p>
+  </div>
+
+  <div class="flow" id="flow">
+    <ol class="flow-steps">
+      <li data-step="1"><h4>The child reads aloud</h4><p>A short Kazakh text in Cyrillic, chosen for their level.</p></li>
+      <li data-step="2" class="is-ai"><h4>The tablet listens</h4><p>A speech-recognition model on the tablet compares what it hears with the text and finds the words the child could not decode. The audio never leaves the tablet.</p><span class="ai-tag">The only AI step</span></li>
+      <li data-step="3"><h4>A bridge appears</h4><p>The difficult word is also shown in a script the child already knows (tote zhazu or Latin), with a picture. Dialect pronunciations count as correct.</p></li>
+      <li data-step="4"><h4>Stories from home</h4><p>Texts are written with teachers and kandas families, including stories from the places the children come from. A teacher checks any AI-drafted text first, and there is no open chat.</p></li>
+      <li data-step="5"><h4>The teacher decides</h4><p>Each week the support teacher sees which letters and sounds each child is stuck on and plans small-group lessons. The tablet never gives grades or labels.</p></li>
+    </ol>
+    <button type="button" class="btn" id="playFlow">Play the flow</button>
+  </div>
+
+  <div class="bridge-demo" aria-label="Example of a script bridge">
+    <div class="bd-card">
+      <p class="bd-label">On the page</p>
+      <p class="bd-word" lang="kk">мектеп</p>
+    </div>
+    <div class="bd-arrow" aria-hidden="true"></div>
+    <div class="bd-card bd-known">
+      <p class="bd-label">The bridge, for a child from Xinjiang</p>
+      <p class="bd-word bd-ar" lang="kk-Arab" dir="rtl">مەكتەپ</p>
+      <p class="bd-gloss">"school"</p>
+    </div>
+  </div>
+
+  <div class="prose">
+    <p><strong>Run by whom, reaching whom.</strong> The Ministry of Enlightenment and regional education departments would own it. A Kazakhstani team would build it by fine-tuning Nazarbayev University's open Kazakh speech models <a class="ref" href="#src-29">[29]</a>, hosted on national infrastructure. It would go to the schools that receive the most kandas: in Almaty region, Mangystau, Astana, Almaty, Shymkent and Turkestan. Any pupil who struggles with reading could use it, so that it never becomes "the kandas tablet". The Russian module would be optional, chosen by each school together with families.</p>
+    <p><strong>Why AI at all?</strong> Only step 2 needs AI, and it is the step teachers cannot scale: listening to every child read aloud, word by word, every day. Everything else (the texts, pictures and scripts) could be a printed workbook. That honesty matters for the bill.</p>
+
+    <h3 class="sub-h">Two documented cases</h3>
+  </div>
+
+  <div class="cases">
+    <article class="case">
+      <p class="case-place">India, 2018–2019</p>
+      <h4>Read Along (Bolo), a speech-based reading tutor</h4>
+      <p>Google's app has an on-screen helper that listens as children read aloud and corrects them. It works offline and keeps personal data on the device. In a pilot in 200 villages in Unnao district run with the ASER Centre, 64% of children with the app improved their reading level <a class="ref" href="#src-25">[25]</a>.</p>
+      <p class="case-catch"><strong>Caveat:</strong> this was the company's own pilot, not a peer-reviewed trial.</p>
+    </article>
+    <article class="case">
+      <p class="case-place">Nigeria, 2024</p>
+      <h4>A GPT-4 English tutor inside a teacher-led programme</h4>
+      <p>A World Bank randomised trial in nine public secondary schools in Edo State ran twelve 90-minute after-school sessions in which pupils worked in pairs with Microsoft Copilot under teacher guidance. English scores rose by 0.23 standard deviations in six weeks <a class="ref" href="#src-26">[26]</a>.</p>
+      <p class="case-catch"><strong>Lesson:</strong> the gains came inside a structure that teachers ran.</p>
+    </article>
+    <article class="case case-quiet">
+      <p class="case-place">Relevant, but not AI</p>
+      <h4>UNICEF–Akelius and Mindspark</h4>
+      <p>The Akelius digital language course has been used by more than 10,500 refugee children in Greece <a class="ref" href="#src-27">[27]</a> and by 7,237 students in Lebanon <a class="ref" href="#src-28">[28]</a>. Mindspark's adaptive software produced large gains in Delhi <a class="ref" href="#src-24">[24]</a>. They show that the non-AI parts work too, which is a reason to keep the AI part small.</p>
+    </article>
+  </div>
+</section>
+
+<!-- ============ THE BILL ============ -->
+<section class="sec" id="bill" aria-labelledby="h-bill">
+  <div class="sec-head">
+    <span class="sec-n" aria-hidden="true">4b</span>
+    <h2 id="h-bill">The bill</h2>
+    <p class="lede">Change the assumptions and the bill recalculates. Every input is my assumption unless it has a source.</p>
+  </div>
+
+  <div class="bill-grid">
+    <div class="controls" aria-label="Assumptions">
+      <label class="ctl">
+        <span class="ctl-row"><span>Pupils using Көпір</span><output id="o-pupils">10,000</output></span>
+        <input type="range" id="i-pupils" min="1000" max="20000" step="500" value="10000">
+      </label>
+      <label class="ctl">
+        <span class="ctl-row"><span>Minutes per school day</span><output id="o-min">20</output></span>
+        <input type="range" id="i-min" min="10" max="45" step="5" value="20">
+      </label>
+      <label class="ctl">
+        <span class="ctl-row"><span>AI text requests per pupil per day</span><output id="o-req">10</output></span>
+        <input type="range" id="i-req" min="0" max="30" step="1" value="10">
+      </label>
+      <label class="ctl">
+        <span class="ctl-row"><span>Pupils sharing one tablet</span><output id="o-share">3</output></span>
+        <input type="range" id="i-share" min="1" max="5" step="1" value="3">
+      </label>
+      <div class="assume">
+        <p><strong>Fixed assumptions:</strong> 170 school days; a tablet draws 5 W; each server request uses 5× Google's published 0.24 Wh median <a class="ref" href="#src-40">[40]</a>, because a small national deployment will be less efficient; 0.9 kg CO₂ per kWh as a rough coal-heavy grid factor; data-centre water at 1.15 L per kWh <a class="ref" href="#src-40">[40]</a>; tablets at 100,000 ₸ each; building the system and collecting a child-speech dataset costs 250 million ₸; running costs are 60 million ₸ a year; teacher training costs 50,000 ₸ per teacher, with one teacher per 15 pupils; 510 ₸ = $1. These are order-of-magnitude assumptions, not price quotes.</p>
+      </div>
+    </div>
+
+    <div class="receipt" id="receipt">
+      <div class="r-head">
+        <p class="r-shop">Көпір, year one</p>
+        <p class="r-meta" id="r-meta">10,000 pupils, 20 min a day</p>
+      </div>
+
+      <details class="r-line" open>
+        <summary><span>Environmental</span><span class="r-dots"></span><span class="r-val" id="v-env">24 MWh</span></summary>
+        <div class="r-body">
+          <p>Kazakhstan's electricity is still mostly coal: 62.1% of generation according to the Energy Ministry <a class="ref" href="#src-38">[38]</a>, while Samruk-Energy reports 74.9% from coal-fired plants in 2024 <a class="ref" href="#src-39">[39]</a>. The sources disagree, which is itself a data-trust problem.</p>
+          <p id="env-detail"></p>
+          <p>Fine-tuning the speech model once (about 500 GPU-hours) adds roughly 0.5 MWh. The larger footprint is physical: thousands of tablets made abroad and replaced every few years, plus the cooling water used by coal plants, which nobody in this chain measures.</p>
+        </div>
+      </details>
+
+      <details class="r-line">
+        <summary><span>Economic</span><span class="r-dots"></span><span class="r-val" id="v-eco">680 m ₸</span></summary>
+        <div class="r-body">
+          <p id="eco-detail"></p>
+          <p><strong>Who pays:</strong> the state budget, through the Ministry of Enlightenment. <strong>Who profits:</strong> tablet manufacturers (most likely abroad), the local developer and the state cloud operator. <strong>The real comparison:</strong> the same money could pay language-support teachers. The tool is only worth buying if it multiplies those teachers' reach.</p>
+        </div>
+      </details>
+
+      <details class="r-line">
+        <summary><span>Labour</span><span class="r-dots"></span><span class="r-val">shifts, not savings</span></summary>
+        <div class="r-body">
+          <p><strong>Work that changes:</strong> support and class teachers get a dashboard and new duties. Without paid time, that becomes unpaid overtime.</p>
+          <p><strong>Work that could disappear:</strong> budget substitution. A district could buy tablets instead of hiring support teachers.</p>
+          <p><strong>Hidden labour:</strong> the speech model depends on people transcribing hours of children's speech in diaspora dialects. Nazarbayev University's corpus was itself built from more than 2,000 speakers <a class="ref" href="#src-43">[43]</a>. This should be paid work for kandas adults who read tote zhazu, not unpaid help from parents. Someone also has to update the texts, fix errors and replace broken tablets.</p>
+        </div>
+      </details>
+
+      <details class="r-line">
+        <summary><span>Political and governance</span><span class="r-dots"></span><span class="r-val">medium risk</span></summary>
+        <div class="r-body">
+          <p>Kazakhstan's Law on Artificial Intelligence (signed 17 November 2025, in force 18 January 2026) <a class="ref" href="#src-32">[32]</a> sorts systems into minimal, medium and high risk <a class="ref" href="#src-33">[33]</a>. Көпір would most likely be medium risk: a failure would not cause an emergency, but it could cause moral harm to a child. It must stay at low autonomy, meaning a human makes every decision about grades, classes and placement <a class="ref" href="#src-34">[34]</a>. The law also prohibits inferring emotions without consent and exploiting age-related vulnerabilities <a class="ref" href="#src-34">[34]</a>, so Көпір would have no emotion tracking and no design meant to maximise screen time.</p>
+          <p>Personal data must be stored in Kazakhstan <a class="ref" href="#src-35">[35]</a>, and the Digital Code, in force since 11 July 2026, tightens localisation further <a class="ref" href="#src-36">[36]</a> <a class="ref" href="#src-37">[37]</a>. <strong>The biggest misuse risk</strong> is a central list of children by country of origin. For families who left Xinjiang, such a database could feel like surveillance, and it could be used for profiling, so the central system should hold no origin field at all. The ministry would control the system, with independent oversight by the Commissioner for Children's Rights and parent representatives.</p>
+          <p>The relevant frameworks are UNESCO's Recommendation on the Ethics of AI, which Kazakhstan has been assessing itself against through UNESCO's Readiness Assessment since January 2026 <a class="ref" href="#src-42">[42]</a>, and UNICEF's Guidance on AI and Children 3.0 <a class="ref" href="#src-41">[41]</a>.</p>
+        </div>
+      </details>
+
+      <details class="r-line">
+        <summary><span>Data ethics</span><span class="r-dots"></span><span class="r-val">consent ×2</span></summary>
+        <div class="r-body">
+          <p><strong>Data needed:</strong> in daily use, voice is processed on the tablet and deleted, and only reading-progress records are kept, plus an optional question about script background. Training the model needs a separate, consented set of recordings.</p>
+          <p><strong>Consent:</strong> the Personal Data Law requires consent from the person or their legal representative <a class="ref" href="#src-35">[35]</a>. That means parents' consent plus the child's own agreement, with forms in Kazakh Cyrillic, tote zhazu, Uzbek and Chinese, and the right to refuse without losing support.</p>
+          <p><strong>What could go wrong:</strong> (1) <em>Dialect bias.</em> The model hears a Xinjiang pronunciation as a mistake and tells the child their Kazakh is wrong; that is the identity harm from Section 3, automated. (2) <em>Function creep.</em> Reading data gets reused for migration control. (3) <em>Stigma.</em> Only kandas children use the tablets.</p>
+        </div>
+      </details>
+
+      <div class="r-total">
+        <span>Cost per pupil, year one</span><span class="r-val" id="v-per">68,000 ₸</span>
+      </div>
+      <p class="r-foot" id="r-foot">About 150 kandas housing certificates. The state pays up to 4.56 million ₸ per family <a class="ref" href="#src-12">[12]</a>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VERDICT ============ -->
+<section class="sec sec-verdict" id="verdict" aria-labelledby="h-verdict">
+  <div class="sec-head">
+    <span class="sec-n" aria-hidden="true">✓</span>
+    <h2 id="h-verdict">The verdict: only under these conditions</h2>
+    <p class="lede">Көпір is cheap in electricity and moderate in money. It is expensive in trust and identity. Switch the conditions on and off to see how the answer changes.</p>
+  </div>
+
+  <div class="verdict-grid">
+    <ul class="conds" id="conds">
+      <li><label><input type="checkbox" data-core="1"><span><strong>Teachers first.</strong> Each pilot school gets funded support-teacher hours, and the tablet is used only inside those lessons.</span></label></li>
+      <li><label><input type="checkbox" data-core="1"><span><strong>Fair to dialects.</strong> Error rates are tested and published for children from each origin group before launch, and a dialect pronunciation is never marked "wrong".</span></label></li>
+      <li><label><input type="checkbox" data-core="1"><span><strong>Private by design.</strong> Voice stays on the tablet, data stays in Kazakhstan, and the central database has no country-of-origin field.</span></label></li>
+      <li><label><input type="checkbox"><span><strong>Inclusion goes both ways.</strong> The child's heritage counts in the texts, and families and schools decide together whether to add Russian.</span></label></li>
+      <li><label><input type="checkbox"><span><strong>Independent evaluation.</strong> Pilot schools are compared with similar schools, and the project stops if reading has not improved after a year.</span></label></li>
+    </ul>
+
+    <div class="sign" id="sign" aria-live="polite">
+      <p class="sign-word" id="signWord">No</p>
+      <p class="sign-text" id="signText">With none of the conditions met, Көпір would be a tablet that tells returnee children their Kazakh is wrong. Kazakhstan should not build it.</p>
+    </div>
+  </div>
+
+  <div class="prose">
+    <p>My verdict is a conditional yes. The first three conditions are non-negotiable: without them, the answer is no. Kazakhstan should pilot Көпір in a small number of schools, with support teachers first and the tablet second, and it should be ready to switch the tablet off. The bill shows that the main risk is not cost. It is that the tool shifts the burden of adapting onto the child while letting the school off the hook. If the state is only willing to buy tablets, it should not do this at all.</p>
+  </div>
+</section>
+
+<!-- ============ TRANSPARENCY ============ -->
+<section class="sec sec-plain" id="transparency" aria-labelledby="h-trans">
+  <div class="sec-head">
+    <h2 id="h-trans">AI transparency statement</h2>
+  </div>
+  <div class="prose">
+    <p><strong>What AI contributed.</strong> I worked with Claude (Anthropic) throughout. It helped me compare topics, test whether my idea genuinely needed AI, search for and check sources, rewrite my draft sections, and write the code for this site, including the charts, the bill calculator and the verdict switch.</p>
+    <p><strong>What the fact-check changed.</strong> When the AI checked my draft against its sources, several claims did not hold up and were corrected or removed. The 2023 figure of 19,476 was a count only up to 1 December (the full year was 21,325). Kandas do not mainly settle in the north and east. A UNICEF claim about stigma and migration assistance did not exist in the source. A count of children from 2011 could not be traced. And several references could not be found or verified (Terlikbayeva 2017, Bazarbayeva 2018, Mahmudova 2009, Shakirov 2008, Baimoldina 2013, Galimova 2007, "Bloemradl 2022", Burde 2023), so they were dropped. An earlier AI draft also suggested an app with too few documented results to count as a case study (AILEM), and I replaced it.</p>
+    <p class="todo"><strong>What I accepted, and what I rejected and why:</strong> [Write this part yourself, in your own words. Say which suggestions you kept, which you changed or rejected, and why. This part of the statement only counts if it is honestly yours.]</p>
+    <p><strong>What I checked myself:</strong> [List the sources you opened and read. The tote zhazu spellings on this site were produced with AI help and should be confirmed by someone who reads the script.]</p>
+  </div>
+</section>
+
+<!-- ============ SOURCES ============ -->
+<section class="sec sec-plain" id="sources" aria-labelledby="h-src">
+  <div class="sec-head"><h2 id="h-src">Sources</h2></div>
+  <ol class="sources" id="sourceList">
+    <li id="src-1">Ministry of Labour and Social Protection, via Otandastar Qory (28 Jan 2026). <a href="https://oq.gov.kz/en/news/1467">Approximately 16.8 thousand ethnic Kazakhs received kandas status in 2025</a>.</li>
+    <li id="src-2">Tengrinews (2026). <a href="https://en.tengrinews.kz/kazakhstan_news/how-many-kandas-kazakhstan-accepted-in-2025-statistics-270826">How many kandas Kazakhstan accepted in 2025: statistics</a>.</li>
+    <li id="src-3">Otandastar Qory (16 Jan 2024). <a href="https://oq.gov.kz/en/news/970">21,325 ethnic Kazakhs obtained kandas status in 2023</a>.</li>
+    <li id="src-4">Otandastar Qory (8 Jan 2025). <a href="https://oq.gov.kz/en/news/1213">Regional quota for kandas and migrants for 2025 approved</a> (states 2024 full-year total).</li>
+    <li id="src-5">Tengrinews (24 Dec 2024). <a href="https://en.tengrinews.kz/kazakhstan_news/over-11-million-ethnic-kazakhs-returned-to-homeland-since-265825">Over 1.1 million ethnic Kazakhs returned to homeland since 1991</a>.</li>
+    <li id="src-6">Kapital.kz (Jan 2023). <a href="https://kapital.kz/gosudarstvo/111949/uvelichena-kvota-na-priyem-kandasov-i-pereselentsev.html">Увеличена квота на прием кандасов и переселенцев</a> (2022 total: 19,178).</li>
+    <li id="src-7">Nur.kz (Dec 2022). <a href="https://www.nur.kz/society/2001099-skolko-etnicheskih-kazahov-vernulos-v-kazahstan-s-1991-goda/">Сколько этнических казахов вернулось в Казахстан с 1991 года</a>.</li>
+    <li id="src-8">El.kz (May 2023). <a href="https://el.kz/en/amp/over-6000-ethnic-kazakhs-receive-kandas-status_73252/">Over 6,000 ethnic Kazakhs receive kandas status</a> (settlement by region).</li>
+    <li id="src-9">Zakon.kz (Jan 2026). <a href="https://www.zakon.kz/obshestvo/6505900-nazvano-gosudarstvolider-po-chislu-pribyvshikh-v-kazakhstan-kandasov.html">Названо государство-лидер по числу прибывших в Казахстан кандасов</a>.</li>
+    <li id="src-10">Kazinform (2026). <a href="https://www.inform.kz/ru/bolee-dvuh-tisyach-kandasov-postupili-vvuzi-kazahstana-pokvote-902fa7c0">Более двух тысяч кандасов поступили в вузы Казахстана по квоте</a>.</li>
+    <li id="src-11">Office of the Prime Minister (2024). <a href="https://primeminister.kz/en/news/zhana-granttar-men-infrakurylym-zhobalary-2024-2025-oku-zhylynda-studentterge-ne-dayyndady-28912">New grants and infrastructure projects for the 2024–2025 academic year</a>.</li>
+    <li id="src-12">Otandastar Qory (29 Oct 2025). <a href="https://oq.gov.kz/en/qazalemnews/1295">Over 11 thousand ethnic Kazakhs granted kandas status since the beginning of 2025</a> (housing certificate up to 4.56 m ₸).</li>
+    <li id="src-13">Dossanova, A., Krause, M., Abdikadyr, I., Uteshkalieva, N., Mira, M., &amp; Khassanova, M. (2026). <a href="https://ijbmc.org/index.php/ijbmc/article/view/1579">Linguistic and social adaptation challenges of repatriated Kazakh children in Kazakhstani schools</a>. <em>International Journal of Body, Mind and Culture</em>, 13(7).</li>
+    <li id="src-14">Dossanova, A. M., &amp; Abdikadyr, I. A. (2021). <a href="https://doi.org/10.26577/EJPh.2021.v182.i2.ph4">Adaptation of repatriate-Kazakh children</a>. <em>Eurasian Journal of Philology</em>, 182(2), 33–39.</li>
+    <li id="src-15">Valieva, F., Sagimbayeva, J., Kurmanayeva, D., &amp; Tazhitova, G. (2019). <a href="https://www.mdpi.com/2227-7102/9/3/164">The socio-linguistic adaptation of migrants: The case of oralman students' studying in Kazakhstan</a>. <em>Education Sciences</em>, 9(3), 164.</li>
+    <li id="src-16">Raimova, Zh. (2026). <a href="https://nur.nu.edu.kz/items/1f15a2c0-952f-4db8-9f0d-2520e4eacd7d">Exploring family language policy and sociolinguistic challenges among repatriate families in Kazakhstan</a>. MA thesis, Nazarbayev University.</li>
+    <li id="src-17">Bokayev, B. (2013). <a href="https://eujournal.org/index.php/esj/article/view/1399">Language, ethnic identity, and adaptation of ethnic migrants in post-Soviet Kazakhstan</a>. <em>European Scientific Journal</em>.</li>
+    <li id="src-18">Saiken, A. (n.d.). <a href="https://nur.nu.edu.kz/bitstreams/751be078-18f4-432c-86ca-b3fddc4e4931/download">Adaptation strategies and identity formation among Xinjiang Kazakhs in Kazakhstan</a>. MA thesis, Nazarbayev University.</li>
+    <li id="src-19"><em>Frontiers in Sociology</em> (2024). <a href="https://www.frontiersin.org/articles/10.3389/fsoc.2024.1452785/full">Transnational practices of Kazakh repatriates: The role of family in the adaptation of ethnic Kazakh students from Mongolia and China</a>.</li>
+    <li id="src-20">Oka, N. (2013). <a href="http://hdl.handle.net/2344/1218">A note on ethnic return migration policy in Kazakhstan: Changing priorities and a growing dilemma</a>. IDE Discussion Paper 394.</li>
+    <li id="src-21">Cerny, A. (2010). <a href="https://doi.org/10.3362/2041-7136.2010.013">Going where the grass is greener: China Kazaks and the oralman immigration policy in Kazakhstan</a>. <em>Pastoralism</em>, 1(2).</li>
+    <li id="src-22">Tsuda, T. (Ed.) (2009). <em>Diasporic Homecomings: Ethnic Return Migration in Comparative Perspective</em>. Stanford University Press.</li>
+    <li id="src-23">Cummins, J. (2000). <em>Language, Power and Pedagogy: Bilingual Children in the Crossfire</em>. Multilingual Matters.</li>
+    <li id="src-24">Muralidharan, K., Singh, A., &amp; Ganimian, A. J. (2019). <a href="https://www.aeaweb.org/doi/10.1257/aer.20171112">Disrupting education? Experimental evidence on technology-aided instruction in India</a>. <em>American Economic Review</em>, 109(4), 1426–60.</li>
+    <li id="src-25">Google (2019). <a href="https://services.google.com/fh/files/misc/read_along_pilot_findings.pdf">Read Along: Initial pilot findings</a>; see also <a href="https://techcrunch.com/?p=1792765">TechCrunch, Mar 2019</a>.</li>
+    <li id="src-26">De Simone, M., Tiberti, F., Barron Rodriguez, M., Manolio, F., Mosuro, W., &amp; Dikoru, E. J. (2025). <a href="https://openknowledge.worldbank.org/entities/publication/15e1ff08-15ae-4f7a-b2a8-d146e6c113ee">From chalkboards to chatbots: Evaluating the impact of generative AI on learning outcomes in Nigeria</a>. World Bank Policy Research Working Paper 11125.</li>
+    <li id="src-27">UNICEF Greece (2023). <a href="https://www.unicef.org/greece/en/stories/akelius-e-learning-platform-supports-refugee-children-greek-schools">Akelius: the e-learning platform that supports refugee children in Greek schools</a>; Karamperidou et al. (2020), <a href="https://blogs.unicef.org/innocenti/media/5926/file/UNICEF-Unlocking-Learning-Greece-2020.pdf">Unlocking Learning</a>, UNICEF Innocenti.</li>
+    <li id="src-28">UNICEF Innocenti (2021). <a href="https://inee.org/resources/unlocking-learning-implementation-and-effectiveness-digital-learning-syrian-refugees">Unlocking Learning: Digital learning for Syrian refugees in Lebanon</a>.</li>
+    <li id="src-29">Khassanov, Y., Mussakhojayeva, S., Mirzakhmetov, A., Adiyev, A., Nurpeiissov, M., &amp; Varol, H. A. (2021). <a href="https://arxiv.org/abs/2009.10334">A crowdsourced open-source Kazakh speech corpus and initial speech recognition baseline</a>. ISSAI, Nazarbayev University.</li>
+    <li id="src-30">Radio Free Asia (Oct 2017). <a href="https://www.rfa.org/english/news/uyghur/ethnic-textbooks-10132017135316.html">China bans use of Uyghur, Kazakh textbooks, materials in Xinjiang schools</a>.</li>
+    <li id="src-31">Congressional-Executive Commission on China. <a href="https://www.cecc.gov/publications/commission-analysis/bilingual-policy-reduces-use-of-ethnic-minority-languages-in">Bilingual policy reduces use of ethnic minority languages in Xinjiang schools</a>.</li>
+    <li id="src-32">EY Kazakhstan (Dec 2025). <a href="https://www.ey.com/en_kz/technical/tax-alerts/2025/12/law-on-artificial-intelligence-kazakhstan">Law on Artificial Intelligence</a>.</li>
+    <li id="src-33">Tengrinews (Jan 2026). <a href="https://en.tengrinews.kz/kazakhstan_news/new-law-comes-into-force-in-kazakhstan-270729">New law comes into force in Kazakhstan</a>.</li>
+    <li id="src-34">CASRAI (2026). <a href="https://casrai.org/guides/kazakhstan-ai-law-230-viii">Kazakhstan's AI Law No. 230-VIII: What it actually requires</a> (secondary summary; check against the statute).</li>
+    <li id="src-35">Law of the Republic of Kazakhstan No. 94-V <a href="https://adilet.zan.kz/eng/docs/Z1300000094">On Personal Data and Their Protection</a> (2013, as amended).</li>
+    <li id="src-36">AmCham Kazakhstan (May 2026). <a href="https://amcham.kz/wp-content/uploads/2026/05/2026-05-15_AmCham_DataLocalization_Issue-Brief_ENG_v5.pdf">Data localization issue brief</a>.</li>
+    <li id="src-37">JD Supra (2026). <a href="https://www.jdsupra.com/legalnews/global-regulatory-tracker-kazakhstan-6847837/">Global regulatory tracker: Kazakhstan</a>.</li>
+    <li id="src-38">The Astana Times (2026). <a href="https://astanatimes.com/?p=116178">Coal accounts for over 60% of Kazakhstan's electricity as its energy mix diversifies</a>.</li>
+    <li id="src-39">Samruk-Energy (2025). <a href="https://ar2024.samruk-energy.kz/en/kazakhstan-power-and-coal-markets.html">Annual report 2024: Overview of the electricity and coal market</a>.</li>
+    <li id="src-40">Elsworth, C., Huang, K., Patterson, D., et al. (2025). <a href="https://arxiv.org/abs/2508.15734">Measuring the environmental impact of delivering AI at Google Scale</a>. arXiv:2508.15734.</li>
+    <li id="src-41">UNICEF Kazakhstan (Feb 2026). <a href="https://www.unicef.org/kazakhstan/blog/%D0%BA%D0%B0%D0%BA-%D0%BA%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD-%D0%B2%D0%BD%D0%B5%D0%B4%D1%80%D1%8F%D0%B5%D1%82-%D1%81%D1%82%D0%B0%D0%BD%D0%B4%D0%B0%D1%80%D1%82%D1%8B-unicef-%D0%B4%D0%BB%D1%8F-%D0%B1%D0%B5%D0%B7%D0%BE%D0%BF%D0%B0%D1%81%D0%BD%D0%BE%D0%B3%D0%BE-%D0%B8%D0%B8-%D0%B4%D0%BB%D1%8F-%D0%B4%D0%B5%D1%82%D0%B5%D0%B9">Как Казахстан внедряет стандарты UNICEF для безопасного ИИ для детей</a> (on UNICEF Guidance on AI and Children 3.0).</li>
+    <li id="src-42">Ministry of Foreign Affairs of Kazakhstan (Jan 2026). <a href="https://www.gov.kz/memleket/entities/mfa/press/news/details/1143949?lang=en">Kazakhstan implements UNESCO best international practices in artificial intelligence</a>.</li>
+    <li id="src-43">ISSAI, Nazarbayev University (2020). <a href="https://issai.nu.edu.kz/?p=2943">ISSAI first anniversary: Kazakh Speech Corpus</a>.</li>
+    <li id="src-44">UNDP Kazakhstan (2013). <a href="https://www.undp.org/kazakhstan/publications/status-oralmans-kazakhstan-overview">Status of Oralmans in Kazakhstan: Overview</a>.</li>
+    <li id="src-45">El.kz (Sept 2023). <a href="https://el.kz/en/1123200-ethnic-kazakhs-returned-to-kazakhstan_91000">1,123,200 ethnic Kazakhs returned to Kazakhstan</a> ("one window" status through embassies).</li>
+  </ol>
+</section>
+
+</main>
+
+<footer class="foot">
+  <p>Final project for PLS 419, 2026. Built with AI assistance; see the <a href="#transparency">transparency statement</a>.</p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
