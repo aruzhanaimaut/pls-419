@@ -557,3 +557,4 @@ input[type="range"] { width: 100%; accent-color: var(--red); }
 .ai-split > p:last-child { color: #d6d1ea; font-size: .95rem; margin: 0 0 .6rem; max-width: 70ch; }
 @media (max-width: 600px) { .ai-table td:last-child { white-space: normal; } }
 .trust-card:first-child .ref { color: #fff; text-decoration: underline; }
+.src-note { font-size: .86rem; color: var(--mist); margin: 0 auto .5rem; max-width: 940px; }
