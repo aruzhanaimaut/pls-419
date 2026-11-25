@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light">
-<title>Көпір: an AI answer for Kazakhstan's kandas children</title>
-<meta name="description" content="Kandas children return to Kazakhstan speaking Kazakh but unable to read it in Cyrillic. A PLS 419 final project on the problem, the data, the research, and an AI reading tutor with its full bill.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231F2366'/%3E%3Ctext x='32' y='45' font-size='38' text-anchor='middle' fill='%23F2B320' font-family='Georgia'%3EҚ%3C/text%3E%3C/svg%3E">
+<title>Із: making a call for help leave a trace. Domestic violence and AI in Kazakhstan</title>
+<meta name="description" content="Half of women in Kazakhstan who experience partner violence never tell anyone; fewer than one in ten tell the police. A PLS 419 project on the police response to domestic violence: the data, the research, and an AI tool with its full bill.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231c1733'/%3E%3Ccircle cx='22' cy='40' r='6' fill='%23e8890c'/%3E%3Ccircle cx='42' cy='26' r='6' fill='%23e8890c' opacity='.55'/%3E%3C/svg%3E">
 <link rel="preload" href="fonts/literata.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/golos.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="style.css">
@@ -21,441 +21,478 @@
     <li><a href="#data" data-sec="data"><span class="rail-n">2</span><span class="rail-t">Data</span></a></li>
     <li><a href="#research" data-sec="research"><span class="rail-n">3</span><span class="rail-t">Research</span></a></li>
     <li><a href="#solution" data-sec="solution"><span class="rail-n">4</span><span class="rail-t">Solution</span></a></li>
-    <li><a href="#bill" data-sec="bill"><span class="rail-n">4b</span><span class="rail-t">The bill</span></a></li>
+    <li><a href="#bill" data-sec="bill"><span class="rail-n">₸</span><span class="rail-t">The bill</span></a></li>
     <li><a href="#verdict" data-sec="verdict"><span class="rail-n">✓</span><span class="rail-t">Verdict</span></a></li>
   </ol>
 </nav>
 
 <header class="hero" id="top">
   <div class="hero-inner">
-    <p class="hero-kicker">PLS 419 final project: an AI answer for Kazakhstan</p>
-    <div class="script-word" aria-label="Kazakh, written in three scripts: Cyrillic, Arabic and Latin">
-      <span class="sw sw-cyr is-on" lang="kk">Қазақ</span>
-      <span class="sw sw-ar" lang="kk-Arab" dir="rtl">قازاق</span>
-      <span class="sw sw-lat" lang="kk-Latn">Qazaq</span>
+    <p class="hero-kicker">PLS 419 final project: an AI answer to a social problem in Kazakhstan</p>
+    <div class="log" id="log">
+      <p class="log-line"><time>23:12</time><span>A neighbour calls 102. Shouting, something breaking.</span></p>
+      <p class="log-line"><time>23:41</time><span>Two officers arrive. He is calm now. She says she is fine.</span></p>
+      <p class="log-line"><time>23:52</time><span>They leave. No protocol, no protective order.</span></p>
+      <p class="log-line log-end"><time>–</time><span>Nothing from this night will appear in any statistic.</span></p>
     </div>
-    <p class="script-caption" aria-hidden="true"><span id="scriptName">Cyrillic, used in Kazakhstan's schools</span></p>
-    <h1>They come home speaking Kazakh. Then school asks them to read it.</h1>
-    <p class="hero-sub">Every year about six thousand ethnic Kazakh children return to Kazakhstan with their families. Many speak Kazakh fluently and still cannot read the classroom board. This project asks why, maps what the state counts and what it doesn't, and prices an AI reading tutor called Көпір ("bridge") before deciding whether Kazakhstan should build it.</p>
-
-    <div class="tryit" id="tryit">
-      <p class="tryit-q">Try to read this sentence:</p>
-      <p class="tryit-line" id="tryLine" lang="kk-Arab" dir="rtl">مەن مەكتەپكە بارامىن</p>
-      <div class="tryit-btns">
-        <button type="button" class="btn" data-try="cyr">Show it in Cyrillic</button>
-        <button type="button" class="btn btn-ghost" data-try="en">What does it mean?</button>
-      </div>
-      <p class="tryit-note" id="tryNote">This is Kazakh written in tote zhazu, the Arabic-based script used by Kazakhs in China. Many kandas children meet Cyrillic the way you just met this line.</p>
-    </div>
+    <p class="log-note">An illustrative scenario, not a real case.</p>
+    <h1><span class="iz" lang="kk">Із</span><span class="h1-rest">Making sure a call for help leaves a trace</span></h1>
+    <p class="hero-sub">In Kazakhstan, half of the women who experience violence from a partner have never told anyone, and fewer than one in ten has told the police. When police do come, what happens next can depend on one officer's decision at the door. This project asks why, maps what the data can and cannot see, and prices an AI tool called <span lang="kk">Із</span> ("trace" in Kazakh) before deciding whether Kazakhstan should build it.</p>
   </div>
   <a class="hero-down" href="#problem">Start with the problem</a>
 </header>
 
 <main>
 
-<!-- ============ SECTION 1 ============ -->
+<!-- ================= SECTION 1 ================= -->
 <section class="sec" id="problem" aria-labelledby="h-problem">
   <div class="sec-head">
     <span class="sec-n" aria-hidden="true">1</span>
     <h2 id="h-problem">The problem</h2>
-    <p class="lede">Kazakhstan invites ethnic Kazakhs abroad to come home. Their children arrive Kazakh enough to qualify, and not yet able to read the classroom board.</p>
+    <p class="lede">Violence at home is common and rarely reported. When it is reported, the response often depends on a single officer.</p>
+  </div>
+
+  <div class="stats" id="stats">
+    <div class="stat"><p class="stat-n" data-count="17" data-suffix="%">17%</p><p class="stat-l">of women who have had a partner experienced physical or sexual violence from him <a class="ref" href="#src-1">[1, p. 15]</a></p></div>
+    <div class="stat"><p class="stat-n" data-count="51" data-suffix="%">51%</p><p class="stat-l">of them never told anyone <a class="ref" href="#src-1">[1, p. 80]</a></p></div>
+    <div class="stat"><p class="stat-n" data-count="96194" data-suffix="">96,194</p><p class="stat-l">people held administratively liable for domestic offences in 2025 <a class="ref" href="#src-4">[4]</a></p></div>
   </div>
 
   <div class="prose">
-    <p>Since independence, Kazakhstan has invited ethnic Kazakhs living abroad to resettle in their historical homeland. People granted this status are now officially called <em>kandas</em> ("of the same blood"); the older term, <em>oralman</em>, has been replaced. By the end of 2025, 1.16 million people had returned <a class="ref" href="#src-1">[1]</a>. The flow has not stopped: 19,178 people received the status in 2022 <a class="ref" href="#src-6">[6]</a>, 21,325 in 2023 <a class="ref" href="#src-3">[3]</a>, more than 19,700 in 2024 <a class="ref" href="#src-4">[4]</a> and 16,805 in 2025 <a class="ref" href="#src-1">[1]</a>. About a third are children: minors were 30.9% of kandas at the start of 2024 <a class="ref" href="#src-3">[3]</a> and 34% at the start of 2026 <a class="ref" href="#src-2">[2]</a>. That works out to roughly 5,700 to 6,600 children a year. That figure is my estimate, because no ministry publishes a count of kandas children.</p>
+    <p>Kazakhstan's only nationally representative survey of violence against women interviewed 14,340 women aged 18 to 75. It found that 17% of women who had ever had a partner had experienced physical or sexual violence from that partner, 21% emotional abuse, and 33% at least one form of controlling behaviour <a class="ref" href="#src-1">[1, pp. 15, 18]</a>. A General Prosecutor's Office official estimates that at least 80 women die from domestic violence each year <a class="ref" href="#src-10">[10]</a>. The Interior Ministry held 96,194 people administratively liable for domestic offences in 2025, up 11.2% from 86,518 in 2024 <a class="ref" href="#src-4">[4]</a>.</p>
+
+    <p>The same survey shows how much never reaches the system. Of the women who had experienced partner violence, 51% had never told anyone. Only 7.8% had told the police and 2.9% a doctor, and not one named a women's organisation <a class="ref" href="#src-1">[1, p. 80]</a>. The silence is also uneven. Abuse is still often unreported in more traditional regions such as Turkestan, Zhambyl and parts of the west <a class="ref" href="#src-11">[11]</a>, and in 2024 rural women were almost three times as likely as urban women to say that a husband can be justified in beating his wife (6.2% against 2.2%) <a class="ref" href="#src-2">[2, p. 230]</a>.</p>
+
+    <p>This project is about what happens when women do turn to the police. Human Rights Watch documented police refusing to register complaints, failing to tell women about their right to a protection order, and urging them to drop complaints and reconcile with their abusers <a class="ref" href="#src-6">[6]</a>. Local police and community leaders still sometimes treat reporting as a family disgrace <a class="ref" href="#src-11">[11]</a>.</p>
+
+    <p>The law has changed fast (see the timeline). After the murder of Saltanat Nukenova, laws signed on 15 April 2024 made battery and minor bodily harm crimes again, allowed prosecution without the victim's complaint, and removed reconciliation in repeated battery cases <a class="ref" href="#src-8">[8]</a>. They came into force on 16 June 2024 <a class="ref" href="#src-9">[9]</a>. Police must now register and investigate every domestic violence case, even without a complaint <a class="ref" href="#src-7">[7]</a>, and in early 2025 the Interior Ministry set up specialised domestic violence units <a class="ref" href="#src-16">[16]</a>. Then, at the end of 2025, the separate domestic violence law was repealed and folded into a general Law on the Prevention of Offences <a class="ref" href="#src-12">[12]</a>, in force from 2 March 2026 <a class="ref" href="#src-13">[13]</a>. Advocates fear domestic violence will be dissolved among other offences.</p>
   </div>
 
-  <figure class="dots-fig" id="dotsFig">
-    <div class="dots" id="dots" role="img" aria-label="114 dots, each representing 50 children: about 5,700 kandas children received status in 2025."></div>
-    <figcaption><strong>Each dot is 50 children.</strong> About 5,700 minors received kandas status in 2025 (16,805 arrivals × 34% minors; my estimate from <a class="ref" href="#src-1">[1]</a> and <a class="ref" href="#src-2">[2]</a>).</figcaption>
-  </figure>
-
-  <div class="prose">
-    <p>These children are not one group. In 2022, almost two thirds of arrivals came from Uzbekistan <a class="ref" href="#src-7">[7]</a>. By 2024 China had become the largest source, at 45.4% <a class="ref" href="#src-5">[5]</a>, and in 2025 the two were level: 44.5% from Uzbekistan and 44.1% from China <a class="ref" href="#src-2">[2]</a>. Nor do the families settle where the state plans. The government pays resettlement support for moving to labour-short regions in the north, east and west, but in 2025 only 2,309 people moved under that quota <a class="ref" href="#src-9">[9]</a>, about 14% of the year's arrivals. In early 2023 most new kandas settled in Almaty region (27.2%), Mangystau (13.8%), Astana (11%), Almaty city (8.8%), Shymkent (7.1%) and Turkestan region (6.4%) <a class="ref" href="#src-8">[8]</a>. So the pressure falls on particular schools in the south, the west and the big cities.</p>
-
-    <p>A 2026 study of 250 kandas pupils in grades 8 to 11 in Almaty, Astana, Mangystau and Turkistan documents what happens in those schools <a class="ref" href="#src-13">[13]</a>. Many pupils spoke Kazakh better than they could read or write it. Russian was a major barrier, especially for pupils who had never been schooled in Cyrillic. They also struggled with the Cyrillic script, with study materials, with speaking up in class and with dialect differences. Their starting points depend on where they come from. Uzbekistan and Turkmenistan write their national languages in Latin script. Children from China face a sharper gap: Xinjiang's "bilingual" schools have moved instruction into Mandarin <a class="ref" href="#src-31">[31]</a>, and in 2017 one county in the Ili Kazakh Autonomous Prefecture banned Kazakh-language textbooks outright <a class="ref" href="#src-30">[30]</a>. A child can be the most fluent Kazakh speaker in the class and its weakest Kazakh reader.</p>
-
-    <p>At this point the problem stops being only about teaching. The state admits these children because they are Kazakh, and repatriation is part of its nation-building story. Yet at school their Kazakh is treated as non-standard and their weak Russian as a deficit. Researchers describe the same boundary in everyday life, where locals draw "insider" and "outsider" lines around returnees <a class="ref" href="#src-17">[17]</a>.</p>
-  </div>
+  <ol class="timeline" aria-label="How the law changed">
+    <li><span class="tl-y">2009</span><span class="tl-t">Law on the Prevention of Domestic Violence</span></li>
+    <li><span class="tl-y">2017</span><span class="tl-t">Battery decriminalised</span></li>
+    <li class="tl-hot"><span class="tl-y">2024</span><span class="tl-t">Battery and minor harm criminal again; police must register every case</span></li>
+    <li><span class="tl-y">2025</span><span class="tl-t">Specialised police units; the 2009 law repealed</span></li>
+    <li><span class="tl-y">2026</span><span class="tl-t">Merged Law on the Prevention of Offences in force</span></li>
+  </ol>
 
   <blockquote class="question">
-    <p>When an institution welcomes people as co-ethnics, who is expected to adapt: the child, the family or the school? And what happens to belonging when the child's own Kazakh is marked as wrong?</p>
+    <p>The law now says police must respond to every report. So why does protection still depend on whether one officer, at one door, decides to write anything down, and who pays when he doesn't?</p>
     <cite>The social-science question inside the issue</cite>
   </blockquote>
 
   <div class="prose">
-    <p>Several groups bear the problem. First are the children: their learning, their confidence and their sense of having come home. Next are the teachers, who receive them without training or materials. Finally there is the state itself, whose promise that kandas are "returning" is tested in every classroom. The problem is also changing. As the share of arrivals from China grows, so, very probably, does the share of children who have never been schooled in Cyrillic. And Kazakhstan's planned move from Cyrillic to a Latin alphabet will add a third script to the ones these children already juggle.</p>
+    <p>This is a question about institutions and power more than about individual cruelty. At the door, the abuser is often in the room, the woman may be under pressure from family, and the officer has wide discretion. Above all, a decision to do nothing leaves no record. Research in Kazakhstan also describes a culture of shame, <span lang="kk">ұят</span> (uyat), that keeps women silent <a class="ref" href="#src-r3">[R3]</a>. The cost falls on women and children first, then on officers asked to change a culture without new resources, and on the state's credibility.</p>
   </div>
 </section>
 
-<!-- ============ SECTION 2 ============ -->
+<!-- ================= SECTION 2 ================= -->
 <section class="sec sec-alt" id="data" aria-labelledby="h-data">
   <div class="sec-head">
     <span class="sec-n" aria-hidden="true">2</span>
     <h2 id="h-data">Background and data</h2>
-    <p class="lede">Kazakhstan counts kandas carefully as workers and settlers. As pupils, they are almost invisible.</p>
+    <p class="lede">Kazakhstan now counts many things about domestic violence. The one thing it cannot count is a call that nobody wrote down.</p>
   </div>
 
   <div class="prose">
-    <p>The main source is not the Bureau of National Statistics but the Ministry of Labour and Social Protection. Roughly once a month it publishes running totals: how many people received kandas status, their countries of origin, an age split into working age, minors and pensioners, the education level of working-age adults, and how many moved to quota regions and received support <a class="ref" href="#src-1">[1–5]</a>. The Ministry of Science and Higher Education publishes the only series about young kandas. University grants under the kandas quota rose from 801 in 2023 to 1,604 in 2024, 2,138 in 2025 and 2,378 in 2026 <a class="ref" href="#src-10">[10]</a>, after a 2024 rule change let kandas sit the national test (UNT) in three subjects with no threshold score <a class="ref" href="#src-11">[11]</a>. UNDP's 2013 survey of oralmans is the last large international study I found, and it focuses on adults <a class="ref" href="#src-44">[44]</a>.</p>
+    <p><strong>Who measures what.</strong> The statistics agency ran the 2017 prevalence survey with UN Women, UNFPA and WHO. It is still the only nationally representative measure of how many women experience violence <a class="ref" href="#src-1">[1]</a>. The Bureau of National Statistics' 2024 Multiple Indicator Cluster Survey (MICS), run with UNICEF and published in November 2025, asks about attitudes toward violence rather than experience of it, and only of women aged 15–49 and men aged 15–24 <a class="ref" href="#src-2">[2]</a>. The Interior Ministry publishes enforcement figures <a class="ref" href="#src-4">[4]</a> <a class="ref" href="#src-5">[5]</a>; the Prosecutor General's legal statistics committee records crimes <a class="ref" href="#src-15">[15]</a>; the Human Rights Commissioner compiles both <a class="ref" href="#src-3">[3]</a>.</p>
   </div>
 
   <figure class="chart-fig" id="fig1">
     <div class="fig-top">
       <div>
-        <h3 class="fig-title">Figure 1. Who arrives: people granted kandas status, by country of origin</h3>
-        <p class="fig-sub">2022–2025, built from Ministry of Labour releases <a class="ref" href="#src-1">[1–7]</a></p>
+        <h3 class="fig-title">Figure 1. If 100 women experienced violence from a partner, who did they tell?</h3>
+        <p class="fig-sub">Ever-partnered women aged 18–75 who had experienced physical or sexual partner violence (N = 2,035). 2017 national survey, Table 6.4 <a class="ref" href="#src-1">[1, p. 80]</a></p>
       </div>
-      <div class="seg" role="radiogroup" aria-label="Chart measure">
-        <button type="button" role="radio" aria-checked="true" data-mode="count">People</button>
-        <button type="button" role="radio" aria-checked="false" data-mode="share">Share of arrivals</button>
+      <div class="seg" role="radiogroup" aria-label="Highlight a group">
+        <button type="button" role="radio" aria-checked="true" data-w="all">Everyone</button>
+        <button type="button" role="radio" aria-checked="false" data-w="none">Told no one</button>
+        <button type="button" role="radio" aria-checked="false" data-w="police">Told the police</button>
       </div>
     </div>
-    <ul class="legend" aria-label="Legend">
-      <li><span class="key" style="--c:var(--s1)"></span>Uzbekistan</li>
-      <li><span class="key" style="--c:var(--s2)"></span>China</li>
-      <li><span class="key" style="--c:var(--s3)"></span>All other countries</li>
+    <div class="waffle-wrap">
+      <div class="waffle" id="waffle" role="img" aria-label="100 squares: 51 women told no one, 41 told someone but not the police, 8 told the police."></div>
+      <ul class="legend legend-col">
+        <li data-g="none"><span class="key" style="--c:#3b6fd1"></span><span><strong>51</strong> told no one</span></li>
+        <li data-g="other"><span class="key" style="--c:#a3399e"></span><span><strong>41</strong> told family, friends or others, but not the police</span></li>
+        <li data-g="police"><span class="key" style="--c:#e8890c"></span><span><strong>8</strong> told the police</span></li>
+      </ul>
+    </div>
+    <figcaption class="fig-note">Survey: told no one 51.0%, told someone 49.0%, told the police 7.8%, rounded to whole women. In a follow-up, 18.3% of women who had told someone had gone to the police for help <a class="ref" href="#src-1">[1, pp. 81–82]</a>.</figcaption>
+  </figure>
+
+  <figure class="chart-fig" id="fig2">
+    <h3 class="fig-title">Figure 2. Criminal cases of family and domestic violence, 2020–2024</h3>
+    <p class="fig-sub">Compiled from the Human Rights Commissioner's 2025 report <a class="ref" href="#src-3">[3]</a>. Hover or tap a bar.</p>
+    <ul class="legend">
+      <li><span class="key" style="--c:#3b6fd1"></span>All other family-violence crimes</li>
+      <li><span class="key" style="--c:#e8890c"></span>Battery and minor harm, crimes again from 16 June 2024</li>
     </ul>
-    <div class="chart" id="chart1"></div>
-    <div class="tip" id="tip1" role="status" aria-live="polite"></div>
-    <details class="tableview">
-      <summary>Show the numbers as a table</summary>
-      <div id="table1"></div>
-    </details>
-    <figcaption class="fig-note">Totals are full-year figures. For 2022 and 2024 the ministry published origin shares only up to 1 December, so I applied those shares to the full-year total, which makes the split an estimate. "All other countries" includes Mongolia, Turkmenistan and Russia.</figcaption>
+    <div class="chart" id="chart2"></div>
+    <div class="tip" id="tip2" role="status" aria-live="polite"></div>
+    <details class="tableview"><summary>Show as a table</summary><div id="table2"></div></details>
+    <figcaption class="fig-note">The 2024 jump follows the law: 2,553 of the 3,382 cases (75%) were under the two restored articles, 108-1 (754) and 109-1 (1,799) of the Criminal Code <a class="ref" href="#src-3">[3]</a>. It shows a change in what gets counted, not proof that violence rose.</figcaption>
   </figure>
 
   <div class="prose">
-    <p>The numbers show three patterns. First, the flow is steady at 17,000 to 21,000 people a year; this is not a wave that has passed. Second, the origin mix is changing fast. China rose from 8.6% of arrivals in 2022 to 44–45% in 2024 and 2025, while Uzbekistan fell from 63.5% to between 38.9% and 44.5% <a class="ref" href="#src-7">[7]</a> <a class="ref" href="#src-5">[5]</a> <a class="ref" href="#src-2">[2]</a>. Children from China are the ones most likely to have been schooled in Mandarin, so this shift probably widens the script gap rather than closing it. Third, the share of minors is rising, from 30.9% to 34% <a class="ref" href="#src-3">[3]</a> <a class="ref" href="#src-2">[2]</a>.</p>
+    <p><strong>What the data shows.</strong> Silence is the norm (Figure 1), and recorded numbers move with law and policing as much as with violence (Figure 2). Enforcement keeps growing. Police issued 85,035 protective orders in 2024 <a class="ref" href="#src-3">[3]</a>, and in January–September 2026 more than 90,000 people were held liable (18.4% more than a year earlier), 25,000 were placed under administrative arrest, and 20,500 were held liable for breaking protective orders or court restrictions <a class="ref" href="#src-5">[5]</a>. The norms behind silence vary sharply (Figure 3). 9.0% of women in the poorest households accept wife-beating, against 1.3% in the richest, and 13.4% of women with lower secondary education, against 1.7% with higher education <a class="ref" href="#src-2">[2, p. 230]</a>.</p>
   </div>
 
-  <figure class="chart-fig" id="fig2">
-    <h3 class="fig-title">Figure 2. Where new kandas settled, January–April 2023</h3>
-    <p class="fig-sub">Share of arrivals by region or city <a class="ref" href="#src-8">[8]</a></p>
-    <div class="chart" id="chart2"></div>
-    <div class="tip" id="tip2" role="status" aria-live="polite"></div>
-    <figcaption class="fig-note">The ministry publishes regional splits only occasionally; this is the most recent breakdown I found. For comparison, the state's resettlement quota for the north, east and west moved 2,309 people in 2025, about 14% of that year's arrivals <a class="ref" href="#src-9">[9]</a>.</figcaption>
+  <figure class="chart-fig" id="fig3">
+    <div class="fig-top">
+      <div>
+        <h3 class="fig-title">Figure 3. Women who say a husband can be justified in beating his wife, by region, 2024</h3>
+        <p class="fig-sub">Women aged 15–49, justified for at least one of five reasons. MICS 2024, Table PR.7.1W <a class="ref" href="#src-2">[2, p. 230]</a></p>
+      </div>
+      <div class="seg" role="radiogroup" aria-label="Sort regions">
+        <button type="button" role="radio" aria-checked="true" data-sort="value">Highest first</button>
+        <button type="button" role="radio" aria-checked="false" data-sort="name">A–Z</button>
+      </div>
+    </div>
+    <div class="chart" id="chart3"></div>
+    <div class="tip" id="tip3" role="status" aria-live="polite"></div>
+    <details class="tableview"><summary>Show as a table</summary><div id="table3"></div></details>
+    <figcaption class="fig-note">The dashed line marks the national figure, 3.5% (urban 2.2%, rural 6.2%). Each regional estimate rests on a few hundred women, so small gaps between regions are not meaningful.</figcaption>
   </figure>
 
   <div class="prose">
     <h3 class="sub-h">Where the data is silent</h3>
-    <p>What no one publishes is the part that matters for schools: how many kandas children are enrolled, in which grades, in Kazakh- or Russian-medium classes, which script they were schooled in, how long they wait before enrolling, how they do on tests, and whether they repeat a year or drop out. I could find no breakdown of pupils by migration background from either the Bureau of National Statistics or the Ministry of Enlightenment. Even the child count has to be estimated by multiplying arrivals by the share of minors, and that age band lumps toddlers together with 17-year-olds.</p>
   </div>
-
-  <figure class="silence" id="fig3">
-    <h3 class="fig-title">Figure 3. What the state counts about kandas, and what it doesn't</h3>
-    <p class="fig-sub">Tap a row to see the source or the reason it matters.</p>
+  <figure class="silence" id="fig4">
+    <h3 class="fig-title">Figure 4. What is published, and what is not</h3>
+    <p class="fig-sub">Tap a row to see why it matters.</p>
     <ul class="silence-list" id="silenceList"></ul>
   </figure>
 
   <div class="prose">
-    <p>Some children fall through these gaps completely. Children whose families have not yet obtained status are not counted at all. Teenagers who arrive at 15 to 17 have the least time to catch up before national exams, yet nothing records whether they finish school. The trustworthiness of the numbers that do exist is limited in four ways:</p>
-    <ul class="checks">
-      <li><strong>These are press releases, not a statistical series.</strong> The figures are running totals "as of" a date, and the media often report a 1 December figure as the year's total. The 2024 figure circulates both as 18,035 (to 1 December) and as "more than 19.7 thousand" (the full year) <a class="ref" href="#src-5">[5]</a> <a class="ref" href="#src-4">[4]</a>.</li>
-      <li><strong>Some splits are partial.</strong> For 2022 and 2024, the origin shares only run to 1 December, so Figure 1 is partly an estimate.</li>
-      <li><strong>The age shares have no clear denominator.</strong> They describe "ethnic migrants" as of a date, without saying whether that means one year's arrivals or a longer period.</li>
-      <li><strong>Status is not presence.</strong> Since 2023, people can obtain kandas status through Kazakh embassies without entering the country <a class="ref" href="#src-45">[45]</a>, so a count of status grants is not the same as a count of children in classrooms.</li>
-    </ul>
-    <p>These numbers are produced for a labour and resettlement purpose, so they describe kandas as labour supply: working age, education, employment, relocation. The university quota is tracked because it is a policy lever. The silence about children in school is therefore not a technical accident. It reflects which ministry owns the question, and no ministry currently owns the kandas child in a classroom.</p>
+    <p><strong>Who falls through.</strong> Household surveys miss women in shelters; the prevalence figures are nine years old; MICS asks men only up to age 24. Most important here, no source records a report that police refused to register, or a call-out that ended without any measure.</p>
+    <p><strong>How far the numbers can be trusted.</strong> Figures reach the public mostly through ministry press statements, and they conflict. One widely shared article reports 34,059 people sanctioned in 2025, while the ministry reports 96,194 held liable <a class="ref" href="#src-4">[4]</a>. I use the ministry's, because the article does not say what it counted. Definitions shift with each reform. Finally, falling reports can mean less violence or fewer women calling. Reports fell 28% in the second half of 2024 <a class="ref" href="#src-9">[9]</a>, and calls fell 17% in 2025 while the number held liable rose by 11% <a class="ref" href="#src-4">[4]</a>. The data cannot tell these apart. Prevalence estimates differ too: 17% in the 2017 survey <a class="ref" href="#src-1">[1]</a>, and 27% for 2023 in a World Bank figure cited by a later study <a class="ref" href="#src-r7">[R7]</a>, with different definitions.</p>
+    <p>The number that matters most here is how many calls ended with no record, and it does not exist. <span lang="kk">Із</span> is built around that gap.</p>
   </div>
 </section>
 
-<!-- ============ SECTION 3 ============ -->
+<!-- ================= SECTION 3 ================= -->
 <section class="sec" id="research" aria-labelledby="h-research">
   <div class="sec-head">
     <span class="sec-n" aria-hidden="true">3</span>
     <h2 id="h-research">Current state of research</h2>
-    <p class="lede">Four research traditions each see part of the problem. None of them has tested a way to solve it.</p>
+    <p class="lede">Researchers have measured the violence, listened to survivors, studied institutions and tested technology. They have rarely studied the moment police arrive.</p>
   </div>
 
   <div class="lenses">
     <div class="lens-tabs" role="tablist" aria-label="Research approaches">
-      <button type="button" role="tab" id="t-lang" aria-controls="p-lang" aria-selected="true">Language and literacy</button>
-      <button type="button" role="tab" id="t-id" aria-controls="p-id" aria-selected="false" tabindex="-1">Identity and belonging</button>
-      <button type="button" role="tab" id="t-state" aria-controls="p-state" aria-selected="false" tabindex="-1">State and policy</button>
-      <button type="button" role="tab" id="t-tech" aria-controls="p-tech" aria-selected="false" tabindex="-1">Learning technology</button>
+      <button type="button" role="tab" id="t-a" aria-controls="p-a" aria-selected="true">Measuring the hidden</button>
+      <button type="button" role="tab" id="t-b" aria-controls="p-b" aria-selected="false" tabindex="-1">Survivors and shame</button>
+      <button type="button" role="tab" id="t-c" aria-controls="p-c" aria-selected="false" tabindex="-1">Institutions and law</button>
+      <button type="button" role="tab" id="t-d" aria-controls="p-d" aria-selected="false" tabindex="-1">Technology and risk</button>
     </div>
 
-    <div class="lens-panel" role="tabpanel" id="p-lang" aria-labelledby="t-lang">
-      <p>Dossanova and Abdikadyr (2021) interviewed school-age repatriate children and described their adaptation in stages, with language the hardest of them <a class="ref" href="#src-14">[14]</a>. Dossanova et al. (2026) scaled this up to a mixed-methods study of 250 pupils plus 35 interviews. Oral Kazakh was stronger than literacy, Russian and Cyrillic were barriers, and support from family, teachers and peers helped. The authors call for "targeted language-bridging programs" <a class="ref" href="#src-13">[13]</a>. At university level, Valieva et al. (2019) found that adaptation problems lowered oralman students' motivation in English classes, and that no extra courses were organised for them <a class="ref" href="#src-15">[15]</a>. Globally, Cummins argues that literacy built in one language transfers to the next <a class="ref" href="#src-23">[23]</a>, which suggests building on what children can already read rather than starting them from zero.</p>
-      <p class="limit"><strong>Where it falls short:</strong> proficiency is self-reported, the samples are small and drawn from a few cities, there is no comparison with local pupils, and there are no test-score data. The 2026 study appeared in a smaller journal (<em>International Journal of Body, Mind and Culture</em>) and reports no percentages.</p>
+    <div class="lens-panel" role="tabpanel" id="p-a" aria-labelledby="t-a">
+      <p>Quantitative work starts from the 2017 national survey <a class="ref" href="#src-1">[1]</a>. Kainazarova and colleagues (2026) argue that domestic violence in Kazakhstan remains latent because of underreporting and social norms that put women at a disadvantage, so official numbers capture only part of it <a class="ref" href="#src-r1">[R1]</a>. The 2024 MICS tracks attitudes and finds sharp gaps by region, wealth and education <a class="ref" href="#src-2">[2]</a>.</p>
+      <p class="limit"><strong>Limits:</strong> self-reported, one-off data. Surveys show how much is hidden, not what happens when a woman reports.</p>
     </div>
 
-    <div class="lens-panel" role="tabpanel" id="p-id" aria-labelledby="t-id" hidden>
-      <p>Bokayev (2013) analyses the culture shock and stereotypes repatriates meet, and how Kazakhstani society draws "insider/outsider" lines around them <a class="ref" href="#src-17">[17]</a>. Saiken's thesis on Xinjiang Kazakhs finds a hybrid identity, with skills gained in China used as capital in Kazakhstan <a class="ref" href="#src-18">[18]</a>. A 2024 <em>Frontiers in Sociology</em> study of students from Mongolia and China shows that family ties across borders shape how they adapt <a class="ref" href="#src-19">[19]</a>. Comparative research on ethnic return migration finds the same paradox from Germany to Japan: returnees are admitted for their sameness and then marginalised for their difference <a class="ref" href="#src-22">[22]</a>.</p>
-      <p class="limit"><strong>What it means for this project:</strong> language marks who belongs. A tool that "corrects" a child's Kazakh can deepen the very outsider label it is meant to remove.</p>
+    <div class="lens-panel" role="tabpanel" id="p-b" aria-labelledby="t-b" hidden>
+      <p>Akhmetova, Durrani and Karabay (2025) interviewed 12 survivors and 12 professionals. They show how <span lang="kk">ұят</span>, shame, shapes how women respond to violence and how they are treated by police and professionals <a class="ref" href="#src-r3">[R3]</a>. Karabay, Akhmetova and Durrani (2024) studied professionals in Kazakhstan's violence-against-women organisations during COVID-19, and show how a crisis stretched the services survivors depend on <a class="ref" href="#src-r2">[R2]</a>.</p>
+      <p class="limit"><strong>Limits:</strong> small samples reached through NGOs. They explain silence, but rarely follow what happens once police are involved.</p>
     </div>
 
-    <div class="lens-panel" role="tabpanel" id="p-state" aria-labelledby="t-state" hidden>
-      <p>Oka (2013) traces how the repatriation policy's priorities shifted and how its central dilemma grew <a class="ref" href="#src-20">[20]</a>. Cerny (2010) shows the environmental and political pressures that pushed Kazakh herders out of China, and why Kazakhstan looked like the place "where the grass is greener" <a class="ref" href="#src-21">[21]</a>. This literature treats kandas as a nation-building and demographic project.</p>
-      <p class="limit"><strong>Where it falls short:</strong> children appear mainly as numbers, which mirrors the data silence in Section 2.</p>
+    <div class="lens-panel" role="tabpanel" id="p-c" aria-labelledby="t-c" hidden>
+      <p>In Kyrgyzstan, Childress and colleagues (2023) interviewed 83 professionals and found a gap between what domestic violence laws intend and what police, courts and social services actually do <a class="ref" href="#src-r4">[R4]</a>. Akisheva (2026) shows that Central Asian laws still fall short of CEDAW and the Beijing Declaration, and that Kazakhstan does not treat domestic violence as a distinct crime even after 2024 <a class="ref" href="#src-r5">[R5]</a>. Globally, a 2024 meta-analysis of 34 studies found that arrest does not consistently reduce repeat violence <a class="ref" href="#src-r6">[R6]</a>.</p>
+      <p class="limit"><strong>What follows:</strong> tougher laws alone do not protect. What matters is a consistent and accountable response.</p>
     </div>
 
-    <div class="lens-panel" role="tabpanel" id="p-tech" aria-labelledby="t-tech" hidden>
-      <p>A randomised trial of the Mindspark adaptive software in Delhi found large gains in maths and Hindi because it taught each child at their actual level <a class="ref" href="#src-24">[24]</a>. Google's Read Along used speech recognition as a reading tutor in a pilot run with India's ASER Centre <a class="ref" href="#src-25">[25]</a>. A World Bank trial in Nigeria found that a GPT-4 tutor, used inside a teacher-led after-school programme, raised English scores by 0.23 standard deviations in six weeks <a class="ref" href="#src-26">[26]</a>. UNICEF's evaluations of the Akelius course show digital language learning supporting refugee children in Greece and Lebanon <a class="ref" href="#src-27">[27]</a> <a class="ref" href="#src-28">[28]</a>.</p>
-      <p class="limit"><strong>What is known:</strong> technology helps when it targets the child's level and sits inside a structured programme run by a teacher. Used on its own, as a device handed out, it disappoints.</p>
+    <div class="lens-panel" role="tabpanel" id="p-d" aria-labelledby="t-d" hidden>
+      <p>In Spain, a study of 7,147 police reports found that the risk form behind the VioGén system identified 79% of women who were later attacked again, but also flagged many women who were not (specificity 35%, AUC 0.62) <a class="ref" href="#src-r8">[R8]</a>. On Greater Manchester Police data, machine-learning models based on criminal histories predicted repeat violence better than the standard police questionnaire <a class="ref" href="#src-r9">[R9]</a>. The AinoAid chatbot for survivors was rated positively by 669 users, who rated perceived safety highest <a class="ref" href="#src-r10">[R10]</a>. In Almaty, women who use drugs, sell sex or live with HIV who used the UMAI-WINGS phone programme were 29% less likely to report physical partner violence six months later than a control group <a class="ref" href="#src-r7">[R7]</a>.</p>
+      <p class="limit"><strong>Limits:</strong> none of these tools has been tested inside Kazakhstan's police practice. Most measure prediction or user satisfaction, not whether women ended up safer.</p>
     </div>
   </div>
 
   <div class="prose">
-    <h3 class="sub-h">What is contested: which language to bridge to</h3>
-    <p>Dossanova et al. treat Russian as a major barrier <a class="ref" href="#src-13">[13]</a>. Raimova (2026), studying repatriate families, finds the opposite priority: Kazakh first, English second, with Russian widely rejected, often after experiences of linguistic discrimination. She calls for consistent enforcement of language policy in Russian-dominant cities <a class="ref" href="#src-16">[16]</a>. This is a political choice, not a technical one. A tool that teaches Russian accommodates Russian's dominance in cities; a tool that ignores Russian leaves children stranded where Russian dominates. A second disagreement sits underneath the first: is the problem the child's language, or the school's inflexibility?</p>
-
+    <h3 class="sub-h">What is contested</h3>
+    <p>First, whether criminalisation and arrest protect women. Kazakhstan's 2024 reform assumes that tougher penalties help, while the international evidence is mixed <a class="ref" href="#src-r6">[R6]</a>. Second, whether risk algorithms protect women or ration protection. VioGén's designers point to its ability to identify women at risk <a class="ref" href="#src-r8">[R8]</a>. An independent audit reports that officers kept the automatic score in 95% of cases, and that in 2021 only 1 in 7 women who went to the police for protection received it <a class="ref" href="#src-c1">[C1, pp. 13, 34]</a>.</p>
     <h3 class="sub-h">The gap this project speaks to</h3>
-    <p>These literatures do not meet. The school studies describe the barrier but test no intervention. The identity studies warn about the burden of adaptation but say little about classroom practice. The technology studies show what works with refugees and struggling readers elsewhere, but none of it has been tried with kandas pupils. Nazarbayev University's open Kazakh speech corpus makes Kazakh speech recognition feasible <a class="ref" href="#src-29">[29]</a>, but it was not built from children or diaspora dialects. My project addresses that gap: it designs a script-bridging reading tutor and gives an honest account of whether it should exist.</p>
+    <p>No study I found examines what happens at the moment of police contact in Kazakhstan: how often reports are refused or closed without action, and whether structured, recorded decisions change that. Technology studies show that risk can be estimated and survivors supported elsewhere, but no such tool has been tested in Kazakh or Russian, or inside Kazakhstan's police and legal system. <span lang="kk">Із</span> is a design for making that moment visible.</p>
   </div>
 </section>
 
-<!-- ============ SECTION 4 ============ -->
+<!-- ================= SECTION 4 ================= -->
 <section class="sec sec-alt" id="solution" aria-labelledby="h-solution">
   <div class="sec-head">
     <span class="sec-n" aria-hidden="true">4</span>
-    <h2 id="h-solution">The AI-assisted solution, and what it would cost</h2>
-    <p class="lede">Көпір means "bridge". It is a reading tutor that starts from the script a child already knows.</p>
+    <h2 id="h-solution">The AI-assisted solution</h2>
+    <p class="lede"><span lang="kk">Із</span> has two connected parts: one for the woman, one for the officer at her door.</p>
   </div>
+
+  <div class="two-up">
+    <article class="part">
+      <p class="part-tag">Part 1, for survivors</p>
+      <h3>Record in seconds, decide later</h3>
+      <ul>
+        <li><strong>10-second capture:</strong> one tap for a photo, a voice note in Kazakh or Russian, or a line of text, dated automatically.</li>
+        <li><strong>Hidden and safe:</strong> a neutral icon, quick exit, nothing in the gallery, encrypted storage in Kazakhstan that survives a taken phone.</li>
+        <li><strong>AI works at once:</strong> the moment she sends an entry, it is transcribed, dated and placed on a timeline, and a correctly worded заявление (police report) is drafted for her to review whenever she is safe.</li>
+        <li><strong>Rights in plain words:</strong> what police must do, and where to complain if they refuse.</li>
+        <li><strong>She decides:</strong> nothing is shared unless she chooses, directly or through a crisis-centre lawyer. A relative or neighbour can report too.</li>
+      </ul>
+    </article>
+    <article class="part part-dark">
+      <p class="part-tag">Part 2, for police</p>
+      <h3>A decision that is written down</h3>
+      <ul>
+        <li><strong>A structured assessment at the call-out,</strong> on a tablet, for the specialised domestic violence units.</li>
+        <li><strong>An AI risk estimate:</strong> a model trained and validated on past Kazakh cases that combines the answers with case history, as in the British research <a class="ref" href="#src-r9">[R9]</a>.</li>
+        <li><strong>The legal options on screen,</strong> not a verdict: detention where the law gives grounds, a protective order, an administrative case, or a criminal report.</li>
+        <li><strong>A recorded reason:</strong> if the officer takes no measure, he must write why. High risk with no measure is flagged automatically.</li>
+        <li><strong>The survivor gets a copy</strong> of the decision.</li>
+      </ul>
+    </article>
+  </div>
+
+  <figure class="door" id="door">
+    <h3 class="fig-title">At the door: what the law allows, and what <span lang="kk">Із</span> records</h3>
+    <p class="fig-sub">Choose an option to see its legal basis. A simplified guide, not legal advice: grounds are assessed by the officer and, where required, a court.</p>
+    <div class="door-grid" role="tablist" aria-label="Measures at the door">
+      <button type="button" role="tab" aria-selected="true" data-m="0">Detention</button>
+      <button type="button" role="tab" aria-selected="false" data-m="1" tabindex="-1">Protective order</button>
+      <button type="button" role="tab" aria-selected="false" data-m="2" tabindex="-1">Administrative case</button>
+      <button type="button" role="tab" aria-selected="false" data-m="3" tabindex="-1">Criminal report</button>
+      <button type="button" role="tab" aria-selected="false" data-m="4" tabindex="-1">No measure</button>
+    </div>
+    <div class="door-out" id="doorOut" role="tabpanel" aria-live="polite"></div>
+  </figure>
 
   <div class="prose">
-    <p><strong>What it is.</strong> A reading tutor on shared school tablets for kandas pupils in their first two years in a Kazakh school, used during lessons with a language-support teacher. Here is how it works:</p>
+    <h3 class="sub-h">Who checks the decision</h3>
   </div>
-
-  <div class="flow" id="flow">
-    <ol class="flow-steps">
-      <li data-step="1"><h4>The child reads aloud</h4><p>A short Kazakh text in Cyrillic, chosen for their level.</p></li>
-      <li data-step="2" class="is-ai"><h4>The tablet listens</h4><p>A speech-recognition model on the tablet compares what it hears with the text and finds the words the child could not decode. The audio never leaves the tablet.</p><span class="ai-tag">The only AI step</span></li>
-      <li data-step="3"><h4>A bridge appears</h4><p>The difficult word is also shown in a script the child already knows (tote zhazu or Latin), with a picture. Dialect pronunciations count as correct.</p></li>
-      <li data-step="4"><h4>Stories from home</h4><p>Texts are written with teachers and kandas families, including stories from the places the children come from. A teacher checks any AI-drafted text first, and there is no open chat.</p></li>
-      <li data-step="5"><h4>The teacher decides</h4><p>Each week the support teacher sees which letters and sounds each child is stuck on and plans small-group lessons. The tablet never gives grades or labels.</p></li>
-    </ol>
-    <button type="button" class="btn" id="playFlow">Play the flow</button>
-  </div>
-
-  <div class="bridge-demo" aria-label="Example of a script bridge">
-    <div class="bd-card">
-      <p class="bd-label">On the page</p>
-      <p class="bd-word" lang="kk">мектеп</p>
+  <div class="tracks">
+    <div class="track">
+      <p class="track-h">Track 1: individual cases, to bodies with power</p>
+      <ol class="track-steps">
+        <li><strong>Supervisor</strong> reviews every flagged case.</li>
+        <li><strong>Prosecutor</strong> is required to check that reports are received and registered lawfully, and can cancel unlawful decisions <a class="ref" href="#src-15">[15]</a>.</li>
+        <li><strong>Investigating court</strong> hears her complaint if a report is refused <a class="ref" href="#src-14">[14]</a>.</li>
+      </ol>
     </div>
-    <div class="bd-arrow" aria-hidden="true"></div>
-    <div class="bd-card bd-known">
-      <p class="bd-label">The bridge, for a child from Xinjiang</p>
-      <p class="bd-word bd-ar" lang="kk-Arab" dir="rtl">مەكتەپ</p>
-      <p class="bd-gloss">"school"</p>
+    <div class="track track-b">
+      <p class="track-h">Track 2: patterns, anonymised</p>
+      <ol class="track-steps">
+        <li><strong>Closure rates by district</strong>, repeat addresses, flagged cases with no measure.</li>
+        <li>Sent to the <strong>Human Rights Commissioner</strong> and <strong>parliament</strong>.</li>
+        <li>Published in an <strong>annual public report</strong>.</li>
+      </ol>
     </div>
   </div>
-
   <div class="prose">
-    <p><strong>Run by whom, reaching whom.</strong> The Ministry of Enlightenment and regional education departments would own it. A Kazakhstani team would build it by fine-tuning Nazarbayev University's open Kazakh speech models <a class="ref" href="#src-29">[29]</a>, hosted on national infrastructure. It would go to the schools that receive the most kandas: in Almaty region, Mangystau, Astana, Almaty, Shymkent and Turkestan. Any pupil who struggles with reading could use it, so that it never becomes "the kandas tablet". The Russian module would be optional, chosen by each school together with families.</p>
-    <p><strong>Why AI at all?</strong> Only step 2 needs AI, and it is the step teachers cannot scale: listening to every child read aloud, word by word, every day. Everything else (the texts, pictures and scripts) could be a printed workbook. That honesty matters for the bill.</p>
-
+    <p>The automatic flag is my proposal; it does not exist in law today. The powers it relies on do.</p>
+    <p><strong>Why AI, and where not.</strong> AI does two things people cannot do at scale: turning Kazakh or Russian voice and text fragments into a dated record and legal draft, and estimating risk from case histories better than a checklist <a class="ref" href="#src-r9">[R9]</a>. The most important part needs no AI: every decision at the door is written down.</p>
     <h3 class="sub-h">Two documented cases</h3>
   </div>
 
   <div class="cases">
     <article class="case">
-      <p class="case-place">India, 2018–2019</p>
-      <h4>Read Along (Bolo), a speech-based reading tutor</h4>
-      <p>Google's app has an on-screen helper that listens as children read aloud and corrects them. It works offline and keeps personal data on the device. In a pilot in 200 villages in Unnao district run with the ASER Centre, 64% of children with the app improved their reading level <a class="ref" href="#src-25">[25]</a>.</p>
-      <p class="case-catch"><strong>Caveat:</strong> this was the company's own pilot, not a peer-reviewed trial.</p>
+      <p class="case-place">Spain, since 2007</p>
+      <h4>VioGén: national police risk assessment</h4>
+      <p>Spain's Interior Ministry system rates the risk faced by women who report gender violence and links it to protection measures. It has carried out more than 3 million risk evaluations <a class="ref" href="#src-c1">[C1, p. 11]</a>, and its police form identified 79% of women later re-victimised <a class="ref" href="#src-r8">[R8]</a>.</p>
+      <p class="case-catch"><strong>Lesson:</strong> officers kept the automatic score in 95% of cases, and 35% of the women the auditors interviewed had not been told their score <a class="ref" href="#src-c1">[C1, pp. 13, 25]</a>. A score can replace judgement instead of supporting it.</p>
     </article>
     <article class="case">
-      <p class="case-place">Nigeria, 2024</p>
-      <h4>A GPT-4 English tutor inside a teacher-led programme</h4>
-      <p>A World Bank randomised trial in nine public secondary schools in Edo State ran twelve 90-minute after-school sessions in which pupils worked in pairs with Microsoft Copilot under teacher guidance. English scores rose by 0.23 standard deviations in six weeks <a class="ref" href="#src-26">[26]</a>.</p>
-      <p class="case-catch"><strong>Lesson:</strong> the gains came inside a structure that teachers ran.</p>
-    </article>
-    <article class="case case-quiet">
-      <p class="case-place">Relevant, but not AI</p>
-      <h4>UNICEF–Akelius and Mindspark</h4>
-      <p>The Akelius digital language course has been used by more than 10,500 refugee children in Greece <a class="ref" href="#src-27">[27]</a> and by 7,237 students in Lebanon <a class="ref" href="#src-28">[28]</a>. Mindspark's adaptive software produced large gains in Delhi <a class="ref" href="#src-24">[24]</a>. They show that the non-AI parts work too, which is a reason to keep the AI part small.</p>
+      <p class="case-place">Five EU countries, 2025</p>
+      <h4>AinoAid: an AI chatbot for survivors</h4>
+      <p>A chatbot that gives information on support services, risk and legal procedures. Its evaluation included interviews with 80 survivors in Austria, Finland, France, Germany and Spain, and a survey of 669 users, who rated it positively, perceived safety most of all <a class="ref" href="#src-r10">[R10]</a>.</p>
+      <p class="case-catch"><strong>Limit:</strong> it measured usability and perceived safety, not whether violence decreased.</p>
     </article>
   </div>
 </section>
 
-<!-- ============ THE BILL ============ -->
+<!-- ================= THE BILL ================= -->
 <section class="sec" id="bill" aria-labelledby="h-bill">
   <div class="sec-head">
-    <span class="sec-n" aria-hidden="true">4b</span>
+    <span class="sec-n" aria-hidden="true">₸</span>
     <h2 id="h-bill">The bill</h2>
-    <p class="lede">Change the assumptions and the bill recalculates. Every input is my assumption unless it has a source.</p>
+    <p class="lede">Change the assumptions and the bill recalculates. Every input without a source is my own assumption.</p>
   </div>
 
   <div class="bill-grid">
     <div class="controls" aria-label="Assumptions">
       <label class="ctl">
-        <span class="ctl-row"><span>Pupils using Көпір</span><output id="o-pupils">10,000</output></span>
-        <input type="range" id="i-pupils" min="1000" max="20000" step="500" value="10000">
+        <span class="ctl-row"><span>Women using the survivor app</span><output id="o-users">20,000</output></span>
+        <input type="range" id="i-users" min="2000" max="100000" step="2000" value="20000">
       </label>
       <label class="ctl">
-        <span class="ctl-row"><span>Minutes per school day</span><output id="o-min">20</output></span>
-        <input type="range" id="i-min" min="10" max="45" step="5" value="20">
+        <span class="ctl-row"><span>Entries per woman per month</span><output id="o-entries">4</output></span>
+        <input type="range" id="i-entries" min="1" max="20" step="1" value="4">
       </label>
       <label class="ctl">
-        <span class="ctl-row"><span>AI text requests per pupil per day</span><output id="o-req">10</output></span>
-        <input type="range" id="i-req" min="0" max="30" step="1" value="10">
+        <span class="ctl-row"><span>Police assessments per year</span><output id="o-calls">84,000</output></span>
+        <input type="range" id="i-calls" min="20000" max="150000" step="2000" value="84000">
       </label>
       <label class="ctl">
-        <span class="ctl-row"><span>Pupils sharing one tablet</span><output id="o-share">3</output></span>
-        <input type="range" id="i-share" min="1" max="5" step="1" value="3">
+        <span class="ctl-row"><span>Officers equipped and trained</span><output id="o-off">1,000</output></span>
+        <input type="range" id="i-off" min="200" max="3000" step="100" value="1000">
       </label>
       <div class="assume">
-        <p><strong>Fixed assumptions:</strong> 170 school days; a tablet draws 5 W; each server request uses 5× Google's published 0.24 Wh median <a class="ref" href="#src-40">[40]</a>, because a small national deployment will be less efficient; 0.9 kg CO₂ per kWh as a rough coal-heavy grid factor; data-centre water at 1.15 L per kWh <a class="ref" href="#src-40">[40]</a>; tablets at 100,000 ₸ each; building the system and collecting a child-speech dataset costs 250 million ₸; running costs are 60 million ₸ a year; teacher training costs 50,000 ₸ per teacher, with one teacher per 15 pupils; 510 ₸ = $1. These are order-of-magnitude assumptions, not price quotes.</p>
+        <p><strong>Where the defaults come from:</strong> police assessments match the more than 84,000 protective orders issued in 2025 <a class="ref" href="#src-4">[4]</a>, and officers match the specialised units' 1,000 staff <a class="ref" href="#src-16">[16]</a>.</p>
+        <p><strong>My assumptions:</strong> three AI requests per entry or assessment, each 5× Google's measured 0.24 Wh and 0.26 mL of water <a class="ref" href="#src-21">[21]</a>; four 0.5 kW servers all year; 10 kWh per tablet; 0.9 kg CO₂/kWh. Build 350m ₸, running 100m ₸ and audit 30m ₸ a year; tablet 150,000 ₸, training 60,000 ₸ per officer; 510 ₸ = $1.</p>
       </div>
     </div>
 
     <div class="receipt" id="receipt">
       <div class="r-head">
-        <p class="r-shop">Көпір, year one</p>
-        <p class="r-meta" id="r-meta">10,000 pupils, 20 min a day</p>
+        <p class="r-shop"><span lang="kk">Із</span>, year one</p>
+        <p class="r-meta" id="r-meta"></p>
       </div>
 
       <details class="r-line" open>
-        <summary><span>Environmental</span><span class="r-dots"></span><span class="r-val" id="v-env">24 MWh</span></summary>
+        <summary><span>Environmental</span><span class="r-dots"></span><span class="r-val" id="v-env"></span></summary>
         <div class="r-body">
-          <p>Kazakhstan's electricity is still mostly coal: 62.1% of generation according to the Energy Ministry <a class="ref" href="#src-38">[38]</a>, while Samruk-Energy reports 74.9% from coal-fired plants in 2024 <a class="ref" href="#src-39">[39]</a>. The sources disagree, which is itself a data-trust problem.</p>
+          <p>Kazakhstan's electricity is mostly coal: 62.1% according to the Energy Ministry <a class="ref" href="#src-20">[20]</a>, while Samruk-Energy reports that coal plants supplied 74.9% of the unified grid in 2024 <a class="ref" href="#src-20">[20]</a>.</p>
           <p id="env-detail"></p>
-          <p>Fine-tuning the speech model once (about 500 GPU-hours) adds roughly 0.5 MWh. The larger footprint is physical: thousands of tablets made abroad and replaced every few years, plus the cooling water used by coal plants, which nobody in this chain measures.</p>
+          <p>Servers, not AI requests, use most of the energy. The bigger footprint is physical: tablets, and years of securely stored photos and audio.</p>
         </div>
       </details>
 
       <details class="r-line">
-        <summary><span>Economic</span><span class="r-dots"></span><span class="r-val" id="v-eco">680 m ₸</span></summary>
+        <summary><span>Economic</span><span class="r-dots"></span><span class="r-val" id="v-eco"></span></summary>
         <div class="r-body">
           <p id="eco-detail"></p>
-          <p><strong>Who pays:</strong> the state budget, through the Ministry of Enlightenment. <strong>Who profits:</strong> tablet manufacturers (most likely abroad), the local developer and the state cloud operator. <strong>The real comparison:</strong> the same money could pay language-support teachers. The tool is only worth buying if it multiplies those teachers' reach.</p>
+          <p><strong>Who pays:</strong> the state budget, through the Interior Ministry for the police side and crisis-centre funding for the survivor side. <strong>Who profits:</strong> the developer, the cloud operator and the tablet maker. <strong>The real comparison:</strong> the state spent almost 3 billion ₸ on crisis centres in 2024 <a class="ref" href="#src-3">[3]</a>. If <span lang="kk">Із</span> were paid for by cutting shelters, it would cost more than it saves.</p>
         </div>
       </details>
 
       <details class="r-line">
         <summary><span>Labour</span><span class="r-dots"></span><span class="r-val">shifts, not savings</span></summary>
         <div class="r-body">
-          <p><strong>Work that changes:</strong> support and class teachers get a dashboard and new duties. Without paid time, that becomes unpaid overtime.</p>
-          <p><strong>Work that could disappear:</strong> budget substitution. A district could buy tablets instead of hiring support teachers.</p>
-          <p><strong>Hidden labour:</strong> the speech model depends on people transcribing hours of children's speech in diaspora dialects. Nazarbayev University's corpus was itself built from more than 2,000 speakers <a class="ref" href="#src-43">[43]</a>. This should be paid work for kandas adults who read tote zhazu, not unpaid help from parents. Someone also has to update the texts, fix errors and replace broken tablets.</p>
+          <p><strong>Work that changes:</strong> the specialised units, about 1,000 officers, were staffed by moving existing personnel, with no extra budget <a class="ref" href="#src-16">[16]</a>. Paperwork without extra time risks box-ticking, and flags add review work for supervisors and prosecutors.</p>
+          <p><strong>Hidden labour:</strong> vetted staff, not outsourced click-workers, must label sensitive past case files to train the model; lawyers must update legal templates whenever the law changes (2024, 2026); crisis-centre lawyers handle shared evidence.</p>
+          <p><strong>The quiet shift:</strong> the app moves work onto women, who now do the documenting. That is only fair if the state then acts on what they record.</p>
         </div>
       </details>
 
       <details class="r-line">
-        <summary><span>Political and governance</span><span class="r-dots"></span><span class="r-val">medium risk</span></summary>
+        <summary><span>Political and governance</span><span class="r-dots"></span><span class="r-val">high risk</span></summary>
         <div class="r-body">
-          <p>Kazakhstan's Law on Artificial Intelligence (signed 17 November 2025, in force 18 January 2026) <a class="ref" href="#src-32">[32]</a> sorts systems into minimal, medium and high risk <a class="ref" href="#src-33">[33]</a>. Көпір would most likely be medium risk: a failure would not cause an emergency, but it could cause moral harm to a child. It must stay at low autonomy, meaning a human makes every decision about grades, classes and placement <a class="ref" href="#src-34">[34]</a>. The law also prohibits inferring emotions without consent and exploiting age-related vulnerabilities <a class="ref" href="#src-34">[34]</a>, so Көпір would have no emotion tracking and no design meant to maximise screen time.</p>
-          <p>Personal data must be stored in Kazakhstan <a class="ref" href="#src-35">[35]</a>, and the Digital Code, in force since 11 July 2026, tightens localisation further <a class="ref" href="#src-36">[36]</a> <a class="ref" href="#src-37">[37]</a>. <strong>The biggest misuse risk</strong> is a central list of children by country of origin. For families who left Xinjiang, such a database could feel like surveillance, and it could be used for profiling, so the central system should hold no origin field at all. The ministry would control the system, with independent oversight by the Commissioner for Children's Rights and parent representatives.</p>
-          <p>The relevant frameworks are UNESCO's Recommendation on the Ethics of AI, which Kazakhstan has been assessing itself against through UNESCO's Readiness Assessment since January 2026 <a class="ref" href="#src-42">[42]</a>, and UNICEF's Guidance on AI and Children 3.0 <a class="ref" href="#src-41">[41]</a>.</p>
+          <p>Kazakhstan's Law on Artificial Intelligence came into force on 18 January 2026 <a class="ref" href="#src-18">[18]</a>. It sorts systems by risk and classes as high risk those whose failure could threaten citizens' lives and health <a class="ref" href="#src-18">[18]</a>. The police tool belongs there. It must stay at low autonomy, with a human making every decision, and the law bars inferring emotions without consent, so there is no voice-emotion analysis <a class="ref" href="#src-18">[18]</a>. Personal data must be stored in Kazakhstan <a class="ref" href="#src-17">[17]</a>.</p>
+          <p><strong>Misuse risks:</strong> an abuser finding the app; police reading her archive; records used against her in custody disputes; profiling of districts. So crisis centres, not police, run the survivor side, and her evidence stays separate from police records. The design follows UNESCO's Recommendation on the Ethics of AI. In January 2026 Kazakhstan began a UNESCO readiness assessment of its own AI use <a class="ref" href="#src-19">[19]</a>.</p>
         </div>
       </details>
 
       <details class="r-line">
-        <summary><span>Data ethics</span><span class="r-dots"></span><span class="r-val">consent ×2</span></summary>
+        <summary><span>Data ethics</span><span class="r-dots"></span><span class="r-val">two kinds of consent</span></summary>
         <div class="r-body">
-          <p><strong>Data needed:</strong> in daily use, voice is processed on the tablet and deleted, and only reading-progress records are kept, plus an optional question about script background. Training the model needs a separate, consented set of recordings.</p>
-          <p><strong>Consent:</strong> the Personal Data Law requires consent from the person or their legal representative <a class="ref" href="#src-35">[35]</a>. That means parents' consent plus the child's own agreement, with forms in Kazakh Cyrillic, tote zhazu, Uzbek and Chinese, and the right to refuse without losing support.</p>
-          <p><strong>What could go wrong:</strong> (1) <em>Dialect bias.</em> The model hears a Xinjiang pronunciation as a mistake and tells the child their Kazakh is wrong; that is the identity harm from Section 3, automated. (2) <em>Function creep.</em> Reading data gets reused for migration control. (3) <em>Stigma.</em> Only kandas children use the tablets.</p>
+          <p><strong>Data needed:</strong> her evidence; the officer's assessment and decision; past case files, including health and children's data.</p>
+          <p><strong>Consent:</strong> her evidence is shared only with her consent. Police records are official records of a state decision, so they are reviewed without her consent. Pressure on her therefore cannot stop oversight of the police.</p>
+          <p><strong>What could go wrong:</strong> missed danger, as the VioGén audit reports <a class="ref" href="#src-c1">[C1]</a>; false alarms that wear officers out; and a bias built in from the start. A model trained on records learns where women report and police register, not where violence happens, so it could rate risk lowest where women report least.</p>
         </div>
       </details>
 
-      <div class="r-total">
-        <span>Cost per pupil, year one</span><span class="r-val" id="v-per">68,000 ₸</span>
-      </div>
-      <p class="r-foot" id="r-foot">About 150 kandas housing certificates. The state pays up to 4.56 million ₸ per family <a class="ref" href="#src-12">[12]</a>.</p>
+      <div class="r-total"><span>Cost per woman reached, year one</span><span class="r-val" id="v-per"></span></div>
+      <p class="r-foot" id="r-foot"></p>
     </div>
   </div>
 </section>
 
-<!-- ============ VERDICT ============ -->
+<!-- ================= VERDICT ================= -->
 <section class="sec sec-verdict" id="verdict" aria-labelledby="h-verdict">
   <div class="sec-head">
     <span class="sec-n" aria-hidden="true">✓</span>
-    <h2 id="h-verdict">The verdict: only under these conditions</h2>
-    <p class="lede">Көпір is cheap in electricity and moderate in money. It is expensive in trust and identity. Switch the conditions on and off to see how the answer changes.</p>
+    <h2 id="h-verdict">The verdict: only under conditions</h2>
+    <p class="lede"><span lang="kk">Із</span> is cheap in electricity and moderate in money; its real cost is the risk of a score that rations protection. Switch the conditions to see the verdict change.</p>
   </div>
 
   <div class="verdict-grid">
     <ul class="conds" id="conds">
-      <li><label><input type="checkbox" data-core="1"><span><strong>Teachers first.</strong> Each pilot school gets funded support-teacher hours, and the tablet is used only inside those lessons.</span></label></li>
-      <li><label><input type="checkbox" data-core="1"><span><strong>Fair to dialects.</strong> Error rates are tested and published for children from each origin group before launch, and a dialect pronunciation is never marked "wrong".</span></label></li>
-      <li><label><input type="checkbox" data-core="1"><span><strong>Private by design.</strong> Voice stays on the tablet, data stays in Kazakhstan, and the central database has no country-of-origin field.</span></label></li>
-      <li><label><input type="checkbox"><span><strong>Inclusion goes both ways.</strong> The child's heritage counts in the texts, and families and schools decide together whether to add Russian.</span></label></li>
-      <li><label><input type="checkbox"><span><strong>Independent evaluation.</strong> Pilot schools are compared with similar schools, and the project stops if reading has not improved after a year.</span></label></li>
+      <li><label><input type="checkbox" data-k="survivor"><span><strong>She is in control.</strong> Her evidence is shared only by her, and the survivor side is run by crisis centres, not the police.</span></label></li>
+      <li><label><input type="checkbox" data-k="money"><span><strong>No cuts elsewhere.</strong> Crisis centres and the specialised units are not cut to pay for the technology.</span></label></li>
+      <li><label><input type="checkbox" data-k="human"><span><strong>A human decides, with a reason.</strong> The score never decides; every "no measure" is explained in writing and reviewed.</span></label></li>
+      <li><label><input type="checkbox" data-k="audit"><span><strong>Tested and published.</strong> Error rates by region and language are checked before launch and every year by an independent auditor.</span></label></li>
+      <li><label><input type="checkbox" data-k="power"><span><strong>Oversight with power.</strong> Flags reach the prosecutor, and women know they can go to court.</span></label></li>
     </ul>
-
     <div class="sign" id="sign" aria-live="polite">
       <p class="sign-word" id="signWord">No</p>
-      <p class="sign-text" id="signText">With none of the conditions met, Көпір would be a tablet that tells returnee children their Kazakh is wrong. Kazakhstan should not build it.</p>
+      <p class="sign-text" id="signText"></p>
     </div>
   </div>
 
   <div class="prose">
-    <p>My verdict is a conditional yes. The first three conditions are non-negotiable: without them, the answer is no. Kazakhstan should pilot Көпір in a small number of schools, with support teachers first and the tablet second, and it should be ready to switch the tablet off. The bill shows that the main risk is not cost. It is that the tool shifts the burden of adapting onto the child while letting the school off the hook. If the state is only willing to buy tablets, it should not do this at all.</p>
+    <p>My verdict is a conditional yes, with the two parts treated differently. Kazakhstan should pilot the survivor side now, run by crisis centres, because it puts the record in the woman's hands and costs little. It should pilot the police side only if the other three conditions also hold, because its main risk is not money but a number that lets an officer, or a ministry, decide someone does not need protection. If what Kazakhstan wants is a score that tells police whom they can leave at home, it should not build <span lang="kk">Із</span> at all.</p>
   </div>
 </section>
 
-<!-- ============ TRANSPARENCY ============ -->
+<!-- ================= TRANSPARENCY ================= -->
 <section class="sec sec-plain" id="transparency" aria-labelledby="h-trans">
-  <div class="sec-head">
-    <h2 id="h-trans">AI transparency statement</h2>
-  </div>
+  <div class="sec-head"><h2 id="h-trans">AI transparency statement</h2></div>
   <div class="prose">
-    <p><strong>What AI contributed.</strong> I worked with Claude (Anthropic) throughout. It helped me compare topics, test whether my idea genuinely needed AI, search for and check sources, rewrite my draft sections, and write the code for this site, including the charts, the bill calculator and the verdict switch.</p>
-    <p><strong>What the fact-check changed.</strong> When the AI checked my draft against its sources, several claims did not hold up and were corrected or removed. The 2023 figure of 19,476 was a count only up to 1 December (the full year was 21,325). Kandas do not mainly settle in the north and east. A UNICEF claim about stigma and migration assistance did not exist in the source. A count of children from 2011 could not be traced. And several references could not be found or verified (Terlikbayeva 2017, Bazarbayeva 2018, Mahmudova 2009, Shakirov 2008, Baimoldina 2013, Galimova 2007, "Bloemradl 2022", Burde 2023), so they were dropped. An earlier AI draft also suggested an app with too few documented results to count as a case study (AILEM), and I replaced it.</p>
-    <p class="todo"><strong>What I accepted, and what I rejected and why:</strong> [Write this part yourself, in your own words. Say which suggestions you kept, which you changed or rejected, and why. This part of the statement only counts if it is honestly yours.]</p>
-    <p><strong>What I checked myself:</strong> [List the sources you opened and read. The tote zhazu spellings on this site were produced with AI help and should be confirmed by someone who reads the script.]</p>
+    <p><strong>What AI contributed.</strong> I worked with Claude (Anthropic) throughout. It helped me compare possible topics, searched for and checked sources and laws, extracted figures from the two survey reports, drafted the text, and wrote the code for this site, including the charts, the bill calculator and the verdict switch.</p>
+    <p><strong>What I rejected or changed, and why.</strong></p>
+    <ul class="checks">
+      <li>I dropped an earlier topic on returnee (kandas) children's literacy. The evidence could not show how many children actually knew the Arabic-based script, and transliteration does not need AI. I wanted a problem I care about that genuinely needs AI.</li>
+      <li>I required the survivor tool to work in seconds, because a woman living with her abuser may not have time to spend on an app, and I asked for the AI to process each entry the moment it is sent so she can review it later.</li>
+      <li>I rejected wording suggesting abusers should simply be detained. Every measure on this site is tied to what Kazakh law actually allows.</li>
+      <li>The AI first proposed the Human Rights Commissioner as the main oversight body. I rejected that because the Commissioner cannot overturn decisions and asked for bodies with real power. That led to the supervisor, the prosecutor and the investigating court, which we then checked in the law.</li>
+      <li>I asked what happens if a woman is pressured to withhold consent. That is why her own evidence and the police records are treated separately.</li>
+      <li>I asked for newer research and limited the academic sources to ten, which replaced several older studies.</li>
+      <li>I dropped a widely shared figure (34,059 sanctioned in 2025) because its source did not say what it counted.</li>
+      <li>Checking caught errors in the AI's drafts: it had used a preprint's 43.9% figure instead of the published 29%, and had misread the VioGén audit's 35% (women not told their score, not women who knew it). Both are corrected.</li>
+    </ul>
+    <p><strong>What I accepted.</strong> Combining a survivor tool with a police tool, using VioGén and AinoAid as case studies, the two-track oversight design, and the cost assumptions, which are labelled as assumptions.</p>
+    <p><strong>Checking.</strong> Every statistic links to its source. Figures from the two survey reports give the PDF page, so anyone can check them.</p>
   </div>
 </section>
 
-<!-- ============ SOURCES ============ -->
+<!-- ================= SOURCES ================= -->
 <section class="sec sec-plain" id="sources" aria-labelledby="h-src">
   <div class="sec-head"><h2 id="h-src">Sources</h2></div>
-  <ol class="sources" id="sourceList">
-    <li id="src-1">Ministry of Labour and Social Protection, via Otandastar Qory (28 Jan 2026). <a href="https://oq.gov.kz/en/news/1467">Approximately 16.8 thousand ethnic Kazakhs received kandas status in 2025</a>.</li>
-    <li id="src-2">Tengrinews (2026). <a href="https://en.tengrinews.kz/kazakhstan_news/how-many-kandas-kazakhstan-accepted-in-2025-statistics-270826">How many kandas Kazakhstan accepted in 2025: statistics</a>.</li>
-    <li id="src-3">Otandastar Qory (16 Jan 2024). <a href="https://oq.gov.kz/en/news/970">21,325 ethnic Kazakhs obtained kandas status in 2023</a>.</li>
-    <li id="src-4">Otandastar Qory (8 Jan 2025). <a href="https://oq.gov.kz/en/news/1213">Regional quota for kandas and migrants for 2025 approved</a> (states 2024 full-year total).</li>
-    <li id="src-5">Tengrinews (24 Dec 2024). <a href="https://en.tengrinews.kz/kazakhstan_news/over-11-million-ethnic-kazakhs-returned-to-homeland-since-265825">Over 1.1 million ethnic Kazakhs returned to homeland since 1991</a>.</li>
-    <li id="src-6">Kapital.kz (Jan 2023). <a href="https://kapital.kz/gosudarstvo/111949/uvelichena-kvota-na-priyem-kandasov-i-pereselentsev.html">Увеличена квота на прием кандасов и переселенцев</a> (2022 total: 19,178).</li>
-    <li id="src-7">Nur.kz (Dec 2022). <a href="https://www.nur.kz/society/2001099-skolko-etnicheskih-kazahov-vernulos-v-kazahstan-s-1991-goda/">Сколько этнических казахов вернулось в Казахстан с 1991 года</a>.</li>
-    <li id="src-8">El.kz (May 2023). <a href="https://el.kz/en/amp/over-6000-ethnic-kazakhs-receive-kandas-status_73252/">Over 6,000 ethnic Kazakhs receive kandas status</a> (settlement by region).</li>
-    <li id="src-9">Zakon.kz (Jan 2026). <a href="https://www.zakon.kz/obshestvo/6505900-nazvano-gosudarstvolider-po-chislu-pribyvshikh-v-kazakhstan-kandasov.html">Названо государство-лидер по числу прибывших в Казахстан кандасов</a>.</li>
-    <li id="src-10">Kazinform (2026). <a href="https://www.inform.kz/ru/bolee-dvuh-tisyach-kandasov-postupili-vvuzi-kazahstana-pokvote-902fa7c0">Более двух тысяч кандасов поступили в вузы Казахстана по квоте</a>.</li>
-    <li id="src-11">Office of the Prime Minister (2024). <a href="https://primeminister.kz/en/news/zhana-granttar-men-infrakurylym-zhobalary-2024-2025-oku-zhylynda-studentterge-ne-dayyndady-28912">New grants and infrastructure projects for the 2024–2025 academic year</a>.</li>
-    <li id="src-12">Otandastar Qory (29 Oct 2025). <a href="https://oq.gov.kz/en/qazalemnews/1295">Over 11 thousand ethnic Kazakhs granted kandas status since the beginning of 2025</a> (housing certificate up to 4.56 m ₸).</li>
-    <li id="src-13">Dossanova, A., Krause, M., Abdikadyr, I., Uteshkalieva, N., Mira, M., &amp; Khassanova, M. (2026). <a href="https://ijbmc.org/index.php/ijbmc/article/view/1579">Linguistic and social adaptation challenges of repatriated Kazakh children in Kazakhstani schools</a>. <em>International Journal of Body, Mind and Culture</em>, 13(7).</li>
-    <li id="src-14">Dossanova, A. M., &amp; Abdikadyr, I. A. (2021). <a href="https://doi.org/10.26577/EJPh.2021.v182.i2.ph4">Adaptation of repatriate-Kazakh children</a>. <em>Eurasian Journal of Philology</em>, 182(2), 33–39.</li>
-    <li id="src-15">Valieva, F., Sagimbayeva, J., Kurmanayeva, D., &amp; Tazhitova, G. (2019). <a href="https://www.mdpi.com/2227-7102/9/3/164">The socio-linguistic adaptation of migrants: The case of oralman students' studying in Kazakhstan</a>. <em>Education Sciences</em>, 9(3), 164.</li>
-    <li id="src-16">Raimova, Zh. (2026). <a href="https://nur.nu.edu.kz/items/1f15a2c0-952f-4db8-9f0d-2520e4eacd7d">Exploring family language policy and sociolinguistic challenges among repatriate families in Kazakhstan</a>. MA thesis, Nazarbayev University.</li>
-    <li id="src-17">Bokayev, B. (2013). <a href="https://eujournal.org/index.php/esj/article/view/1399">Language, ethnic identity, and adaptation of ethnic migrants in post-Soviet Kazakhstan</a>. <em>European Scientific Journal</em>.</li>
-    <li id="src-18">Saiken, A. (n.d.). <a href="https://nur.nu.edu.kz/bitstreams/751be078-18f4-432c-86ca-b3fddc4e4931/download">Adaptation strategies and identity formation among Xinjiang Kazakhs in Kazakhstan</a>. MA thesis, Nazarbayev University.</li>
-    <li id="src-19"><em>Frontiers in Sociology</em> (2024). <a href="https://www.frontiersin.org/articles/10.3389/fsoc.2024.1452785/full">Transnational practices of Kazakh repatriates: The role of family in the adaptation of ethnic Kazakh students from Mongolia and China</a>.</li>
-    <li id="src-20">Oka, N. (2013). <a href="http://hdl.handle.net/2344/1218">A note on ethnic return migration policy in Kazakhstan: Changing priorities and a growing dilemma</a>. IDE Discussion Paper 394.</li>
-    <li id="src-21">Cerny, A. (2010). <a href="https://doi.org/10.3362/2041-7136.2010.013">Going where the grass is greener: China Kazaks and the oralman immigration policy in Kazakhstan</a>. <em>Pastoralism</em>, 1(2).</li>
-    <li id="src-22">Tsuda, T. (Ed.) (2009). <em>Diasporic Homecomings: Ethnic Return Migration in Comparative Perspective</em>. Stanford University Press.</li>
-    <li id="src-23">Cummins, J. (2000). <em>Language, Power and Pedagogy: Bilingual Children in the Crossfire</em>. Multilingual Matters.</li>
-    <li id="src-24">Muralidharan, K., Singh, A., &amp; Ganimian, A. J. (2019). <a href="https://www.aeaweb.org/doi/10.1257/aer.20171112">Disrupting education? Experimental evidence on technology-aided instruction in India</a>. <em>American Economic Review</em>, 109(4), 1426–60.</li>
-    <li id="src-25">Google (2019). <a href="https://services.google.com/fh/files/misc/read_along_pilot_findings.pdf">Read Along: Initial pilot findings</a>; see also <a href="https://techcrunch.com/?p=1792765">TechCrunch, Mar 2019</a>.</li>
-    <li id="src-26">De Simone, M., Tiberti, F., Barron Rodriguez, M., Manolio, F., Mosuro, W., &amp; Dikoru, E. J. (2025). <a href="https://openknowledge.worldbank.org/entities/publication/15e1ff08-15ae-4f7a-b2a8-d146e6c113ee">From chalkboards to chatbots: Evaluating the impact of generative AI on learning outcomes in Nigeria</a>. World Bank Policy Research Working Paper 11125.</li>
-    <li id="src-27">UNICEF Greece (2023). <a href="https://www.unicef.org/greece/en/stories/akelius-e-learning-platform-supports-refugee-children-greek-schools">Akelius: the e-learning platform that supports refugee children in Greek schools</a>; Karamperidou et al. (2020), <a href="https://blogs.unicef.org/innocenti/media/5926/file/UNICEF-Unlocking-Learning-Greece-2020.pdf">Unlocking Learning</a>, UNICEF Innocenti.</li>
-    <li id="src-28">UNICEF Innocenti (2021). <a href="https://inee.org/resources/unlocking-learning-implementation-and-effectiveness-digital-learning-syrian-refugees">Unlocking Learning: Digital learning for Syrian refugees in Lebanon</a>.</li>
-    <li id="src-29">Khassanov, Y., Mussakhojayeva, S., Mirzakhmetov, A., Adiyev, A., Nurpeiissov, M., &amp; Varol, H. A. (2021). <a href="https://arxiv.org/abs/2009.10334">A crowdsourced open-source Kazakh speech corpus and initial speech recognition baseline</a>. ISSAI, Nazarbayev University.</li>
-    <li id="src-30">Radio Free Asia (Oct 2017). <a href="https://www.rfa.org/english/news/uyghur/ethnic-textbooks-10132017135316.html">China bans use of Uyghur, Kazakh textbooks, materials in Xinjiang schools</a>.</li>
-    <li id="src-31">Congressional-Executive Commission on China. <a href="https://www.cecc.gov/publications/commission-analysis/bilingual-policy-reduces-use-of-ethnic-minority-languages-in">Bilingual policy reduces use of ethnic minority languages in Xinjiang schools</a>.</li>
-    <li id="src-32">EY Kazakhstan (Dec 2025). <a href="https://www.ey.com/en_kz/technical/tax-alerts/2025/12/law-on-artificial-intelligence-kazakhstan">Law on Artificial Intelligence</a>.</li>
-    <li id="src-33">Tengrinews (Jan 2026). <a href="https://en.tengrinews.kz/kazakhstan_news/new-law-comes-into-force-in-kazakhstan-270729">New law comes into force in Kazakhstan</a>.</li>
-    <li id="src-34">CASRAI (2026). <a href="https://casrai.org/guides/kazakhstan-ai-law-230-viii">Kazakhstan's AI Law No. 230-VIII: What it actually requires</a> (secondary summary; check against the statute).</li>
-    <li id="src-35">Law of the Republic of Kazakhstan No. 94-V <a href="https://adilet.zan.kz/eng/docs/Z1300000094">On Personal Data and Their Protection</a> (2013, as amended).</li>
-    <li id="src-36">AmCham Kazakhstan (May 2026). <a href="https://amcham.kz/wp-content/uploads/2026/05/2026-05-15_AmCham_DataLocalization_Issue-Brief_ENG_v5.pdf">Data localization issue brief</a>.</li>
-    <li id="src-37">JD Supra (2026). <a href="https://www.jdsupra.com/legalnews/global-regulatory-tracker-kazakhstan-6847837/">Global regulatory tracker: Kazakhstan</a>.</li>
-    <li id="src-38">The Astana Times (2026). <a href="https://astanatimes.com/?p=116178">Coal accounts for over 60% of Kazakhstan's electricity as its energy mix diversifies</a>.</li>
-    <li id="src-39">Samruk-Energy (2025). <a href="https://ar2024.samruk-energy.kz/en/kazakhstan-power-and-coal-markets.html">Annual report 2024: Overview of the electricity and coal market</a>.</li>
-    <li id="src-40">Elsworth, C., Huang, K., Patterson, D., et al. (2025). <a href="https://arxiv.org/abs/2508.15734">Measuring the environmental impact of delivering AI at Google Scale</a>. arXiv:2508.15734.</li>
-    <li id="src-41">UNICEF Kazakhstan (Feb 2026). <a href="https://www.unicef.org/kazakhstan/blog/%D0%BA%D0%B0%D0%BA-%D0%BA%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD-%D0%B2%D0%BD%D0%B5%D0%B4%D1%80%D1%8F%D0%B5%D1%82-%D1%81%D1%82%D0%B0%D0%BD%D0%B4%D0%B0%D1%80%D1%82%D1%8B-unicef-%D0%B4%D0%BB%D1%8F-%D0%B1%D0%B5%D0%B7%D0%BE%D0%BF%D0%B0%D1%81%D0%BD%D0%BE%D0%B3%D0%BE-%D0%B8%D0%B8-%D0%B4%D0%BB%D1%8F-%D0%B4%D0%B5%D1%82%D0%B5%D0%B9">Как Казахстан внедряет стандарты UNICEF для безопасного ИИ для детей</a> (on UNICEF Guidance on AI and Children 3.0).</li>
-    <li id="src-42">Ministry of Foreign Affairs of Kazakhstan (Jan 2026). <a href="https://www.gov.kz/memleket/entities/mfa/press/news/details/1143949?lang=en">Kazakhstan implements UNESCO best international practices in artificial intelligence</a>.</li>
-    <li id="src-43">ISSAI, Nazarbayev University (2020). <a href="https://issai.nu.edu.kz/?p=2943">ISSAI first anniversary: Kazakh Speech Corpus</a>.</li>
-    <li id="src-44">UNDP Kazakhstan (2013). <a href="https://www.undp.org/kazakhstan/publications/status-oralmans-kazakhstan-overview">Status of Oralmans in Kazakhstan: Overview</a>.</li>
-    <li id="src-45">El.kz (Sept 2023). <a href="https://el.kz/en/1123200-ethnic-kazakhs-returned-to-kazakhstan_91000">1,123,200 ethnic Kazakhs returned to Kazakhstan</a> ("one window" status through embassies).</li>
+  <h3 class="src-h">Data, reports and law</h3>
+  <ol class="sources">
+    <li id="src-1">[1] Statistics Committee of Kazakhstan, UN Women, UNFPA &amp; WHO (2017). <em>Sample Survey on Violence Against Women in Kazakhstan.</em> <a href="https://eca.unwomen.org/en/digital-library/publications/2018/08/sample-survey-on-violence-against-women-in-kazakhstan">Report page</a> · <a href="https://eca.unwomen.org/sites/default/files/Field%20Office%20ECA/Attachments/Publications/Country/MCO-Kazakhstan/Kazakhstan%20VAW%20reportfinal%20ENGcompressed.pdf">PDF</a>. Page numbers are PDF pages.</li>
+    <li id="src-2">[2] Bureau of National Statistics &amp; UNICEF (2025). <em>Kazakhstan Multiple Indicator Cluster Survey 2024: Survey Findings Report</em>, Table PR.7.1W (PDF p. 230, printed p. 216). <a href="https://stat.gov.kz/en/news/kazakhstan-presents-results-of-the-multiple-indicator-cluster-survey-mics/">Bureau announcement</a> · <a href="https://www.unicef.org/kazakhstan/en/press-releases/latest-mics-survey-kazakhstan-reveals-progress-and-challenges-women-and-children">UNICEF release</a>.</li>
+    <li id="src-3">[3] Human Rights Commissioner of Kazakhstan (2025). <a href="https://www.gov.kz/uploads/2025/6/24/9ebc3587f1c9940aea1485a312577f65_original.560800.pdf">Statement on countering family and domestic violence</a> (criminal cases 2020–2024, protective orders 2024, crisis-centre spending).</li>
+    <li id="src-4">[4] Tengrinews (17 Dec 2025). <a href="https://tengrinews.kz/kazakhstan_news/nashumevshiy-zakon-zaschite-jenschin-detey-on-izmenil-588093/">Interior Ministry statistics on domestic violence for 2025</a>; also reported by <a href="https://www.lada.kz/kazakhstan-news/147154-kazhdyi-udar-na-uchiote-kak-mvd-kazakhstana-schitaet-poboi-v-semiakh.html">Lada.kz</a>.</li>
+    <li id="src-5">[5] Zakon.kz (6 Oct 2026). <a href="https://www.zakon.kz/obshestvo/6533988-snizhenie-ubiystv-na-11-glava-mvd-otchitalsya-ob-itogakh-borby-s-semeynym-nasiliem.html">Interior Minister's report on January–September 2026</a>.</li>
+    <li id="src-6">[6] Human Rights Watch (17 Oct 2019). <a href="https://www.hrw.org/news/2019/10/17/kazakhstan-little-help-domestic-violence-survivors">Kazakhstan: Little Help for Domestic Violence Survivors</a>.</li>
+    <li id="src-7">[7] Human Rights Watch (22 Apr 2024). <a href="https://www.hrw.org/news/2024/04/22/kazakhstan-new-law-protect-women-improved-incomplete">Kazakhstan: New Law to Protect Women Improved, Incomplete</a>.</li>
+    <li id="src-8">[8] Government of Kazakhstan (2024). <a href="https://www.gov.kz/uploads/2024/4/17/92f06d6ccda3c0e7a7c61e3c74603541_original.519990.pdf">Factsheet on the laws on women's rights and children's safety</a>.</li>
+    <li id="src-9">[9] The Astana Times (May 2025). <a href="https://astanatimes.com/2025/05/one-year-since-kazakhstan-criminalized-domestic-violence-what-numbers-reveal/">One Year Since Kazakhstan Criminalized Domestic Violence: What Numbers Reveal</a>.</li>
+    <li id="src-10">[10] The Times of Central Asia (20 Jun 2025). <a href="https://timesca.com/kazakhstans-domestic-violence-law-brings-progress-amid-ongoing-challenges/">Kazakhstan's Domestic Violence Law Brings Progress Amid Ongoing Challenges</a> (estimate by Marat Abishev, General Prosecutor's Office).</li>
+    <li id="src-11">[11] The Times of Central Asia (5 Dec 2025). <a href="https://timesca.com/saltanat-law-one-year-on-domestic-violence-crackdown-hidden-barriers-remain/">Saltanat Law One Year On: Domestic Violence Crackdown, Hidden Barriers Remain</a>.</li>
+    <li id="src-12">[12] Tengrinews (5 Jun 2026). <a href="https://tengrinews.kz/article/jenschina-poboi-zakon-protivorechiya-borbe-kazahstana-4111/">Женщина, побои и закон</a> (repeal of the 2009 law and merger into the Law on the Prevention of Offences).</li>
+    <li id="src-13">[13] Law of the Republic of Kazakhstan No. 245-VIII «О профилактике правонарушений», 30 Dec 2025: <a href="https://zakon.uchet.kz/rus/docs/Z2500000245">full text</a>; <a href="https://kodeksy-kz.com/ka/o_profilaktike_pravonarushenij/60.htm">Art. 60 (protective order)</a>; <a href="https://kodeksy-kz.com/ka/o_profilaktike_pravonarushenij/72.htm">Art. 72</a>; <a href="https://www.gov.kz/memleket/entities/kostanai-mendykarin-krasnopresnen/press/news/details/1151041?lang=ru">in force from 2 March 2026</a>. Official text: <a href="https://adilet.zan.kz/rus/docs/Z2500000245">adilet.zan.kz</a>.</li>
+    <li id="src-14">[14] Supreme Court of Kazakhstan, Normative Resolution No. 3 (2012) on Article 106 of the Criminal Procedure Code, <a href="https://adilet.zan.kz/rus/docs/P120000003S">text</a>, as amended by <a href="https://adilet.zan.kz/rus/docs/P260000005S">Resolution No. 5 of 20 May 2026</a> (complaints to the investigating judge, including refusal to accept a report).</li>
+    <li id="src-15">[15] Constitutional Law No. 155-VII «О прокуратуре», 5 Nov 2022, Art. 10: <a href="https://zakon.uchet.kz/rus/docs/Z2200000155">text</a> · <a href="https://adilet.zan.kz/rus/docs/Z2200000155">adilet.zan.kz</a>. Bureau open-data indicator on women's appeals to police (data from the Prosecutor General's legal statistics committee): <a href="https://stat.gov.kz/ru/open-data/474265/474330/">stat.gov.kz</a>.</li>
+    <li id="src-16">[16] Bizmedia.kz (13 Feb 2025). <a href="https://bizmedia.kz/2025-02-13-v-kazahstane-sozdano-podrazdelenie-policzii-dlya-borby-s-bytovym-nasiliem/">В Казахстане создано подразделение полиции для борьбы с бытовым насилием</a> (1,000 staff from existing personnel, no additional budget).</li>
+    <li id="src-17">[17] Law No. 94-V <a href="https://adilet.zan.kz/eng/docs/Z1300000094">On Personal Data and Their Protection</a> (2013, as amended), data localisation requirement.</li>
+    <li id="src-18">[18] Law No. 230-VIII On Artificial Intelligence: <a href="https://en.tengrinews.kz/kazakhstan_news/new-law-comes-into-force-in-kazakhstan-270729">entry into force</a>; <a href="https://www.ey.com/en_kz/technical/tax-alerts/2025/12/law-on-artificial-intelligence-kazakhstan">EY summary</a>; <a href="https://casrai.org/guides/kazakhstan-ai-law-230-viii">CASRAI guide</a> (risk levels, autonomy, prohibited practices; secondary summaries).</li>
+    <li id="src-19">[19] Ministry of Foreign Affairs (19 Jan 2026). <a href="https://www.gov.kz/memleket/entities/mfa/press/news/details/1143949?lang=en">Kazakhstan implements UNESCO best international practices in AI</a> (UNESCO Readiness Assessment Methodology).</li>
+    <li id="src-20">[20] The Astana Times (15 Jun 2026). <a href="https://astanatimes.com/?p=116178">Coal Accounts for Over 60% of Kazakhstan's Electricity</a>; Samruk-Energy, <a href="https://ar2024.samruk-energy.kz/en/kazakhstan-power-and-coal-markets.html">Annual Report 2024: power and coal markets</a> (117.9 billion kWh generated in 2024).</li>
+    <li id="src-21">[21] Elsworth, C., Huang, K., Patterson, D., et al. (2025). <a href="https://arxiv.org/abs/2508.15734">Measuring the environmental impact of delivering AI at Google Scale</a>. arXiv:2508.15734.</li>
+    <li id="src-22">[22] Codes of the Republic of Kazakhstan (2014): <a href="https://adilet.zan.kz/rus/docs/K1400000235">Code of Administrative Offences</a> (Art. 73, family and domestic relations); <a href="https://adilet.zan.kz/rus/docs/K1400000231">Criminal Procedure Code</a> (Art. 128, detention); <a href="https://adilet.zan.kz/rus/docs/K1400000226">Criminal Code</a> (Arts. 108-1 and 109-1).</li>
+  </ol>
+
+  <h3 class="src-h">Academic research</h3>
+  <ol class="sources">
+    <li id="src-r1">[R1] Kainazarova, M., Abdukarimova, Z., Aitkhozhin, K., &amp; Bayanbayeva, A. (2026). Quantifying a hidden crisis: Challenges in addressing domestic violence against women in Kazakhstan. <em>International Journal of Discrimination and the Law</em>, 26(2), 212–232. <a href="https://doi.org/10.1177/13582291251337325">doi:10.1177/13582291251337325</a></li>
+    <li id="src-r2">[R2] Karabay, A., Akhmetova, S., &amp; Durrani, N. (2024). Lessons learned from the experiences of domestic violence service providers in times of crisis: Insights from a Central Asian country. <em>International Journal of Environmental Research and Public Health</em>, 21(10), 1326. <a href="https://www.mdpi.com/1660-4601/21/10/1326">doi:10.3390/ijerph21101326</a></li>
+    <li id="src-r3">[R3] Akhmetova, S., Durrani, N., &amp; Karabay, A. (2025). Intimate partner violence and the culture of shame in Kazakhstan: Voices of survivors and violence against women professionals. <em>Violence Against Women.</em> <a href="https://research.nu.edu.kz/en/publications/intimate-partner-violence-and-the-culture-of-shame-in-kazakhstan-/">doi:10.1177/10778012251384563</a></li>
+    <li id="src-r4">[R4] Childress, S., Shrestha, N., Anekwe, K., Wong, M. D., &amp; Dudovitz, R. N. (2023). Factors inhibiting institutional responses to domestic violence in Kyrgyzstan. <em>Central Asian Survey</em>, 42(2), 254–273. <a href="https://escholarship.org/uc/item/2693r6kn">doi:10.1080/02634937.2022.2147146</a></li>
+    <li id="src-r5">[R5] Akisheva, A. (2026). Questions of harmonization with international legal and policy standards on violence against women and girls in Central Asia. <em>International Journal of Discrimination and the Law</em>, 26(1). <a href="https://journals.sagepub.com/doi/10.1177/13582291251327140">doi:10.1177/13582291251327140</a></li>
+    <li id="src-r6">[R6] Connor, R. A., Johnson, L., Bridgeman, M., Shokraneh, F., &amp; Hakobyan, B. (2024). Outcomes associated with arrest for domestic violence: A systematic review and meta-analysis. <em>Trauma, Violence, &amp; Abuse</em>, 26(3). <a href="https://www.ojp.gov/ncjrs/virtual-library/abstracts/outcomes-associated-arrest-domestic-violence-systematic-review-and">Abstract</a></li>
+    <li id="src-r7">[R7] Terlikbayeva, A., Primbetova, S., Gatanaga, O. S., et al. (2025). UMAI-WINGS: Evaluating the effectiveness of implementing mHealth intimate partner violence prevention intervention in reducing intimate partner violence among women from key affected populations in Kazakhstan using a community-based approach. <em>Behavioral Sciences</em>, 15(5), 641. <a href="https://www.mdpi.com/2076-328X/15/5/641">doi:10.3390/bs15050641</a></li>
+    <li id="src-r8">[R8] López-Ossorio, J. J., Loinaz, I., &amp; González-Álvarez, J. L. (2019). Protocolo para la valoración policial del riesgo de violencia de género (VPR4.0): revisión de su funcionamiento. <em>Revista Española de Medicina Legal</em>, 45, 52–58. <a href="https://www.elsevier.es/es-revista-revista-espanola-medicina-legal-285-articulo-protocolo-valoracion-policial-del-riesgo-S0377473219300033">Article</a></li>
+    <li id="src-r9">[R9] Grogger, J., Gupta, S., Ivandic, R., &amp; Kirchmaier, T. (2021). Comparing conventional and machine-learning approaches to risk assessment in domestic abuse cases. <em>Journal of Empirical Legal Studies</em>, 18(1), 90–130. <a href="https://onlinelibrary.wiley.com/doi/full/10.1111/jels.12276">doi:10.1111/jels.12276</a></li>
+    <li id="src-r10">[R10] Vogt, C., Giljohann, S., Köpsel, N., et al. (2025). From needs assessment to usability testing: Evaluating the AinoAid™ chatbot for domestic violence support. <em>BMC Women's Health.</em> <a href="https://link.springer.com/article/10.1186/s12905-025-04202-3">doi:10.1186/s12905-025-04202-3</a></li>
+  </ol>
+
+  <h3 class="src-h">Case-study evidence</h3>
+  <ol class="sources">
+    <li id="src-c1">[C1] Eticas Foundation (2022). <a href="https://eticasfoundation.org/wp-content/uploads/2024/12/Eticas_Audit_of_VioGen.pdf">The External Audit of the VioGén System</a> (pp. 11, 13, 25, 34). See also <a href="https://algorithmwatch.org/en/viogen-algorithm-gender-violence/">AlgorithmWatch (2020)</a>.</li>
   </ol>
 </section>
 
 </main>
 
 <footer class="foot">
-  <p>Final project for PLS 419, 2026. Built with AI assistance; see the <a href="#transparency">transparency statement</a>.</p>
+  <p>Final project for PLS 419, 2026. If you are experiencing violence in Kazakhstan, call 102 (police) or 111 (the helpline for women and children).</p>
 </footer>
 
 <script src="app.js"></script>
