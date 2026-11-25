@@ -544,3 +544,16 @@ input[type="range"] { width: 100%; accent-color: var(--red); }
   .lens-panel[hidden] { display: block !important; }
   .log-line, .stamp, .timeline li { opacity: 1; transform: none; }
 }
+
+/* where AI adds value */
+.ai-split { background: var(--ink-2); border-radius: 22px; padding: 24px 26px 14px; margin: 1.4rem auto 2rem; }
+.ai-split-h { font-family: var(--display); font-weight: 800; font-size: 1.35rem; color: #fff; margin: 0 0 .8rem; }
+.ai-table { width: 100%; border-collapse: collapse; font-size: .94rem; margin-bottom: 1rem; }
+.ai-table td { padding: 9px 10px 9px 0; border-bottom: 1px solid #3a3358; vertical-align: middle; }
+.ai-table td:last-child { text-align: right; white-space: nowrap; font-weight: 650; }
+.ai-table .no { color: #b9b2d8; }
+.ai-table .yes { color: #ff8590; }
+.ai-table .maybe { color: #9db3ff; }
+.ai-split > p:last-child { color: #d6d1ea; font-size: .95rem; margin: 0 0 .6rem; max-width: 70ch; }
+@media (max-width: 600px) { .ai-table td:last-child { white-space: normal; } }
+.trust-card:first-child .ref { color: #fff; text-decoration: underline; }

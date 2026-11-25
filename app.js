@@ -211,7 +211,7 @@
   /* ---------- Figure 5: the register ---------- */
   const ref = (id, t) => `<a class="ref" href="#src-${id}">[${t}]</a>`;
   const register = [
-    ["How many women experience partner violence", "17%", "2017 survey " + ref("1", "1")],
+    ["How many women experience partner violence", "17%", "2015 survey " + ref("1", "1")],
     ["Women who say wife-beating can be justified", "3.5%", "2024 " + ref("2", "2")],
     ["People held liable for domestic offences", "96,194", "2025 " + ref("4", "4")],
     ["Protective orders issued", "85,035", "2024 " + ref("3", "3")],
@@ -220,11 +220,11 @@
     ["Reports police refused to register", null, 1],
     ["Call-outs that ended with no measure", null, 1],
     ["Repeat call-outs to the same address", null, 0],
-    ["Women in shelters and institutions", null, 0]
+    ["Any prevalence figure after 2015", null, 0]
   ];
   $("#register").innerHTML = register.map(([q, v, note]) => v
     ? `<tr><td>${q}</td><td><span class="reg-val">${v}</span> <small class="reg-src">${note}</small></td></tr>`
-    : `<tr class="${note ? "reg-key" : ""}"><td>${q}</td><td><span class="redact"><span class="redact-bar" aria-hidden="true"></span><span class="redact-tag">not recorded</span></span></td></tr>`).join("");
+    : `<tr class="${note ? "reg-key" : ""}"><td>${q}</td><td><span class="redact"><span class="redact-bar" aria-hidden="true"></span><span class="redact-tag">not published</span></span></td></tr>`).join("");
   onceVisible($("#fig5"), () => $("#fig5").classList.add("is-in"), 0.45);
 
   /* ---------- tabs (research lenses and the door) ---------- */
@@ -242,7 +242,7 @@
 
   const measures = [
     { h: "Detention", p: "Only where the law gives grounds: administrative detention under the Code of Administrative Infractions, or detention of a suspect under Article 128 of the Criminal Procedure Code. It is never automatic.", law: `Basis: ${ref("13", "13, Art. 60(1)")} ${ref("22", "22")}`, rec: "the grounds used, the time and the officer." },
-    { h: "Protective order", p: "If there are no grounds for detention, police issue an order on the fact of the unlawful acts; it does not depend on her complaint. For 30 days it bars violence, searching for, pursuing or visiting her against her will, and calls or other contact. She gets a copy the same day, and police check at least every seven days.", law: `Basis: ${ref("13", "13, Art. 60")}`, rec: "the order, its end date and every check." },
+    { h: "Protective order", p: "Without grounds for detention, police issue an order on the fact of the unlawful acts, not on her complaint. For 30 days it bars violence, pursuing or visiting her against her will, and any contact. She gets a copy that day; police check at least weekly.", law: `Basis: ${ref("13", "13, Art. 60")}`, rec: "the order, its end date and every check." },
     { h: "Administrative case", p: "A protocol under Article 73 of the Code of Administrative Infractions, illegal actions in family and household relations. A court decides the penalty.", law: `Basis: ${ref("22", "22")} ${ref("r1", "R1, p. 226")}`, rec: "the protocol number, so the case can be followed." },
     { h: "Criminal report", p: "Since 16 June 2024, battery (Criminal Code, Art. 109-1) and minor injury to health (Art. 108-1) are crimes again, and police must register the case even without her complaint.", law: `Basis: ${ref("22", "22")} ${ref("7", "7")} ${ref("8", "8")}`, rec: "the registration number in the crime register." },
     { h: "No measure", p: "Police must respond to every report. If the officer still takes no measure, Із asks for a reason; high-risk cases go to his supervisor. She gets a copy and is told she can complain to the prosecutor or an investigating court.", law: `Basis: ${ref("13", "13, Art. 72(3)")} ${ref("15", "15")} ${ref("14", "14")}`, rec: "the reason. Today nothing is recorded." }
@@ -271,11 +271,11 @@
     const later = C.run + C.audit + O * C.tablet * 0.25;
     $("#r-meta").textContent = `${fmt(U)} women, ${E} entries a month, ${fmt(P)} police assessments, ${fmt(O)} officers`;
     setVal($("#v-env"), (kwh / 1000).toFixed(1) + " MWh");
-    $("#env-detail").innerHTML = `At these settings <span lang="kk">Із</span> uses about <strong>${(kwh / 1000).toFixed(1)} MWh a year</strong>: ${fmt(reqKWh)} kWh for ${fmt(req)} AI requests, ${fmt(C.serverKWh)} kWh for servers and ${fmt(tabKWh)} kWh for tablets. That is about ${(kwh / C.natKWh * 100).toFixed(5)}% of the 117.9 billion kWh Kazakhstan generated in 2024 ${ref("20", "20")}, roughly ${fmt(tCO2)} tonnes of CO₂ and ${fmt(water)} litres of data-centre water.`;
+    $("#env-detail").innerHTML = `At these settings <span lang="kk">Із</span> uses about <strong>${(kwh / 1000).toFixed(1)} MWh a year</strong>: ${fmt(reqKWh)} kWh for ${fmt(req)} AI requests, ${fmt(C.serverKWh)} kWh for storage and app servers and ${fmt(tabKWh)} kWh for tablets. That is about ${(kwh / C.natKWh * 100).toFixed(5)}% of the 117.9 billion kWh Kazakhstan generated in 2024 ${ref("20", "20")}, roughly ${fmt(tCO2)} tonnes of CO₂ and ${fmt(water)} litres of data-centre water.`;
     setVal($("#v-eco"), fmt(cost / 1e6) + " m ₸");
     $("#eco-detail").innerHTML = `Year one costs about <strong>${fmt(cost / 1e6)} million ₸</strong> (≈ $${(cost / C.usd / 1e6).toFixed(2)} million): building both parts (${C.build / 1e6} m ₸), running them (${C.run / 1e6} m ₸), the independent audit (${C.audit / 1e6} m ₸), ${fmt(O)} tablets (${fmt(O * C.tablet / 1e6)} m ₸) and training (${fmt(O * C.train / 1e6)} m ₸). From year two, about ${fmt(later / 1e6)} million ₸ a year, if a quarter of the tablets are replaced each year.`;
     setVal($("#v-per"), fmt(Math.round(cost / (U + P) / 100) * 100) + " ₸");
-    $("#r-foot").innerHTML = `"Women reached" counts app users plus women at assessed call-outs. Year one equals about ${Math.round(cost / C.crisis * 100)}% of the almost 3 billion ₸ spent on crisis centres in 2024 ${ref("3", "3")}.`;
+    $("#r-foot").innerHTML = `A rough measure: app users plus assessed call-outs, so one woman may count more than once. Year one equals about ${Math.round(cost / C.crisis * 100)}% of the almost 3 billion ₸ spent on crisis centres in 2024 ${ref("3", "3")}.`;
   }
   Object.values(inp).forEach((i) => i.addEventListener("input", bill));
   bill();
