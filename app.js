@@ -220,11 +220,11 @@
     ["Reports police refused to register", null, 1],
     ["Call-outs that ended with no measure", null, 1],
     ["Repeat call-outs to the same address", null, 0],
-    ["Any prevalence figure after 2015", null, 0]
+    ["A national prevalence survey after 2015", null, 0]
   ];
   $("#register").innerHTML = register.map(([q, v, note]) => v
     ? `<tr><td>${q}</td><td><span class="reg-val">${v}</span> <small class="reg-src">${note}</small></td></tr>`
-    : `<tr class="${note ? "reg-key" : ""}"><td>${q}</td><td><span class="redact"><span class="redact-bar" aria-hidden="true"></span><span class="redact-tag">not published</span></span></td></tr>`).join("");
+    : `<tr class="${note ? "reg-key" : ""}"><td>${q}</td><td><span class="redact"><span class="redact-bar" aria-hidden="true"></span><span class="redact-tag">none found</span></span></td></tr>`).join("");
   onceVisible($("#fig5"), () => $("#fig5").classList.add("is-in"), 0.45);
 
   /* ---------- tabs (research lenses and the door) ---------- */
