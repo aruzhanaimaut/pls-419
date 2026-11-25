@@ -6,9 +6,9 @@
 <meta name="color-scheme" content="light">
 <title>Із: making a call for help leave a trace. Domestic violence and AI in Kazakhstan</title>
 <meta name="description" content="Half of women in Kazakhstan who experience partner violence never tell anyone; fewer than one in ten tell the police. A PLS 419 project on the police response to domestic violence: the data, the research, and an AI tool with its full bill.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231c1733'/%3E%3Ccircle cx='22' cy='40' r='6' fill='%23e8890c'/%3E%3Ccircle cx='42' cy='26' r='6' fill='%23e8890c' opacity='.55'/%3E%3C/svg%3E">
-<link rel="preload" href="fonts/literata.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="fonts/golos.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2315121f'/%3E%3Ccircle cx='22' cy='32' r='9' fill='%23d62839'/%3E%3Ccircle cx='42' cy='32' r='9' fill='%232350d1'/%3E%3C/svg%3E">
+<link rel="preload" href="fonts/piazzolla-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/geologica-latin-full-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -27,8 +27,9 @@
 </nav>
 
 <header class="hero" id="top">
+  <div class="siren" aria-hidden="true"><span class="siren-r"></span><span class="siren-b"></span></div>
   <div class="hero-inner">
-    <p class="hero-kicker">PLS 419 final project: an AI answer to a social problem in Kazakhstan</p>
+    <p class="hero-kicker">PLS 419 final project, Kazakhstan</p>
     <div class="log" id="log">
       <p class="log-line"><time>23:12</time><span>A neighbour calls 102. Shouting, something breaking.</span></p>
       <p class="log-line"><time>23:41</time><span>Two officers arrive. He is calm now. She says she is fine.</span></p>
@@ -37,7 +38,7 @@
     </div>
     <p class="log-note">An illustrative scenario, not a real case.</p>
     <h1><span class="iz" lang="kk">Із</span><span class="h1-rest">Making sure a call for help leaves a trace</span></h1>
-    <p class="hero-sub">In Kazakhstan, half of the women who experience violence from a partner have never told anyone, and fewer than one in ten has told the police. When police do come, what happens next can depend on one officer's decision at the door. This project asks why, maps what the data can and cannot see, and prices an AI tool called <span lang="kk">Із</span> ("trace" in Kazakh) before deciding whether Kazakhstan should build it.</p>
+    <p class="hero-sub">Half of the women in Kazakhstan who experience violence from a partner have never told anyone, and fewer than one in ten has told the police. When police do come, what happens next can depend on one officer at the door. This project asks why, maps what the data cannot see, and prices an AI tool called <span lang="kk">Із</span> ("trace" in Kazakh) before deciding whether Kazakhstan should build it.</p>
   </div>
   <a class="hero-down" href="#problem">Start with the problem</a>
 </header>
@@ -53,56 +54,81 @@
   </div>
 
   <div class="stats" id="stats">
-    <div class="stat"><p class="stat-n" data-count="17" data-suffix="%">17%</p><p class="stat-l">of women who have had a partner experienced physical or sexual violence from him <a class="ref" href="#src-1">[1, p. 15]</a></p></div>
-    <div class="stat"><p class="stat-n" data-count="51" data-suffix="%">51%</p><p class="stat-l">of them never told anyone <a class="ref" href="#src-1">[1, p. 80]</a></p></div>
-    <div class="stat"><p class="stat-n" data-count="96194" data-suffix="">96,194</p><p class="stat-l">people held administratively liable for domestic offences in 2025 <a class="ref" href="#src-4">[4]</a></p></div>
+    <div class="stat stat-r"><p class="stat-n" data-count="17" data-suffix="%">17%</p><p class="stat-l">of women who have had a partner experienced physical or sexual violence from him <a class="ref" href="#src-1">[1, p. 15]</a></p></div>
+    <div class="stat stat-r"><p class="stat-n" data-count="51" data-suffix="%">51%</p><p class="stat-l">of them never told anyone <a class="ref" href="#src-1">[1, p. 80]</a></p></div>
+    <div class="stat stat-b"><p class="stat-n" data-count="96194" data-suffix="">96,194</p><p class="stat-l">people held administratively liable for domestic offences in 2025 <a class="ref" href="#src-4">[4]</a></p></div>
+  </div>
+
+  <div class="beat">
+    <p class="beat-k"><span class="beat-n">80+</span><span class="beat-c">women killed each year</span></p>
+    <div class="beat-t">
+      <p>Kazakhstan's only nationally representative survey of violence against women interviewed 14,340 women. It found that <mark class="hl">17% of women who had ever had a partner</mark> had experienced physical or sexual violence from him, 21% emotional abuse, and 33% controlling behaviour <a class="ref" href="#src-1">[1, pp. 15, 18]</a>. A General Prosecutor's Office official estimates that at least 80 women die from domestic violence each year <a class="ref" href="#src-10">[10]</a>, and the Interior Ministry held 96,194 people liable for domestic offences in 2025, up 11.2% on 2024 <a class="ref" href="#src-4">[4]</a>.</p>
+    </div>
+  </div>
+
+  <div class="beat">
+    <p class="beat-k beat-k-b"><span class="beat-n">7.8%</span><span class="beat-c">told the police</span></p>
+    <div class="beat-t">
+      <p>Most of it never reaches the system. Of women who had experienced partner violence, 51% had told no one, <mark class="hl">only 7.8% had told the police</mark> and 2.9% a doctor; none named a women's organisation <a class="ref" href="#src-1">[1, p. 80]</a>. Abuse is still often unreported in Turkestan, Zhambyl and parts of the west <a class="ref" href="#src-11">[11]</a>, and in 2024 rural women were almost three times as likely as urban women to say a husband can be justified in beating his wife (6.2% against 2.2%) <a class="ref" href="#src-2">[2, p. 230]</a>.</p>
+    </div>
+  </div>
+
+  <div class="door-panel">
+    <p class="door-panel-h">What women have met at the door</p>
+    <ul class="stamps">
+      <li><span class="stamp">Refused</span>Police refused to register complaints.</li>
+      <li><span class="stamp">Not told</span>Women were not informed of their right to a protection order.</li>
+      <li><span class="stamp">Reconcile</span>Women were urged to drop complaints and reconcile.</li>
+    </ul>
+    <p class="door-panel-src">Human Rights Watch interviews <a class="ref" href="#src-6">[6]</a>. Local police and community leaders still sometimes treat reporting as a family disgrace <a class="ref" href="#src-11">[11]</a>.</p>
   </div>
 
   <div class="prose">
-    <p>Kazakhstan's only nationally representative survey of violence against women interviewed 14,340 women aged 18 to 75. It found that 17% of women who had ever had a partner had experienced physical or sexual violence from that partner, 21% emotional abuse, and 33% at least one form of controlling behaviour <a class="ref" href="#src-1">[1, pp. 15, 18]</a>. A General Prosecutor's Office official estimates that at least 80 women die from domestic violence each year <a class="ref" href="#src-10">[10]</a>. The Interior Ministry held 96,194 people administratively liable for domestic offences in 2025, up 11.2% from 86,518 in 2024 <a class="ref" href="#src-4">[4]</a>.</p>
-
-    <p>The same survey shows how much never reaches the system. Of the women who had experienced partner violence, 51% had never told anyone. Only 7.8% had told the police and 2.9% a doctor, and not one named a women's organisation <a class="ref" href="#src-1">[1, p. 80]</a>. The silence is also uneven. Abuse is still often unreported in more traditional regions such as Turkestan, Zhambyl and parts of the west <a class="ref" href="#src-11">[11]</a>, and in 2024 rural women were almost three times as likely as urban women to say that a husband can be justified in beating his wife (6.2% against 2.2%) <a class="ref" href="#src-2">[2, p. 230]</a>.</p>
-
-    <p>This project is about what happens when women do turn to the police. Human Rights Watch documented police refusing to register complaints, failing to tell women about their right to a protection order, and urging them to drop complaints and reconcile with their abusers <a class="ref" href="#src-6">[6]</a>. Local police and community leaders still sometimes treat reporting as a family disgrace <a class="ref" href="#src-11">[11]</a>.</p>
-
-    <p>The law has changed fast (see the timeline). After the murder of Saltanat Nukenova, laws signed on 15 April 2024 made battery and minor bodily harm crimes again, allowed prosecution without the victim's complaint, and removed reconciliation in repeated battery cases <a class="ref" href="#src-8">[8]</a>. They came into force on 16 June 2024 <a class="ref" href="#src-9">[9]</a>. Police must now register and investigate every domestic violence case, even without a complaint <a class="ref" href="#src-7">[7]</a>, and in early 2025 the Interior Ministry set up specialised domestic violence units <a class="ref" href="#src-16">[16]</a>. Then, at the end of 2025, the separate domestic violence law was repealed and folded into a general Law on the Prevention of Offences <a class="ref" href="#src-12">[12]</a>, in force from 2 March 2026 <a class="ref" href="#src-13">[13]</a>. Advocates fear domestic violence will be dissolved among other offences.</p>
+    <p>The law has changed fast. After the murder of Saltanat Nukenova, laws signed on 15 April 2024 made battery and minor bodily harm crimes again, allowed prosecution without the victim's complaint, and removed reconciliation in repeated battery cases <a class="ref" href="#src-8">[8]</a>. Police must now respond to every report and register every case, even without a complaint <a class="ref" href="#src-7">[7]</a> <a class="ref" href="#src-13">[13, Art. 72]</a>. Then the 2009 domestic violence law was repealed and folded into a general Law on the Prevention of Offences <a class="ref" href="#src-13">[13, Art. 85]</a>, and advocates fear domestic violence will be dissolved among other offences <a class="ref" href="#src-12">[12]</a>.</p>
   </div>
 
-  <ol class="timeline" aria-label="How the law changed">
+  <ol class="timeline" id="timeline" aria-label="How the law changed">
     <li><span class="tl-y">2009</span><span class="tl-t">Law on the Prevention of Domestic Violence</span></li>
     <li><span class="tl-y">2017</span><span class="tl-t">Battery decriminalised</span></li>
-    <li class="tl-hot"><span class="tl-y">2024</span><span class="tl-t">Battery and minor harm criminal again; police must register every case</span></li>
-    <li><span class="tl-y">2025</span><span class="tl-t">Specialised police units; the 2009 law repealed</span></li>
-    <li><span class="tl-y">2026</span><span class="tl-t">Merged Law on the Prevention of Offences in force</span></li>
+    <li class="tl-hot"><span class="tl-y">2024</span><span class="tl-t">Battery and minor harm crimes again, from 16 June <a class="ref" href="#src-9">[9]</a></span></li>
+    <li><span class="tl-y">2025</span><span class="tl-t">Specialised police units <a class="ref" href="#src-16">[16]</a>; the 2009 law repealed</span></li>
+    <li><span class="tl-y">2026</span><span class="tl-t">Merged prevention law in force, 2 March <a class="ref" href="#src-13">[13]</a></span></li>
   </ol>
+</section>
 
+<section class="band band-red" aria-label="Research question">
   <blockquote class="question">
     <p>The law now says police must respond to every report. So why does protection still depend on whether one officer, at one door, decides to write anything down, and who pays when he doesn't?</p>
     <cite>The social-science question inside the issue</cite>
   </blockquote>
+</section>
 
-  <div class="prose">
-    <p>This is a question about institutions and power more than about individual cruelty. At the door, the abuser is often in the room, the woman may be under pressure from family, and the officer has wide discretion. Above all, a decision to do nothing leaves no record. Research in Kazakhstan also describes a culture of shame, <span lang="kk">ұят</span> (uyat), that keeps women silent <a class="ref" href="#src-r3">[R3]</a>. The cost falls on women and children first, then on officers asked to change a culture without new resources, and on the state's credibility.</p>
+<section class="sec sec-tight" aria-label="Why it matters">
+  <div class="prose prose-big">
+    <p>This is a question about institutions and power more than individual cruelty. At the door, the abuser is often in the room, the woman may be under pressure from family, and the officer has wide discretion. <strong>A decision to do nothing leaves no record.</strong> Research in Kazakhstan describes a culture of shame, <span lang="kk">ұят</span> (uyat), that keeps women silent <a class="ref" href="#src-r3">[R3]</a>. The cost falls on women and children first, then on officers asked to change a culture without new resources, and on the state's credibility.</p>
   </div>
 </section>
 
 <!-- ================= SECTION 2 ================= -->
-<section class="sec sec-alt" id="data" aria-labelledby="h-data">
+<section class="sec sec-blue" id="data" aria-labelledby="h-data">
   <div class="sec-head">
     <span class="sec-n" aria-hidden="true">2</span>
     <h2 id="h-data">Background and data</h2>
     <p class="lede">Kazakhstan now counts many things about domestic violence. The one thing it cannot count is a call that nobody wrote down.</p>
   </div>
 
-  <div class="prose">
-    <p><strong>Who measures what.</strong> The statistics agency ran the 2017 prevalence survey with UN Women, UNFPA and WHO. It is still the only nationally representative measure of how many women experience violence <a class="ref" href="#src-1">[1]</a>. The Bureau of National Statistics' 2024 Multiple Indicator Cluster Survey (MICS), run with UNICEF and published in November 2025, asks about attitudes toward violence rather than experience of it, and only of women aged 15–49 and men aged 15–24 <a class="ref" href="#src-2">[2]</a>. The Interior Ministry publishes enforcement figures <a class="ref" href="#src-4">[4]</a> <a class="ref" href="#src-5">[5]</a>; the Prosecutor General's legal statistics committee records crimes <a class="ref" href="#src-15">[15]</a>; the Human Rights Commissioner compiles both <a class="ref" href="#src-3">[3]</a>.</p>
+  <div class="sources-grid" aria-label="Who measures what">
+    <div class="src-card"><p class="src-card-h">Prevalence survey, 2017</p><p>Statistics agency with UN Women, UNFPA and WHO. The only national measure of how many women experience violence <a class="ref" href="#src-1">[1]</a>.</p></div>
+    <div class="src-card"><p class="src-card-h">MICS, 2024</p><p>Bureau of National Statistics with UNICEF. Attitudes only, women 15–49 and men 15–24 <a class="ref" href="#src-2">[2]</a>.</p></div>
+    <div class="src-card"><p class="src-card-h">Interior Ministry</p><p>People held liable, arrests, protective orders, mostly via press statements <a class="ref" href="#src-4">[4]</a> <a class="ref" href="#src-5">[5]</a>.</p></div>
+    <div class="src-card"><p class="src-card-h">Prosecutor General</p><p>Legal statistics on crimes and offences, compiled by the Human Rights Commissioner <a class="ref" href="#src-3">[3]</a> <a class="ref" href="#src-15">[15]</a>.</p></div>
   </div>
 
   <figure class="chart-fig" id="fig1">
     <div class="fig-top">
       <div>
         <h3 class="fig-title">Figure 1. If 100 women experienced violence from a partner, who did they tell?</h3>
-        <p class="fig-sub">Ever-partnered women aged 18–75 who had experienced physical or sexual partner violence (N = 2,035). 2017 national survey, Table 6.4 <a class="ref" href="#src-1">[1, p. 80]</a></p>
+        <p class="fig-sub">Ever-partnered women aged 18–75 who had experienced physical or sexual partner violence (N = 2,035). 2017 survey, Table 6.4 <a class="ref" href="#src-1">[1, p. 80]</a></p>
       </div>
       <div class="seg" role="radiogroup" aria-label="Highlight a group">
         <button type="button" role="radio" aria-checked="true" data-w="all">Everyone</button>
@@ -113,9 +139,9 @@
     <div class="waffle-wrap">
       <div class="waffle" id="waffle" role="img" aria-label="100 squares: 51 women told no one, 41 told someone but not the police, 8 told the police."></div>
       <ul class="legend legend-col">
-        <li data-g="none"><span class="key" style="--c:#3b6fd1"></span><span><strong>51</strong> told no one</span></li>
-        <li data-g="other"><span class="key" style="--c:#a3399e"></span><span><strong>41</strong> told family, friends or others, but not the police</span></li>
-        <li data-g="police"><span class="key" style="--c:#e8890c"></span><span><strong>8</strong> told the police</span></li>
+        <li><span class="key" style="--c:#d62839"></span><span><strong>51</strong> told no one</span></li>
+        <li><span class="key" style="--c:#e8a33d"></span><span><strong>41</strong> told family, friends or others, but not the police</span></li>
+        <li><span class="key" style="--c:#2350d1"></span><span><strong>8</strong> told the police</span></li>
       </ul>
     </div>
     <figcaption class="fig-note">Survey: told no one 51.0%, told someone 49.0%, told the police 7.8%, rounded to whole women. In a follow-up, 18.3% of women who had told someone had gone to the police for help <a class="ref" href="#src-1">[1, pp. 81–82]</a>.</figcaption>
@@ -123,52 +149,80 @@
 
   <figure class="chart-fig" id="fig2">
     <h3 class="fig-title">Figure 2. Criminal cases of family and domestic violence, 2020–2024</h3>
-    <p class="fig-sub">Compiled from the Human Rights Commissioner's 2025 report <a class="ref" href="#src-3">[3]</a>. Hover or tap a bar.</p>
+    <p class="fig-sub">Human Rights Commissioner's 2025 report <a class="ref" href="#src-3">[3]</a>. Hover or tap a bar.</p>
     <ul class="legend">
-      <li><span class="key" style="--c:#3b6fd1"></span>All other family-violence crimes</li>
-      <li><span class="key" style="--c:#e8890c"></span>Battery and minor harm, crimes again from 16 June 2024</li>
+      <li><span class="key" style="--c:#2350d1"></span>Other family-violence crimes</li>
+      <li><span class="key" style="--c:#d62839"></span>Battery and minor harm, crimes again from June 2024</li>
     </ul>
     <div class="chart" id="chart2"></div>
     <div class="tip" id="tip2" role="status" aria-live="polite"></div>
     <details class="tableview"><summary>Show as a table</summary><div id="table2"></div></details>
-    <figcaption class="fig-note">The 2024 jump follows the law: 2,553 of the 3,382 cases (75%) were under the two restored articles, 108-1 (754) and 109-1 (1,799) of the Criminal Code <a class="ref" href="#src-3">[3]</a>. It shows a change in what gets counted, not proof that violence rose.</figcaption>
+    <figcaption class="fig-note">2,553 of the 3,382 cases in 2024 (75%) fall under the two restored articles <a class="ref" href="#src-3">[3]</a>. The jump shows a change in what is counted, not proof that violence rose.</figcaption>
   </figure>
 
-  <div class="prose">
-    <p><strong>What the data shows.</strong> Silence is the norm (Figure 1), and recorded numbers move with law and policing as much as with violence (Figure 2). Enforcement keeps growing. Police issued 85,035 protective orders in 2024 <a class="ref" href="#src-3">[3]</a>, and in January–September 2026 more than 90,000 people were held liable (18.4% more than a year earlier), 25,000 were placed under administrative arrest, and 20,500 were held liable for breaking protective orders or court restrictions <a class="ref" href="#src-5">[5]</a>. The norms behind silence vary sharply (Figure 3). 9.0% of women in the poorest households accept wife-beating, against 1.3% in the richest, and 13.4% of women with lower secondary education, against 1.7% with higher education <a class="ref" href="#src-2">[2, p. 230]</a>.</p>
+  <figure class="chart-fig" id="fig3">
+    <h3 class="fig-title">Figure 3. Domestic administrative cases where proceedings were terminated, 2018–2022</h3>
+    <p class="fig-sub">Share of registered offences, by article of the Code of Administrative Infractions. Prosecutor General's statistics in Kainazarova et al., Table 3 <a class="ref" href="#src-r1">[R1, p. 228]</a></p>
+    <ul class="legend">
+      <li><span class="key" style="--c:#d62839"></span>Art. 73-2, beatings</li>
+      <li><span class="key" style="--c:#e8a33d"></span>Art. 73-1, minor bodily harm</li>
+      <li><span class="key" style="--c:#2350d1"></span>Art. 73, family and household relations</li>
+    </ul>
+    <div class="chart" id="chart3"></div>
+    <div class="tip" id="tip3" role="status" aria-live="polite"></div>
+    <details class="tableview"><summary>Show as a table</summary><div id="table3"></div></details>
+    <figcaption class="fig-note">Even falling, roughly half of cases ended without a penalty. Treat as indicative: the source table is inconsistent (for 2018 it lists 23,893 people held liable out of 23,904 Article 73 offences, alongside 14,171 terminations) <a class="ref" href="#src-r1">[R1, pp. 227–228]</a>.</figcaption>
+  </figure>
+
+  <div class="beat beat-onblue">
+    <p class="beat-k beat-k-b"><span class="beat-n">90,000+</span><span class="beat-c">held liable, Jan–Sep 2026</span></p>
+    <div class="beat-t">
+      <p><strong>What the data shows.</strong> Silence is the norm (Figure 1). Recorded numbers move with law and policing as much as with violence (Figures 2 and 3). Enforcement keeps growing: police issued 85,035 protective orders in 2024 <a class="ref" href="#src-3">[3]</a>, and in January–September 2026 more than 90,000 people were held liable, 18.4% more than a year earlier <a class="ref" href="#src-5">[5]</a>. The norms behind silence vary sharply (Figure 4): 9.0% of women in the poorest households accept wife-beating, against 1.3% in the richest <a class="ref" href="#src-2">[2, p. 230]</a>.</p>
+    </div>
   </div>
 
-  <figure class="chart-fig" id="fig3">
+  <figure class="chart-fig" id="fig4">
     <div class="fig-top">
       <div>
-        <h3 class="fig-title">Figure 3. Women who say a husband can be justified in beating his wife, by region, 2024</h3>
-        <p class="fig-sub">Women aged 15–49, justified for at least one of five reasons. MICS 2024, Table PR.7.1W <a class="ref" href="#src-2">[2, p. 230]</a></p>
+        <h3 class="fig-title">Figure 4. Women who say a husband can be justified in beating his wife, by region, 2024</h3>
+        <p class="fig-sub">Women aged 15–49, at least one of five reasons. MICS 2024, Table PR.7.1W <a class="ref" href="#src-2">[2, p. 230]</a></p>
       </div>
       <div class="seg" role="radiogroup" aria-label="Sort regions">
         <button type="button" role="radio" aria-checked="true" data-sort="value">Highest first</button>
         <button type="button" role="radio" aria-checked="false" data-sort="name">A–Z</button>
       </div>
     </div>
-    <div class="chart" id="chart3"></div>
-    <div class="tip" id="tip3" role="status" aria-live="polite"></div>
-    <details class="tableview"><summary>Show as a table</summary><div id="table3"></div></details>
-    <figcaption class="fig-note">The dashed line marks the national figure, 3.5% (urban 2.2%, rural 6.2%). Each regional estimate rests on a few hundred women, so small gaps between regions are not meaningful.</figcaption>
+    <div class="chart" id="chart4"></div>
+    <div class="tip" id="tip4" role="status" aria-live="polite"></div>
+    <details class="tableview"><summary>Show as a table</summary><div id="table4"></div></details>
+    <figcaption class="fig-note">Dashed line: national figure, 3.5% (urban 2.2%, rural 6.2%). Each regional estimate rests on a few hundred women, so small gaps are not meaningful.</figcaption>
   </figure>
 
-  <div class="prose">
-    <h3 class="sub-h">Where the data is silent</h3>
-  </div>
-  <figure class="silence" id="fig4">
-    <h3 class="fig-title">Figure 4. What is published, and what is not</h3>
-    <p class="fig-sub">Tap a row to see why it matters.</p>
-    <ul class="silence-list" id="silenceList"></ul>
+  <figure class="register" id="fig5">
+    <h3 class="fig-title">Figure 5. What Kazakhstan counts, and what it does not</h3>
+    <p class="fig-sub">The latest published figure for each question. Blacked-out rows have no public number.</p>
+    <table class="reg-table">
+      <thead><tr><th scope="col">Question</th><th scope="col">Latest figure</th></tr></thead>
+      <tbody id="register"></tbody>
+    </table>
   </figure>
 
-  <div class="prose">
-    <p><strong>Who falls through.</strong> Household surveys miss women in shelters; the prevalence figures are nine years old; MICS asks men only up to age 24. Most important here, no source records a report that police refused to register, or a call-out that ended without any measure.</p>
-    <p><strong>How far the numbers can be trusted.</strong> Figures reach the public mostly through ministry press statements, and they conflict. One widely shared article reports 34,059 people sanctioned in 2025, while the ministry reports 96,194 held liable <a class="ref" href="#src-4">[4]</a>. I use the ministry's, because the article does not say what it counted. Definitions shift with each reform. Finally, falling reports can mean less violence or fewer women calling. Reports fell 28% in the second half of 2024 <a class="ref" href="#src-9">[9]</a>, and calls fell 17% in 2025 while the number held liable rose by 11% <a class="ref" href="#src-4">[4]</a>. The data cannot tell these apart. Prevalence estimates differ too: 17% in the 2017 survey <a class="ref" href="#src-1">[1]</a>, and 27% for 2023 in a World Bank figure cited by a later study <a class="ref" href="#src-r7">[R7]</a>, with different definitions.</p>
-    <p>The number that matters most here is how many calls ended with no record, and it does not exist. <span lang="kk">Із</span> is built around that gap.</p>
+  <div class="trust">
+    <div class="trust-card">
+      <p class="trust-h">Who falls through</p>
+      <p>Household surveys miss women in shelters; the prevalence figures are nine years old; MICS asks men only up to age 24. No source records a report police refused to register, or a call-out that ended without any measure.</p>
+    </div>
+    <div class="trust-card">
+      <p class="trust-h">How far to trust the numbers</p>
+      <ul>
+        <li>Figures conflict: one widely shared article reports 34,059 people sanctioned in 2025; the ministry reports 96,194 held liable <a class="ref" href="#src-4">[4]</a>. I use the ministry's, because the article does not say what it counted.</li>
+        <li>Definitions shift with each reform, and official tables can be internally inconsistent (Figure 3).</li>
+        <li>Calls fell 17% in 2025 while the number held liable rose 11% <a class="ref" href="#src-4">[4]</a>: less violence, or fewer women calling? The data cannot say.</li>
+        <li>Prevalence estimates differ: 17% (2017) <a class="ref" href="#src-1">[1]</a> against 27% for 2023, a World Bank figure cited in a later study <a class="ref" href="#src-r7">[R7]</a>.</li>
+      </ul>
+    </div>
   </div>
+  <p class="kicker-line">The number that matters most here, how many calls ended with no record, does not exist. <span lang="kk">Із</span> is built around that gap.</p>
 </section>
 
 <!-- ================= SECTION 3 ================= -->
@@ -188,36 +242,47 @@
     </div>
 
     <div class="lens-panel" role="tabpanel" id="p-a" aria-labelledby="t-a">
-      <p>Quantitative work starts from the 2017 national survey <a class="ref" href="#src-1">[1]</a>. Kainazarova and colleagues (2026) argue that domestic violence in Kazakhstan remains latent because of underreporting and social norms that put women at a disadvantage, so official numbers capture only part of it <a class="ref" href="#src-r1">[R1]</a>. The 2024 MICS tracks attitudes and finds sharp gaps by region, wealth and education <a class="ref" href="#src-2">[2]</a>.</p>
+      <p>The 2017 survey measured prevalence <a class="ref" href="#src-1">[1]</a>; the 2024 MICS tracks attitudes, with sharp gaps by region, wealth and education <a class="ref" href="#src-2">[2]</a>. Kainazarova and colleagues (2026) surveyed 395 adults and 29 crisis-centre staff: <mark class="hl">only 34% said they would report domestic violence</mark>, and 79.3% of staff said services lacked resources. Among the factors that keep cases hidden, they list the neglect of crimes that were reported but never registered <a class="ref" href="#src-r1">[R1, pp. 222, 225]</a>.</p>
       <p class="limit"><strong>Limits:</strong> self-reported, one-off data. Surveys show how much is hidden, not what happens when a woman reports.</p>
     </div>
 
     <div class="lens-panel" role="tabpanel" id="p-b" aria-labelledby="t-b" hidden>
-      <p>Akhmetova, Durrani and Karabay (2025) interviewed 12 survivors and 12 professionals. They show how <span lang="kk">ұят</span>, shame, shapes how women respond to violence and how they are treated by police and professionals <a class="ref" href="#src-r3">[R3]</a>. Karabay, Akhmetova and Durrani (2024) studied professionals in Kazakhstan's violence-against-women organisations during COVID-19, and show how a crisis stretched the services survivors depend on <a class="ref" href="#src-r2">[R2]</a>.</p>
+      <p>Akhmetova, Durrani and Karabay (2025) interviewed 12 survivors and 12 professionals and show how <span lang="kk">ұят</span>, shame, shapes how women respond to violence and how police and professionals treat them <a class="ref" href="#src-r3">[R3]</a>. Karabay, Akhmetova and Durrani (2024) studied professionals in violence-against-women organisations during COVID-19, and show how a crisis stretched the services survivors depend on <a class="ref" href="#src-r2">[R2]</a>.</p>
       <p class="limit"><strong>Limits:</strong> small samples reached through NGOs. They explain silence, but rarely follow what happens once police are involved.</p>
     </div>
 
     <div class="lens-panel" role="tabpanel" id="p-c" aria-labelledby="t-c" hidden>
-      <p>In Kyrgyzstan, Childress and colleagues (2023) interviewed 83 professionals and found a gap between what domestic violence laws intend and what police, courts and social services actually do <a class="ref" href="#src-r4">[R4]</a>. Akisheva (2026) shows that Central Asian laws still fall short of CEDAW and the Beijing Declaration, and that Kazakhstan does not treat domestic violence as a distinct crime even after 2024 <a class="ref" href="#src-r5">[R5]</a>. Globally, a 2024 meta-analysis of 34 studies found that arrest does not consistently reduce repeat violence <a class="ref" href="#src-r6">[R6]</a>.</p>
-      <p class="limit"><strong>What follows:</strong> tougher laws alone do not protect. What matters is a consistent and accountable response.</p>
+      <p>In Kyrgyzstan, Childress and colleagues (2023) interviewed 83 professionals and found a gap between what domestic violence laws intend and what police, courts and social services do <a class="ref" href="#src-r4">[R4]</a>. Akisheva (2026) shows that Central Asian laws still fall short of CEDAW and the Beijing Declaration, and that Kazakhstan does not treat domestic violence as a distinct crime even after 2024 <a class="ref" href="#src-r5">[R5]</a>. A 2024 meta-analysis of 34 studies found that arrest does not consistently reduce repeat violence <a class="ref" href="#src-r6">[R6]</a>.</p>
+      <p class="limit"><strong>What follows:</strong> tougher laws alone do not protect. What matters is a consistent, accountable response.</p>
     </div>
 
     <div class="lens-panel" role="tabpanel" id="p-d" aria-labelledby="t-d" hidden>
-      <p>In Spain, a study of 7,147 police reports found that the risk form behind the VioGén system identified 79% of women who were later attacked again, but also flagged many women who were not (specificity 35%, AUC 0.62) <a class="ref" href="#src-r8">[R8]</a>. On Greater Manchester Police data, machine-learning models based on criminal histories predicted repeat violence better than the standard police questionnaire <a class="ref" href="#src-r9">[R9]</a>. The AinoAid chatbot for survivors was rated positively by 669 users, who rated perceived safety highest <a class="ref" href="#src-r10">[R10]</a>. In Almaty, women who use drugs, sell sex or live with HIV who used the UMAI-WINGS phone programme were 29% less likely to report physical partner violence six months later than a control group <a class="ref" href="#src-r7">[R7]</a>.</p>
-      <p class="limit"><strong>Limits:</strong> none of these tools has been tested inside Kazakhstan's police practice. Most measure prediction or user satisfaction, not whether women ended up safer.</p>
+      <p>In Spain, a study of 7,147 police reports found that VioGén's risk form identified 79% of women later attacked again, but also flagged many who were not (specificity 35%, AUC 0.62) <a class="ref" href="#src-r8">[R8]</a>. On Greater Manchester Police data, machine-learning models based on criminal histories beat the standard police questionnaire <a class="ref" href="#src-r9">[R9]</a>. The AinoAid chatbot was rated positively by 669 users, perceived safety highest <a class="ref" href="#src-r10">[R10]</a>. In Almaty, women who use drugs, sell sex or live with HIV who used the UMAI-WINGS phone programme were 29% less likely to report physical partner violence six months later than a control group <a class="ref" href="#src-r7">[R7]</a>.</p>
+      <p class="limit"><strong>Limits:</strong> none of these tools has been tested in Kazakhstan's police practice. Most measure prediction or satisfaction, not whether women ended up safer.</p>
     </div>
   </div>
 
-  <div class="prose">
-    <h3 class="sub-h">What is contested</h3>
-    <p>First, whether criminalisation and arrest protect women. Kazakhstan's 2024 reform assumes that tougher penalties help, while the international evidence is mixed <a class="ref" href="#src-r6">[R6]</a>. Second, whether risk algorithms protect women or ration protection. VioGén's designers point to its ability to identify women at risk <a class="ref" href="#src-r8">[R8]</a>. An independent audit reports that officers kept the automatic score in 95% of cases, and that in 2021 only 1 in 7 women who went to the police for protection received it <a class="ref" href="#src-c1">[C1, pp. 13, 34]</a>.</p>
-    <h3 class="sub-h">The gap this project speaks to</h3>
-    <p>No study I found examines what happens at the moment of police contact in Kazakhstan: how often reports are refused or closed without action, and whether structured, recorded decisions change that. Technology studies show that risk can be estimated and survivors supported elsewhere, but no such tool has been tested in Kazakh or Russian, or inside Kazakhstan's police and legal system. <span lang="kk">Із</span> is a design for making that moment visible.</p>
+  <h3 class="sub-h">What is contested</h3>
+  <div class="faceoff">
+    <div class="face face-a">
+      <p class="face-q">Do arrest and criminalisation protect women?</p>
+      <p>Kazakhstan's 2024 reform assumes tougher penalties help. The international evidence is mixed <a class="ref" href="#src-r6">[R6]</a>.</p>
+    </div>
+    <div class="face face-b">
+      <p class="face-q">Do risk algorithms protect women, or ration protection?</p>
+      <p>VioGén's designers point to its ability to find women at risk <a class="ref" href="#src-r8">[R8]</a>. An audit found officers kept the automatic score in 95% of cases, and in 2021 only 1 in 7 women who sought police protection got it <a class="ref" href="#src-c1">[C1, pp. 13, 34]</a>.</p>
+    </div>
+  </div>
+
+  <div class="gap">
+    <p class="gap-h">The gap</p>
+    <p class="gap-t">No study I found measures what happens at the moment of police contact in Kazakhstan: how often reports are refused or closed without action, and whether recorded decisions change that.</p>
+    <p class="gap-s">Kainazarova et al. name unregistered reports as a cause but cannot count them <a class="ref" href="#src-r1">[R1]</a>. No risk or survivor tool has been tested in Kazakh or Russian, inside Kazakhstan's legal system. <span lang="kk">Із</span> is a design for making that moment visible.</p>
   </div>
 </section>
 
 <!-- ================= SECTION 4 ================= -->
-<section class="sec sec-alt" id="solution" aria-labelledby="h-solution">
+<section class="sec sec-ink" id="solution" aria-labelledby="h-solution">
   <div class="sec-head">
     <span class="sec-n" aria-hidden="true">4</span>
     <h2 id="h-solution">The AI-assisted solution</h2>
@@ -225,33 +290,33 @@
   </div>
 
   <div class="two-up">
-    <article class="part">
-      <p class="part-tag">Part 1, for survivors</p>
+    <article class="part part-r">
+      <p class="part-tag">Part 1, for survivors, run by crisis centres</p>
       <h3>Record in seconds, decide later</h3>
       <ul>
         <li><strong>10-second capture:</strong> one tap for a photo, a voice note in Kazakh or Russian, or a line of text, dated automatically.</li>
         <li><strong>Hidden and safe:</strong> a neutral icon, quick exit, nothing in the gallery, encrypted storage in Kazakhstan that survives a taken phone.</li>
-        <li><strong>AI works at once:</strong> the moment she sends an entry, it is transcribed, dated and placed on a timeline, and a correctly worded заявление (police report) is drafted for her to review whenever she is safe.</li>
+        <li><strong>AI works at once:</strong> each entry is transcribed, dated and placed on a timeline, and a correctly worded заявление (police report) is drafted for her to review when she is safe.</li>
         <li><strong>Rights in plain words:</strong> what police must do, and where to complain if they refuse.</li>
-        <li><strong>She decides:</strong> nothing is shared unless she chooses, directly or through a crisis-centre lawyer. A relative or neighbour can report too.</li>
+        <li><strong>She decides:</strong> nothing is shared unless she chooses, directly or through a crisis-centre lawyer.</li>
       </ul>
     </article>
-    <article class="part part-dark">
+    <article class="part part-b">
       <p class="part-tag">Part 2, for police</p>
       <h3>A decision that is written down</h3>
       <ul>
         <li><strong>A structured assessment at the call-out,</strong> on a tablet, for the specialised domestic violence units.</li>
-        <li><strong>An AI risk estimate:</strong> a model trained and validated on past Kazakh cases that combines the answers with case history, as in the British research <a class="ref" href="#src-r9">[R9]</a>.</li>
-        <li><strong>The legal options on screen,</strong> not a verdict: detention where the law gives grounds, a protective order, an administrative case, or a criminal report.</li>
+        <li><strong>An AI risk estimate</strong> from a model trained and validated on past Kazakh cases, combining the answers with case history <a class="ref" href="#src-r9">[R9]</a>.</li>
+        <li><strong>The legal options on screen,</strong> not a verdict.</li>
         <li><strong>A recorded reason:</strong> if the officer takes no measure, he must write why. High risk with no measure is flagged automatically.</li>
-        <li><strong>The survivor gets a copy</strong> of the decision.</li>
+        <li><strong>She gets a copy</strong> of the decision.</li>
       </ul>
     </article>
   </div>
 
   <figure class="door" id="door">
     <h3 class="fig-title">At the door: what the law allows, and what <span lang="kk">Із</span> records</h3>
-    <p class="fig-sub">Choose an option to see its legal basis. A simplified guide, not legal advice: grounds are assessed by the officer and, where required, a court.</p>
+    <p class="fig-sub">Choose an option. A simplified guide, not legal advice: grounds are assessed by the officer and, where required, a court.</p>
     <div class="door-grid" role="tablist" aria-label="Measures at the door">
       <button type="button" role="tab" aria-selected="true" data-m="0">Detention</button>
       <button type="button" role="tab" aria-selected="false" data-m="1" tabindex="-1">Protective order</button>
@@ -262,20 +327,18 @@
     <div class="door-out" id="doorOut" role="tabpanel" aria-live="polite"></div>
   </figure>
 
-  <div class="prose">
-    <h3 class="sub-h">Who checks the decision</h3>
-  </div>
+  <h3 class="sub-h">Who checks the decision</h3>
   <div class="tracks">
-    <div class="track">
-      <p class="track-h">Track 1: individual cases, to bodies with power</p>
+    <div class="track track-r">
+      <p class="track-h">Individual cases, to bodies with power</p>
       <ol class="track-steps">
         <li><strong>Supervisor</strong> reviews every flagged case.</li>
-        <li><strong>Prosecutor</strong> is required to check that reports are received and registered lawfully, and can cancel unlawful decisions <a class="ref" href="#src-15">[15]</a>.</li>
+        <li><strong>Prosecutor</strong> must check that reports are received and registered lawfully, and cancels unlawful decisions <a class="ref" href="#src-15">[15]</a>.</li>
         <li><strong>Investigating court</strong> hears her complaint if a report is refused <a class="ref" href="#src-14">[14]</a>.</li>
       </ol>
     </div>
     <div class="track track-b">
-      <p class="track-h">Track 2: patterns, anonymised</p>
+      <p class="track-h">Patterns, anonymised</p>
       <ol class="track-steps">
         <li><strong>Closure rates by district</strong>, repeat addresses, flagged cases with no measure.</li>
         <li>Sent to the <strong>Human Rights Commissioner</strong> and <strong>parliament</strong>.</li>
@@ -283,23 +346,22 @@
       </ol>
     </div>
   </div>
-  <div class="prose">
-    <p>The automatic flag is my proposal; it does not exist in law today. The powers it relies on do.</p>
-    <p><strong>Why AI, and where not.</strong> AI does two things people cannot do at scale: turning Kazakh or Russian voice and text fragments into a dated record and legal draft, and estimating risk from case histories better than a checklist <a class="ref" href="#src-r9">[R9]</a>. The most important part needs no AI: every decision at the door is written down.</p>
-    <h3 class="sub-h">Two documented cases</h3>
+  <div class="prose prose-dark">
+    <p>The automatic flag is my proposal; the powers it relies on already exist. <strong>Why AI, and where not:</strong> AI does two things people cannot do at scale, turning Kazakh or Russian voice and text fragments into a dated record and legal draft, and estimating risk from case histories better than a checklist <a class="ref" href="#src-r9">[R9]</a>. The most important part needs no AI: every decision at the door is written down.</p>
   </div>
 
+  <h3 class="sub-h">Two documented cases</h3>
   <div class="cases">
     <article class="case">
       <p class="case-place">Spain, since 2007</p>
       <h4>VioGén: national police risk assessment</h4>
-      <p>Spain's Interior Ministry system rates the risk faced by women who report gender violence and links it to protection measures. It has carried out more than 3 million risk evaluations <a class="ref" href="#src-c1">[C1, p. 11]</a>, and its police form identified 79% of women later re-victimised <a class="ref" href="#src-r8">[R8]</a>.</p>
-      <p class="case-catch"><strong>Lesson:</strong> officers kept the automatic score in 95% of cases, and 35% of the women the auditors interviewed had not been told their score <a class="ref" href="#src-c1">[C1, pp. 13, 25]</a>. A score can replace judgement instead of supporting it.</p>
+      <p>Spain's Interior Ministry system rates the risk faced by women who report gender violence and links it to protection measures. It has carried out more than 3 million risk evaluations <a class="ref" href="#src-c1">[C1, p. 11]</a>; its police form identified 79% of women later re-victimised <a class="ref" href="#src-r8">[R8]</a>.</p>
+      <p class="case-catch"><strong>Lesson:</strong> officers kept the automatic score in 95% of cases, and 35% of women the auditors interviewed had not been told their score <a class="ref" href="#src-c1">[C1, pp. 13, 25]</a>. A score can replace judgement instead of supporting it.</p>
     </article>
     <article class="case">
       <p class="case-place">Five EU countries, 2025</p>
       <h4>AinoAid: an AI chatbot for survivors</h4>
-      <p>A chatbot that gives information on support services, risk and legal procedures. Its evaluation included interviews with 80 survivors in Austria, Finland, France, Germany and Spain, and a survey of 669 users, who rated it positively, perceived safety most of all <a class="ref" href="#src-r10">[R10]</a>.</p>
+      <p>A chatbot giving information on support services, risk and legal procedures. Its evaluation interviewed 80 survivors in Austria, Finland, France, Germany and Spain and surveyed 669 users, who rated it positively, perceived safety most of all <a class="ref" href="#src-r10">[R10]</a>.</p>
       <p class="case-catch"><strong>Limit:</strong> it measured usability and perceived safety, not whether violence decreased.</p>
     </article>
   </div>
@@ -332,7 +394,7 @@
         <input type="range" id="i-off" min="200" max="3000" step="100" value="1000">
       </label>
       <div class="assume">
-        <p><strong>Where the defaults come from:</strong> police assessments match the more than 84,000 protective orders issued in 2025 <a class="ref" href="#src-4">[4]</a>, and officers match the specialised units' 1,000 staff <a class="ref" href="#src-16">[16]</a>.</p>
+        <p><strong>Defaults:</strong> assessments match the more than 84,000 protective orders of 2025 <a class="ref" href="#src-4">[4]</a>; officers match the specialised units' 1,000 staff <a class="ref" href="#src-16">[16]</a>.</p>
         <p><strong>My assumptions:</strong> three AI requests per entry or assessment, each 5× Google's measured 0.24 Wh and 0.26 mL of water <a class="ref" href="#src-21">[21]</a>; four 0.5 kW servers all year; 10 kWh per tablet; 0.9 kg CO₂/kWh. Build 350m ₸, running 100m ₸ and audit 30m ₸ a year; tablet 150,000 ₸, training 60,000 ₸ per officer; 510 ₸ = $1.</p>
       </div>
     </div>
@@ -346,7 +408,7 @@
       <details class="r-line" open>
         <summary><span>Environmental</span><span class="r-dots"></span><span class="r-val" id="v-env"></span></summary>
         <div class="r-body">
-          <p>Kazakhstan's electricity is mostly coal: 62.1% according to the Energy Ministry <a class="ref" href="#src-20">[20]</a>, while Samruk-Energy reports that coal plants supplied 74.9% of the unified grid in 2024 <a class="ref" href="#src-20">[20]</a>.</p>
+          <p>Kazakhstan's electricity is mostly coal: 62.1% according to the Energy Ministry, while Samruk-Energy reports that coal plants supplied 74.9% of the unified grid in 2024 <a class="ref" href="#src-20">[20]</a>.</p>
           <p id="env-detail"></p>
           <p>Servers, not AI requests, use most of the energy. The bigger footprint is physical: tablets, and years of securely stored photos and audio.</p>
         </div>
@@ -356,24 +418,26 @@
         <summary><span>Economic</span><span class="r-dots"></span><span class="r-val" id="v-eco"></span></summary>
         <div class="r-body">
           <p id="eco-detail"></p>
-          <p><strong>Who pays:</strong> the state budget, through the Interior Ministry for the police side and crisis-centre funding for the survivor side. <strong>Who profits:</strong> the developer, the cloud operator and the tablet maker. <strong>The real comparison:</strong> the state spent almost 3 billion ₸ on crisis centres in 2024 <a class="ref" href="#src-3">[3]</a>. If <span lang="kk">Із</span> were paid for by cutting shelters, it would cost more than it saves.</p>
+          <p><strong>Who pays:</strong> the state budget, through the Interior Ministry and crisis-centre funding. <strong>Who profits:</strong> the developer, the cloud operator and the tablet maker. <strong>The real comparison:</strong> the state spent almost 3 billion ₸ on crisis centres in 2024 <a class="ref" href="#src-3">[3]</a>. Paid for by cutting shelters, <span lang="kk">Із</span> would cost more than it saves.</p>
         </div>
       </details>
 
       <details class="r-line">
         <summary><span>Labour</span><span class="r-dots"></span><span class="r-val">shifts, not savings</span></summary>
         <div class="r-body">
-          <p><strong>Work that changes:</strong> the specialised units, about 1,000 officers, were staffed by moving existing personnel, with no extra budget <a class="ref" href="#src-16">[16]</a>. Paperwork without extra time risks box-ticking, and flags add review work for supervisors and prosecutors.</p>
-          <p><strong>Hidden labour:</strong> vetted staff, not outsourced click-workers, must label sensitive past case files to train the model; lawyers must update legal templates whenever the law changes (2024, 2026); crisis-centre lawyers handle shared evidence.</p>
-          <p><strong>The quiet shift:</strong> the app moves work onto women, who now do the documenting. That is only fair if the state then acts on what they record.</p>
+          <p><strong>Work that changes:</strong> the specialised units were staffed by moving existing personnel, with no extra budget <a class="ref" href="#src-16">[16]</a>. Paperwork without extra time risks box-ticking, and flags add review work for supervisors and prosecutors.</p>
+          <p><strong>Hidden labour:</strong> vetted staff, not outsourced click-workers, must label sensitive case files to train the model; lawyers must update legal templates whenever the law changes; crisis-centre lawyers handle shared evidence.</p>
+          <p><strong>The quiet shift:</strong> the app moves documenting onto women. That is only fair if the state acts on what they record.</p>
         </div>
       </details>
 
       <details class="r-line">
         <summary><span>Political and governance</span><span class="r-dots"></span><span class="r-val">high risk</span></summary>
         <div class="r-body">
-          <p>Kazakhstan's Law on Artificial Intelligence came into force on 18 January 2026 <a class="ref" href="#src-18">[18]</a>. It sorts systems by risk and classes as high risk those whose failure could threaten citizens' lives and health <a class="ref" href="#src-18">[18]</a>. The police tool belongs there. It must stay at low autonomy, with a human making every decision, and the law bars inferring emotions without consent, so there is no voice-emotion analysis <a class="ref" href="#src-18">[18]</a>. Personal data must be stored in Kazakhstan <a class="ref" href="#src-17">[17]</a>.</p>
-          <p><strong>Misuse risks:</strong> an abuser finding the app; police reading her archive; records used against her in custody disputes; profiling of districts. So crisis centres, not police, run the survivor side, and her evidence stays separate from police records. The design follows UNESCO's Recommendation on the Ethics of AI. In January 2026 Kazakhstan began a UNESCO readiness assessment of its own AI use <a class="ref" href="#src-19">[19]</a>.</p>
+          <p>Kazakhstan's AI Law (No. 230-VIII, in force January 2026) sorts systems into minimal, medium and high risk, but the owner classifies its own system <a class="ref" href="#src-18">[18, Art. 17]</a>. Buribayeva and colleagues warn that such risks are built in through legal design before any harm is visible <a class="ref" href="#src-w1">[W1]</a>, so <span lang="kk">Із</span> should declare itself high-risk and accept audit <a class="ref" href="#src-18">[18, Arts. 18–20]</a>.</p>
+          <p>The law also bans classifying people by predicted personal characteristics "except in cases provided for by the laws", and detecting emotions without consent <a class="ref" href="#src-18">[18, Art. 17(3)]</a>. The police score therefore needs an explicit legal basis, such as an amendment to Law 245-VIII, and no voice-emotion analysis. It must be low-autonomy, which the law defines as a person always making the final choice; people affected can be told about automated processing and object to it <a class="ref" href="#src-18">[18, Arts. 7, 17]</a>. Data stays in Kazakhstan <a class="ref" href="#src-17">[17]</a>.</p>
+          <p>The EU AI Act treats domestic-violence risk assessment by police as high-risk <a class="ref" href="#src-23">[23]</a>. Roberts and colleagues describe global AI governance as a weak "regime complex" <a class="ref" href="#src-w2">[W2]</a>: no single standard exists, so <span lang="kk">Із</span> should meet the stricter of the two. Kazakhstan began a UNESCO readiness assessment of its AI use in January 2026 <a class="ref" href="#src-19">[19]</a>.</p>
+          <p><strong>Misuse risks:</strong> an abuser finding the app; police reading her archive; records used in custody disputes; scores leaking into household profiling such as the Digital Family Card, whose errors citizens rarely see <a class="ref" href="#src-w1">[W1]</a>. So crisis centres, not police, run the survivor side.</p>
         </div>
       </details>
 
@@ -381,8 +445,8 @@
         <summary><span>Data ethics</span><span class="r-dots"></span><span class="r-val">two kinds of consent</span></summary>
         <div class="r-body">
           <p><strong>Data needed:</strong> her evidence; the officer's assessment and decision; past case files, including health and children's data.</p>
-          <p><strong>Consent:</strong> her evidence is shared only with her consent. Police records are official records of a state decision, so they are reviewed without her consent. Pressure on her therefore cannot stop oversight of the police.</p>
-          <p><strong>What could go wrong:</strong> missed danger, as the VioGén audit reports <a class="ref" href="#src-c1">[C1]</a>; false alarms that wear officers out; and a bias built in from the start. A model trained on records learns where women report and police register, not where violence happens, so it could rate risk lowest where women report least.</p>
+          <p><strong>Consent:</strong> her evidence is shared only with her consent. Police records are official records of a state decision, so they are reviewed without it, and pressure on her cannot stop oversight of the police. Mhlambi's relational ethics treats the harms of automated decisions as harms to relationships <a class="ref" href="#src-w3">[W3]</a>, which fits a woman whose "no" may be her family's. He also argues that marginalised communities are experts on their own experience, so survivors and crisis-centre staff should co-design <span lang="kk">Із</span>.</p>
+          <p><strong>What could go wrong:</strong> missed danger <a class="ref" href="#src-c1">[C1]</a>; false alarms that wear officers out; and bias from the start. A model trained on records learns where women report and police register, not where violence happens.</p>
         </div>
       </details>
 
@@ -402,10 +466,10 @@
 
   <div class="verdict-grid">
     <ul class="conds" id="conds">
-      <li><label><input type="checkbox" data-k="survivor"><span><strong>She is in control.</strong> Her evidence is shared only by her, and the survivor side is run by crisis centres, not the police.</span></label></li>
-      <li><label><input type="checkbox" data-k="money"><span><strong>No cuts elsewhere.</strong> Crisis centres and the specialised units are not cut to pay for the technology.</span></label></li>
-      <li><label><input type="checkbox" data-k="human"><span><strong>A human decides, with a reason.</strong> The score never decides; every "no measure" is explained in writing and reviewed.</span></label></li>
-      <li><label><input type="checkbox" data-k="audit"><span><strong>Tested and published.</strong> Error rates by region and language are checked before launch and every year by an independent auditor.</span></label></li>
+      <li><label><input type="checkbox" data-k="survivor"><span><strong>She is in control.</strong> Her evidence is shared only by her; crisis centres run and co-design the survivor side.</span></label></li>
+      <li><label><input type="checkbox" data-k="money"><span><strong>No cuts elsewhere.</strong> Crisis centres and the specialised units are not cut to pay for it.</span></label></li>
+      <li><label><input type="checkbox" data-k="human"><span><strong>A human decides, with a reason.</strong> Every "no measure" is explained in writing and reviewed.</span></label></li>
+      <li><label><input type="checkbox" data-k="audit"><span><strong>A legal basis and an audit.</strong> The score is authorised by law, and error rates by region and language are published every year.</span></label></li>
       <li><label><input type="checkbox" data-k="power"><span><strong>Oversight with power.</strong> Flags reach the prosecutor, and women know they can go to court.</span></label></li>
     </ul>
     <div class="sign" id="sign" aria-live="polite">
@@ -414,8 +478,8 @@
     </div>
   </div>
 
-  <div class="prose">
-    <p>My verdict is a conditional yes, with the two parts treated differently. Kazakhstan should pilot the survivor side now, run by crisis centres, because it puts the record in the woman's hands and costs little. It should pilot the police side only if the other three conditions also hold, because its main risk is not money but a number that lets an officer, or a ministry, decide someone does not need protection. If what Kazakhstan wants is a score that tells police whom they can leave at home, it should not build <span lang="kk">Із</span> at all.</p>
+  <div class="prose prose-dark">
+    <p>My verdict is a conditional yes, with the two parts treated differently. Kazakhstan should pilot the survivor side now, through crisis centres, because it puts the record in the woman's hands and costs little. It should pilot the police side only if the other three conditions also hold. Its main risk is not money but a number that makes a decision look neutral <a class="ref" href="#src-w1">[W1]</a> and lets an officer, or a ministry, decide someone does not need protection. If Kazakhstan wants a score that tells police whom they can leave at home, it should not build <span lang="kk">Із</span> at all.</p>
   </div>
 </section>
 
@@ -423,50 +487,55 @@
 <section class="sec sec-plain" id="transparency" aria-labelledby="h-trans">
   <div class="sec-head"><h2 id="h-trans">AI transparency statement</h2></div>
   <div class="prose">
-    <p><strong>What AI contributed.</strong> I worked with Claude (Anthropic) throughout. It helped me compare possible topics, searched for and checked sources and laws, extracted figures from the two survey reports, drafted the text, and wrote the code for this site, including the charts, the bill calculator and the verdict switch.</p>
+    <p><strong>What AI contributed.</strong> I worked with Claude (Anthropic) throughout. It helped me compare topics, searched for and checked sources and laws, extracted figures from the survey reports and the law texts, drafted the text, and wrote the code for this site, including the charts, the bill calculator and the verdict switch.</p>
     <p><strong>What I rejected or changed, and why.</strong></p>
     <ul class="checks">
-      <li>I dropped an earlier topic on returnee (kandas) children's literacy. The evidence could not show how many children actually knew the Arabic-based script, and transliteration does not need AI. I wanted a problem I care about that genuinely needs AI.</li>
-      <li>I required the survivor tool to work in seconds, because a woman living with her abuser may not have time to spend on an app, and I asked for the AI to process each entry the moment it is sent so she can review it later.</li>
-      <li>I rejected wording suggesting abusers should simply be detained. Every measure on this site is tied to what Kazakh law actually allows.</li>
-      <li>The AI first proposed the Human Rights Commissioner as the main oversight body. I rejected that because the Commissioner cannot overturn decisions and asked for bodies with real power. That led to the supervisor, the prosecutor and the investigating court, which we then checked in the law.</li>
-      <li>I asked what happens if a woman is pressured to withhold consent. That is why her own evidence and the police records are treated separately.</li>
-      <li>I asked for newer research and limited the academic sources to ten, which replaced several older studies.</li>
+      <li>I dropped an earlier topic on returnee (kandas) children's literacy: the evidence could not show how many children knew the Arabic-based script, and transliteration does not need AI.</li>
+      <li>I required the survivor tool to work in seconds and to process each entry the moment it is sent, because a woman living with her abuser may have no time to spend on an app.</li>
+      <li>I rejected wording suggesting abusers should simply be detained. Every measure on the site is tied to what Kazakh law allows, and I checked the articles myself in the law texts.</li>
+      <li>The AI first proposed the Human Rights Commissioner as the main oversight body. I rejected that, because the Commissioner cannot overturn decisions, and asked for bodies with real power: the supervisor, the prosecutor and the investigating court.</li>
+      <li>I asked what happens if a woman is pressured to withhold consent. That is why her evidence and the police records are treated separately.</li>
+      <li>I asked for newer research, limited academic sources to ten, and added the Week 12 readings to the governance analysis.</li>
+      <li>An earlier draft cited Kainazarova et al. from the abstract alone, because the full text would not open. I supplied the article, and the figures now come from its full text with page numbers.</li>
+      <li>Checking caught AI errors: a preprint's 43.9% instead of the published 29%; a misread VioGén audit figure; and an overstated claim that the AI Law requires low autonomy, when it defines autonomy levels and leaves the choice to the design.</li>
       <li>I dropped a widely shared figure (34,059 sanctioned in 2025) because its source did not say what it counted.</li>
-      <li>Checking caught errors in the AI's drafts: it had used a preprint's 43.9% figure instead of the published 29%, and had misread the VioGén audit's 35% (women not told their score, not women who knew it). Both are corrected.</li>
     </ul>
-    <p><strong>What I accepted.</strong> Combining a survivor tool with a police tool, using VioGén and AinoAid as case studies, the two-track oversight design, and the cost assumptions, which are labelled as assumptions.</p>
-    <p><strong>Checking.</strong> Every statistic links to its source. Figures from the two survey reports give the PDF page, so anyone can check them.</p>
+    <p><strong>What I accepted.</strong> Combining a survivor tool with a police tool, the VioGén and AinoAid case studies, the two-track oversight design, and the cost assumptions, which are labelled as assumptions.</p>
   </div>
 </section>
 
 <!-- ================= SOURCES ================= -->
 <section class="sec sec-plain" id="sources" aria-labelledby="h-src">
   <div class="sec-head"><h2 id="h-src">Sources</h2></div>
-  <h3 class="src-h">Data, reports and law</h3>
+  <h3 class="src-h">Data and reports</h3>
   <ol class="sources">
-    <li id="src-1">[1] Statistics Committee of Kazakhstan, UN Women, UNFPA &amp; WHO (2017). <em>Sample Survey on Violence Against Women in Kazakhstan.</em> <a href="https://eca.unwomen.org/en/digital-library/publications/2018/08/sample-survey-on-violence-against-women-in-kazakhstan">Report page</a> · <a href="https://eca.unwomen.org/sites/default/files/Field%20Office%20ECA/Attachments/Publications/Country/MCO-Kazakhstan/Kazakhstan%20VAW%20reportfinal%20ENGcompressed.pdf">PDF</a>. Page numbers are PDF pages.</li>
-    <li id="src-2">[2] Bureau of National Statistics &amp; UNICEF (2025). <em>Kazakhstan Multiple Indicator Cluster Survey 2024: Survey Findings Report</em>, Table PR.7.1W (PDF p. 230, printed p. 216). <a href="https://stat.gov.kz/en/news/kazakhstan-presents-results-of-the-multiple-indicator-cluster-survey-mics/">Bureau announcement</a> · <a href="https://www.unicef.org/kazakhstan/en/press-releases/latest-mics-survey-kazakhstan-reveals-progress-and-challenges-women-and-children">UNICEF release</a>.</li>
-    <li id="src-3">[3] Human Rights Commissioner of Kazakhstan (2025). <a href="https://www.gov.kz/uploads/2025/6/24/9ebc3587f1c9940aea1485a312577f65_original.560800.pdf">Statement on countering family and domestic violence</a> (criminal cases 2020–2024, protective orders 2024, crisis-centre spending).</li>
-    <li id="src-4">[4] Tengrinews (17 Dec 2025). <a href="https://tengrinews.kz/kazakhstan_news/nashumevshiy-zakon-zaschite-jenschin-detey-on-izmenil-588093/">Interior Ministry statistics on domestic violence for 2025</a>; also reported by <a href="https://www.lada.kz/kazakhstan-news/147154-kazhdyi-udar-na-uchiote-kak-mvd-kazakhstana-schitaet-poboi-v-semiakh.html">Lada.kz</a>.</li>
+    <li id="src-1">[1] Statistics Committee of Kazakhstan, UN Women, UNFPA &amp; WHO (2017). <em>Sample Survey on Violence Against Women in Kazakhstan.</em> <a href="https://eca.unwomen.org/en/digital-library/publications/2018/08/sample-survey-on-violence-against-women-in-kazakhstan">Report page</a>, <a href="https://eca.unwomen.org/sites/default/files/Field%20Office%20ECA/Attachments/Publications/Country/MCO-Kazakhstan/Kazakhstan%20VAW%20reportfinal%20ENGcompressed.pdf">PDF</a>. Page numbers are PDF pages.</li>
+    <li id="src-2">[2] Bureau of National Statistics &amp; UNICEF (2025). <em>Kazakhstan Multiple Indicator Cluster Survey 2024: Survey Findings Report</em>, Table PR.7.1W (PDF p. 230, printed p. 216). <a href="https://stat.gov.kz/en/news/kazakhstan-presents-results-of-the-multiple-indicator-cluster-survey-mics/">Bureau announcement</a>, <a href="https://www.unicef.org/kazakhstan/en/press-releases/latest-mics-survey-kazakhstan-reveals-progress-and-challenges-women-and-children">UNICEF release</a>.</li>
+    <li id="src-3">[3] Human Rights Commissioner of Kazakhstan (2025). <a href="https://www.gov.kz/uploads/2025/6/24/9ebc3587f1c9940aea1485a312577f65_original.560800.pdf">Statement on countering family and domestic violence</a>.</li>
+    <li id="src-4">[4] Tengrinews (17 Dec 2025). <a href="https://tengrinews.kz/kazakhstan_news/nashumevshiy-zakon-zaschite-jenschin-detey-on-izmenil-588093/">Interior Ministry statistics on domestic violence for 2025</a>; also <a href="https://www.lada.kz/kazakhstan-news/147154-kazhdyi-udar-na-uchiote-kak-mvd-kazakhstana-schitaet-poboi-v-semiakh.html">Lada.kz</a>.</li>
     <li id="src-5">[5] Zakon.kz (6 Oct 2026). <a href="https://www.zakon.kz/obshestvo/6533988-snizhenie-ubiystv-na-11-glava-mvd-otchitalsya-ob-itogakh-borby-s-semeynym-nasiliem.html">Interior Minister's report on January–September 2026</a>.</li>
     <li id="src-6">[6] Human Rights Watch (17 Oct 2019). <a href="https://www.hrw.org/news/2019/10/17/kazakhstan-little-help-domestic-violence-survivors">Kazakhstan: Little Help for Domestic Violence Survivors</a>.</li>
     <li id="src-7">[7] Human Rights Watch (22 Apr 2024). <a href="https://www.hrw.org/news/2024/04/22/kazakhstan-new-law-protect-women-improved-incomplete">Kazakhstan: New Law to Protect Women Improved, Incomplete</a>.</li>
     <li id="src-8">[8] Government of Kazakhstan (2024). <a href="https://www.gov.kz/uploads/2024/4/17/92f06d6ccda3c0e7a7c61e3c74603541_original.519990.pdf">Factsheet on the laws on women's rights and children's safety</a>.</li>
-    <li id="src-9">[9] The Astana Times (May 2025). <a href="https://astanatimes.com/2025/05/one-year-since-kazakhstan-criminalized-domestic-violence-what-numbers-reveal/">One Year Since Kazakhstan Criminalized Domestic Violence: What Numbers Reveal</a>.</li>
+    <li id="src-9">[9] The Astana Times (May 2025). <a href="https://astanatimes.com/2025/05/one-year-since-kazakhstan-criminalized-domestic-violence-what-numbers-reveal/">One Year Since Kazakhstan Criminalized Domestic Violence</a>.</li>
     <li id="src-10">[10] The Times of Central Asia (20 Jun 2025). <a href="https://timesca.com/kazakhstans-domestic-violence-law-brings-progress-amid-ongoing-challenges/">Kazakhstan's Domestic Violence Law Brings Progress Amid Ongoing Challenges</a> (estimate by Marat Abishev, General Prosecutor's Office).</li>
-    <li id="src-11">[11] The Times of Central Asia (5 Dec 2025). <a href="https://timesca.com/saltanat-law-one-year-on-domestic-violence-crackdown-hidden-barriers-remain/">Saltanat Law One Year On: Domestic Violence Crackdown, Hidden Barriers Remain</a>.</li>
-    <li id="src-12">[12] Tengrinews (5 Jun 2026). <a href="https://tengrinews.kz/article/jenschina-poboi-zakon-protivorechiya-borbe-kazahstana-4111/">Женщина, побои и закон</a> (repeal of the 2009 law and merger into the Law on the Prevention of Offences).</li>
-    <li id="src-13">[13] Law of the Republic of Kazakhstan No. 245-VIII «О профилактике правонарушений», 30 Dec 2025: <a href="https://zakon.uchet.kz/rus/docs/Z2500000245">full text</a>; <a href="https://kodeksy-kz.com/ka/o_profilaktike_pravonarushenij/60.htm">Art. 60 (protective order)</a>; <a href="https://kodeksy-kz.com/ka/o_profilaktike_pravonarushenij/72.htm">Art. 72</a>; <a href="https://www.gov.kz/memleket/entities/kostanai-mendykarin-krasnopresnen/press/news/details/1151041?lang=ru">in force from 2 March 2026</a>. Official text: <a href="https://adilet.zan.kz/rus/docs/Z2500000245">adilet.zan.kz</a>.</li>
-    <li id="src-14">[14] Supreme Court of Kazakhstan, Normative Resolution No. 3 (2012) on Article 106 of the Criminal Procedure Code, <a href="https://adilet.zan.kz/rus/docs/P120000003S">text</a>, as amended by <a href="https://adilet.zan.kz/rus/docs/P260000005S">Resolution No. 5 of 20 May 2026</a> (complaints to the investigating judge, including refusal to accept a report).</li>
-    <li id="src-15">[15] Constitutional Law No. 155-VII «О прокуратуре», 5 Nov 2022, Art. 10: <a href="https://zakon.uchet.kz/rus/docs/Z2200000155">text</a> · <a href="https://adilet.zan.kz/rus/docs/Z2200000155">adilet.zan.kz</a>. Bureau open-data indicator on women's appeals to police (data from the Prosecutor General's legal statistics committee): <a href="https://stat.gov.kz/ru/open-data/474265/474330/">stat.gov.kz</a>.</li>
-    <li id="src-16">[16] Bizmedia.kz (13 Feb 2025). <a href="https://bizmedia.kz/2025-02-13-v-kazahstane-sozdano-podrazdelenie-policzii-dlya-borby-s-bytovym-nasiliem/">В Казахстане создано подразделение полиции для борьбы с бытовым насилием</a> (1,000 staff from existing personnel, no additional budget).</li>
-    <li id="src-17">[17] Law No. 94-V <a href="https://adilet.zan.kz/eng/docs/Z1300000094">On Personal Data and Their Protection</a> (2013, as amended), data localisation requirement.</li>
-    <li id="src-18">[18] Law No. 230-VIII On Artificial Intelligence: <a href="https://en.tengrinews.kz/kazakhstan_news/new-law-comes-into-force-in-kazakhstan-270729">entry into force</a>; <a href="https://www.ey.com/en_kz/technical/tax-alerts/2025/12/law-on-artificial-intelligence-kazakhstan">EY summary</a>; <a href="https://casrai.org/guides/kazakhstan-ai-law-230-viii">CASRAI guide</a> (risk levels, autonomy, prohibited practices; secondary summaries).</li>
-    <li id="src-19">[19] Ministry of Foreign Affairs (19 Jan 2026). <a href="https://www.gov.kz/memleket/entities/mfa/press/news/details/1143949?lang=en">Kazakhstan implements UNESCO best international practices in AI</a> (UNESCO Readiness Assessment Methodology).</li>
-    <li id="src-20">[20] The Astana Times (15 Jun 2026). <a href="https://astanatimes.com/?p=116178">Coal Accounts for Over 60% of Kazakhstan's Electricity</a>; Samruk-Energy, <a href="https://ar2024.samruk-energy.kz/en/kazakhstan-power-and-coal-markets.html">Annual Report 2024: power and coal markets</a> (117.9 billion kWh generated in 2024).</li>
+    <li id="src-11">[11] The Times of Central Asia (5 Dec 2025). <a href="https://timesca.com/saltanat-law-one-year-on-domestic-violence-crackdown-hidden-barriers-remain/">Saltanat Law One Year On</a>.</li>
+    <li id="src-12">[12] Tengrinews (5 Jun 2026). <a href="https://tengrinews.kz/article/jenschina-poboi-zakon-protivorechiya-borbe-kazahstana-4111/">Женщина, побои и закон</a>.</li>
+    <li id="src-16">[16] Bizmedia.kz (13 Feb 2025). <a href="https://bizmedia.kz/2025-02-13-v-kazahstane-sozdano-podrazdelenie-policzii-dlya-borby-s-bytovym-nasiliem/">В Казахстане создано подразделение полиции для борьбы с бытовым насилием</a>.</li>
+    <li id="src-19">[19] Ministry of Foreign Affairs (19 Jan 2026). <a href="https://www.gov.kz/memleket/entities/mfa/press/news/details/1143949?lang=en">Kazakhstan implements UNESCO best international practices in AI</a>.</li>
+    <li id="src-20">[20] The Astana Times (15 Jun 2026). <a href="https://astanatimes.com/?p=116178">Coal Accounts for Over 60% of Kazakhstan's Electricity</a>; Samruk-Energy, <a href="https://ar2024.samruk-energy.kz/en/kazakhstan-power-and-coal-markets.html">Annual Report 2024</a> (117.9 billion kWh generated).</li>
     <li id="src-21">[21] Elsworth, C., Huang, K., Patterson, D., et al. (2025). <a href="https://arxiv.org/abs/2508.15734">Measuring the environmental impact of delivering AI at Google Scale</a>. arXiv:2508.15734.</li>
-    <li id="src-22">[22] Codes of the Republic of Kazakhstan (2014): <a href="https://adilet.zan.kz/rus/docs/K1400000235">Code of Administrative Offences</a> (Art. 73, family and domestic relations); <a href="https://adilet.zan.kz/rus/docs/K1400000231">Criminal Procedure Code</a> (Art. 128, detention); <a href="https://adilet.zan.kz/rus/docs/K1400000226">Criminal Code</a> (Arts. 108-1 and 109-1).</li>
+  </ol>
+
+  <h3 class="src-h">Laws and legal instruments</h3>
+  <ol class="sources">
+    <li id="src-13">[13] Law No. 245-VIII "On Prevention of Infractions", 30 Dec 2025, Arts. 60, 72, 85: <a href="https://adilet.zan.kz/eng/docs/Z2500000245">official English translation</a>, <a href="https://adilet.zan.kz/rus/docs/Z2500000245">Russian</a>; <a href="https://www.gov.kz/memleket/entities/kostanai-mendykarin-krasnopresnen/press/news/details/1151041?lang=ru">in force 2 March 2026</a>.</li>
+    <li id="src-14">[14] Supreme Court, Normative Resolution No. 5 of 20 May 2026, amending Resolution No. 3 of 27 June 2012 on complaints under Article 106 of the Criminal Procedure Code (point 4: refusal to accept a report of a criminal offence): <a href="https://adilet.zan.kz/rus/docs/P260000005S">adilet</a>, <a href="https://zakon.uchet.kz/rus/docs/P260000005S">mirror</a>.</li>
+    <li id="src-15">[15] Constitutional Law No. 155-VII "On the Prosecutor's Office", 5 Nov 2022, Art. 10(2), subparas. 7 and 10: <a href="https://adilet.zan.kz/rus/docs/Z2200000155">adilet</a>, <a href="https://zakon.uchet.kz/rus/docs/Z2200000155">mirror</a>. Bureau open-data indicator on women's appeals to police: <a href="https://stat.gov.kz/ru/open-data/474265/474330/">stat.gov.kz</a>.</li>
+    <li id="src-17">[17] Law No. 94-V "On Personal Data and Their Protection", 2013, Art. 12(2) (storage in Kazakhstan): <a href="https://adilet.zan.kz/eng/docs/Z1300000094">adilet</a>.</li>
+    <li id="src-18">[18] Law No. 230-VIII "On Artificial Intelligence", 17 Nov 2025, Arts. 7, 17–20: <a href="https://adilet.zan.kz/eng/docs/Z2500000230">official English translation</a>; <a href="https://en.tengrinews.kz/kazakhstan_news/new-law-comes-into-force-in-kazakhstan-270729">entry into force</a>.</li>
+    <li id="src-22">[22] Codes of the Republic of Kazakhstan, 2014: <a href="https://adilet.zan.kz/eng/docs/K1400000235">Code of Administrative Infractions</a> (Art. 73; Arts. 73-1 and 73-2 repealed by Law 73-VIII of 15 Apr 2024); <a href="https://adilet.zan.kz/eng/docs/K1400000231">Criminal Procedure Code</a> (Art. 128, detention of a suspect); <a href="https://adilet.zan.kz/eng/docs/K1400000226">Criminal Code</a> (Art. 108-1, minor injury to health; Art. 109-1, battery; added by Law 72-VIII of 15 Apr 2024).</li>
+    <li id="src-23">[23] European Union AI Act (Regulation 2024/1689), Annex III, point 6(a), and Commission guidance placing domestic-violence risk assessment in that use case: <a href="https://ai-act-service-desk.ec.europa.eu/en/ai-act/annex-3">Annex III</a>, <a href="https://ai-act-service-desk.ec.europa.eu/fr/node/466">guidance</a>.</li>
   </ol>
 
   <h3 class="src-h">Academic research</h3>
@@ -477,10 +546,17 @@
     <li id="src-r4">[R4] Childress, S., Shrestha, N., Anekwe, K., Wong, M. D., &amp; Dudovitz, R. N. (2023). Factors inhibiting institutional responses to domestic violence in Kyrgyzstan. <em>Central Asian Survey</em>, 42(2), 254–273. <a href="https://escholarship.org/uc/item/2693r6kn">doi:10.1080/02634937.2022.2147146</a></li>
     <li id="src-r5">[R5] Akisheva, A. (2026). Questions of harmonization with international legal and policy standards on violence against women and girls in Central Asia. <em>International Journal of Discrimination and the Law</em>, 26(1). <a href="https://journals.sagepub.com/doi/10.1177/13582291251327140">doi:10.1177/13582291251327140</a></li>
     <li id="src-r6">[R6] Connor, R. A., Johnson, L., Bridgeman, M., Shokraneh, F., &amp; Hakobyan, B. (2024). Outcomes associated with arrest for domestic violence: A systematic review and meta-analysis. <em>Trauma, Violence, &amp; Abuse</em>, 26(3). <a href="https://www.ojp.gov/ncjrs/virtual-library/abstracts/outcomes-associated-arrest-domestic-violence-systematic-review-and">Abstract</a></li>
-    <li id="src-r7">[R7] Terlikbayeva, A., Primbetova, S., Gatanaga, O. S., et al. (2025). UMAI-WINGS: Evaluating the effectiveness of implementing mHealth intimate partner violence prevention intervention in reducing intimate partner violence among women from key affected populations in Kazakhstan using a community-based approach. <em>Behavioral Sciences</em>, 15(5), 641. <a href="https://www.mdpi.com/2076-328X/15/5/641">doi:10.3390/bs15050641</a></li>
+    <li id="src-r7">[R7] Terlikbayeva, A., Primbetova, S., Gatanaga, O. S., et al. (2025). UMAI-WINGS: Evaluating the effectiveness of implementing mHealth intimate partner violence prevention intervention among women from key affected populations in Kazakhstan using a community-based approach. <em>Behavioral Sciences</em>, 15(5), 641. <a href="https://www.mdpi.com/2076-328X/15/5/641">doi:10.3390/bs15050641</a></li>
     <li id="src-r8">[R8] López-Ossorio, J. J., Loinaz, I., &amp; González-Álvarez, J. L. (2019). Protocolo para la valoración policial del riesgo de violencia de género (VPR4.0): revisión de su funcionamiento. <em>Revista Española de Medicina Legal</em>, 45, 52–58. <a href="https://www.elsevier.es/es-revista-revista-espanola-medicina-legal-285-articulo-protocolo-valoracion-policial-del-riesgo-S0377473219300033">Article</a></li>
     <li id="src-r9">[R9] Grogger, J., Gupta, S., Ivandic, R., &amp; Kirchmaier, T. (2021). Comparing conventional and machine-learning approaches to risk assessment in domestic abuse cases. <em>Journal of Empirical Legal Studies</em>, 18(1), 90–130. <a href="https://onlinelibrary.wiley.com/doi/full/10.1111/jels.12276">doi:10.1111/jels.12276</a></li>
     <li id="src-r10">[R10] Vogt, C., Giljohann, S., Köpsel, N., et al. (2025). From needs assessment to usability testing: Evaluating the AinoAid™ chatbot for domestic violence support. <em>BMC Women's Health.</em> <a href="https://link.springer.com/article/10.1186/s12905-025-04202-3">doi:10.1186/s12905-025-04202-3</a></li>
+  </ol>
+
+  <h3 class="src-h">Course readings (Week 12)</h3>
+  <ol class="sources">
+    <li id="src-w1">[W1] Buribayeva, M., Khamzina, Z., &amp; Buribayev, Y. (2026). Potential negative effects of artificial intelligence in Kazakhstan's public sector: An analysis of hidden risks. <em>Frontiers in Artificial Intelligence</em>, 9, 1781993. <a href="https://doi.org/10.3389/frai.2026.1781993">doi:10.3389/frai.2026.1781993</a> (§4.1.1–4.1.3)</li>
+    <li id="src-w2">[W2] Roberts, H., Hine, E., Taddeo, M., &amp; Floridi, L. (2024). Global AI governance: Barriers and pathways forward. <em>International Affairs</em>, 100(3), 1275–1286. <a href="https://doi.org/10.1093/ia/iiae073">doi:10.1093/ia/iiae073</a></li>
+    <li id="src-w3">[W3] Mhlambi, S. (2020). From rationality to relationality: Ubuntu as an ethical and human rights framework for artificial intelligence governance. <em>Carr Center Discussion Paper</em> 2020-009, pp. 20–25.</li>
   </ol>
 
   <h3 class="src-h">Case-study evidence</h3>
@@ -492,7 +568,7 @@
 </main>
 
 <footer class="foot">
-  <p>Final project for PLS 419, 2026. If you are experiencing violence in Kazakhstan, call 102 (police) or 111 (the helpline for women and children).</p>
+  <p>Final project for PLS 419, 2026. Typefaces: Piazzolla and Geologica (SIL Open Font License). If you are experiencing violence in Kazakhstan, call 102 (police) or 111 (the helpline for women and children).</p>
 </footer>
 
 <script src="app.js"></script>
